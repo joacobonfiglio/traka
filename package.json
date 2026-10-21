@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/test-models.mjs",
+    "test": "node scripts/test-models.mjs && node scripts/test-sync.mjs",
     "db:migration:new": "npx --yes supabase@2.121.0 migration new"
   },
   "dependencies": {

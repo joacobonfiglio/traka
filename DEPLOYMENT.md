@@ -47,3 +47,19 @@ Referencias de Supabase:
 - [Funciones públicas SECURITY DEFINER](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable)
 - [Protección de contraseñas](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection)
 - [Índices sin uso](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index)
+
+## Ajuste de latencia (21/10/2026)
+
+Se identificaron consultas consecutivas antes de cada escritura: verificación de sesión en proxy y API, membresía, lectura del registro, validación remota de referencias y escritura. Las funciones usaban `iad1`, mientras que Supabase está en `eu-west-1`.
+
+- `vercel.json` fija las funciones en Dublín (`dub1`), junto a la región de Supabase.
+- Las APIs verifican y refrescan su sesión en su propio cliente; no repiten la verificación en el proxy. Las páginas conservan el refresco de cookies.
+- `getClaims()` verifica el JWT con JWKS cuando está disponible; Supabase conserva la verificación remota para claves simétricas heredadas. La membresía sigue consultándose en cada solicitud y RLS sigue aplicándose en la base.
+- Las ediciones habituales pasan directamente a una escritura condicional por ID, tipo y versión. Las claves foráneas y el trigger existente validan las relaciones dentro de la transacción. Los documentos mantienen una lectura para impedir cambios de ruta o enlace desde la API general.
+- Los checks y estados de tareas se actualizan de inmediato, con indicador de guardado y bloqueo por tarea. Ante error se restaura solo esa tarea, sin deshacer cambios confirmados de otras tareas.
+- Los formularios muestran un indicador de guardado y mantienen sus valores ante errores. Se confirman únicamente cuando responde la base.
+- La respuesta POST incluye `Server-Timing` para distinguir autorización, base y duración total, sin registrar datos personales ni tokens.
+
+Validación: `npm test`, tipos y compilación de producción; pruebas de latencia simulada, doble clic, escrituras paralelas, restauración, reintento, conflictos, validación, autorización, rutas de documentos y matcher del proxy. Se ejecutaron también escrituras autenticadas en Supabase dentro de una transacción revertida, comprobando versiones y referencias.
+
+La mejora elimina viajes de red y espera visual; no hay una comparación de milisegundos de guardado de extremo a extremo con la sesión personal del propietario. Para medirla, iniciar sesión, guardar una tarea y consultar `Server-Timing` en la respuesta de `/api/data` (autorización/base/total).

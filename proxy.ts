@@ -9,4 +9,6 @@ export async function proxy(request:NextRequest){
  response.headers.set('Cache-Control','private, no-store');
  return response;
 }
-export const config={matcher:['/((?!_next/static|_next/image|favicon.svg|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)']};
+// Route handlers verify/refresh their own session and can write response cookies.
+// Running a second Auth check in the proxy adds a round trip to every mutation.
+export const config={matcher:['/((?!api(?:/|$)|_next/static|_next/image|favicon.svg|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)']};
