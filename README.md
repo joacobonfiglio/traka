@@ -22,6 +22,8 @@ No se usa ninguna clave `service_role` en el código o el navegador.
 
 El proyecto utiliza `traka_members`, `traka_records` y el bucket privado `traka-documents`. Los objetos anteriores del proyecto Supabase no se modifican ni eliminan.
 
+La migración inicial ya está aplicada y registrada en el proyecto de producción. Para instalar una instancia nueva:
+
 1. Aplicar `supabase/migrations/20261021121157_traka_workspace.sql`.
 2. Insertar el email de la persona autorizada en `traka_members` desde SQL Editor o una conexión administrativa, en minúsculas. La aplicación no permite añadir miembros por sí sola.
 3. En Supabase Auth → URL Configuration, configurar la URL de producción y autorizar `/auth/callback` como redirect. No autorizar comodines generales de Vercel.
@@ -35,7 +37,7 @@ Los archivos se suben directamente a Supabase con URLs de carga firmadas; el lí
 
 Repositorio: `joacobonfiglio/traka`. Proyecto: `traka`, equipo `joakobon-5283s-projects`.
 
-La rama `main` despliega producción mediante la integración Git de Vercel. Configurar las variables en Production. Las previews no reciben por defecto acceso a la base de producción.
+La rama de producción es `main` y el proyecto está conectado al repositorio mediante la integración Git de Vercel. La primera publicación se realizó con el commit exacto de GitHub desde la API de Vercel. Configurar las variables en Production. Las previews no reciben por defecto acceso a la base de producción.
 
 ## Verificación
 
