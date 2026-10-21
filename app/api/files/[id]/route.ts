@@ -1,0 +1,4 @@
+import {getAgencyAccess} from '../../../../lib/agency-auth';
+import {json} from '../../../../lib/api';
+export const dynamic='force-dynamic';
+export async function GET(req:Request,{params}:{params:Promise<{id:string}>}){const a=await getAgencyAccess();if(!a)return json({error:'Acceso restringido'},401);const {id}=await params;const {data:doc}=await a.supabase.from('traka_records').select('data').eq('id',id).eq('kind','document').maybeSingle();if(!doc?.data.fileKey)return json({error:'No encontrado'},404);const d=doc.data,inline=/^(application\/pdf|image\/(png|jpeg|webp|gif))$/.test(d.mime);const download=new URL(req.url).searchParams.has('download')||!inline;const {data,error}=await a.supabase.storage.from('traka-documents').createSignedUrl(d.fileKey,60,download?{download:d.name}:{});if(error)return json({error:'Archivo no disponible'},404);return new Response(null,{status:302,headers:{Location:data.signedUrl,'Cache-Control':'private, no-store'}})}

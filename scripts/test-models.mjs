@@ -1,0 +1,12 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import ts from 'typescript';
+const dir=path.resolve('.test-output');await fs.mkdir(dir,{recursive:true});
+const text=await fs.readFile('lib/models.ts','utf8');await fs.writeFile(path.join(dir,'models.mjs'),ts.transpileModule(text,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText);
+const {schemas}=await import(pathToFileURL(path.join(dir,'models.mjs')).href);
+const p={name:'SEO',clientId:'c',service:'SEO',status:'En curso',amount:1000,cost:300,paid:500,currency:'ARS',due:'2026-11-01',notes:''};assert.ok(schemas.project.safeParse(p).success);assert.equal(schemas.project.safeParse({...p,paid:1001}).success,false);assert.equal(schemas.project.safeParse({...p,amount:-1}).success,false);
+const t={name:'Revisión',projectId:'p',status:'En curso',priority:'Alta',due:'2026-11-01',assignee:'Joaquín',notes:''};assert.deepEqual(schemas.task.parse(t).timeEntries,[]);assert.equal(schemas.task.safeParse({...t,due:''}).success,false);const e={id:crypto.randomUUID(),date:'2026-10-21',minutes:90,note:'Diseño'};assert.ok(schemas.task.safeParse({...t,timeEntries:[e]}).success);assert.equal(schemas.task.safeParse({...t,timeEntries:[{...e,minutes:-5}]}).success,false);
+assert.equal(schemas.tool.safeParse({name:'Mal enlace',category:'SEO',url:'javascript:alert(1)',description:'',status:'Disponible'}).success,false);
+console.log('Validation checks passed: amounts, currencies, overpayment, task end dates, optional time tracking, invalid time and unsafe links.');
