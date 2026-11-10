@@ -1,50 +1,125 @@
-# Traka Workspace
+# Traka
 
-Gestión de agencia: clientes, proyectos, tareas, calendario, finanzas, documentos privados, herramientas y prospección. Next.js 16, React 19, Supabase Auth/Postgres/Storage y Vercel.
+Este repositorio tiene dos cosas que se publican por separado en Vercel:
 
-## Desarrollo
+| Qué | Dónde vive | Qué publica |
+|---|---|---|
+| **La web pública** | la raíz del repositorio | `trakadigital.com` |
+| **Traka Workspace** (gestión interna: clientes, proyectos, tareas, finanzas, documentos) | `workspace/` | el subdominio de la herramienta |
 
-```sh
-npm ci
-cp .env.example .env.local
-npm run dev
+Los dos proyectos de Vercel apuntan al mismo repositorio y a la misma rama; lo único
+que los diferencia es el **Root Directory**: vacío para la web, `workspace` para la
+herramienta. Ver `DESPLIEGUE.md`.
+
+El workspace tiene su propio README y su propio `DEPLOYMENT.md` dentro de `workspace/`.
+Su base de datos (Supabase) no se toca desde acá.
+
+---
+
+# La web — trakadigital.com
+
+Astro (salida estática) + Tailwind v4. **Sin librerías de animación en el navegador**: el
+movimiento es CSS (`@keyframes`, `scroll-snap`, `:has()`, `::details-content`, transiciones de
+vista nativas) más un único `src/scripts/motion.ts` con IntersectionObserver. Fuentes
+autoalojadas con Fontsource.
+
+```bash
+npm install
+npm run dev      # desarrollo
+npm run build    # genera /dist
+npm test         # sitemap, H1, canonical, largo de title/description y JSON-LD sobre /dist
+npm run og       # regenera las imágenes de Open Graph en /public/og
+npm run qa       # control de calidad en celular con Playwright (ver abajo)
 ```
 
-Variables necesarias:
+## Páginas
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: clave pública; la autorización la aplica RLS.
-- `AGENCY_OWNER_EMAIL`: email que puede activar el primer acceso desde la interfaz.
+| URL | Qué es |
+|---|---|
+| `/` | Home: hero, selector "¿Qué necesitás?", tres actos, servicios con precio, casos, proceso, FAQ y guías |
+| `/servicios/desarrollo-web/` | Desarrollo de páginas web — desde $200.000 |
+| `/servicios/google-y-redes/` | Perfil de Empresa en Google y redes — desde $100.000 |
+| `/servicios/herramientas-a-medida/` | Herramientas y plataformas a medida — a presupuesto |
+| `/guias/` + `/guias/<slug>/` | Centro de guías |
+| `/sobre-nosotros/` | Origen, el nombre, cómo trabajamos |
+| `/legales/privacidad/` · `/legales/cookies/` · `/legales/terminos/` | Legales, con `noindex, follow` y fuera del sitemap |
+| `404` | Página propia con salida a WhatsApp |
+| `/llms.txt` | Resumen en texto plano para asistentes de IA, generado desde los mismos datos |
 
-No se usa ninguna clave `service_role` en el código o el navegador.
+`/servicios/` (la vieja página general) redirige con 301 al listado de la home: ver `vercel.json`.
 
-## Base de datos
+## Una sola fuente de datos: `src/site.ts`
 
-El proyecto utiliza `traka_members`, `traka_records` y el bucket privado `traka-documents`. Los objetos anteriores del proyecto Supabase no se modifican ni eliminan.
+Contacto, ciudad, servicios con su precio y **todo el contenido de cada página de servicio**
+(qué incluye, cuándo te sirve, preguntas frecuentes) salen de ahí. De ese archivo se alimentan
+el texto visible, el JSON-LD, el sitemap, las imágenes de Open Graph y `/llms.txt`.
 
-La migración inicial ya está aplicada y registrada en el proyecto de producción. Para instalar una instancia nueva:
+**Regla: lo que no está confirmado queda vacío y no se muestra.** Cada dato pendiente tiene su
+`TODO(cliente)` en el código; ninguno aparece en pantalla.
 
-1. Aplicar `supabase/migrations/20261021121157_traka_workspace.sql`.
-2. Insertar el email de la persona autorizada en `traka_members` desde SQL Editor o una conexión administrativa, en minúsculas. La aplicación no permite añadir miembros por sí sola.
-3. En Supabase Auth → URL Configuration, configurar la URL de producción y autorizar `/auth/callback` como redirect. No autorizar comodines generales de Vercel.
-4. Si el email ya tiene cuenta en ese proyecto, ingresar con su contraseña. Para una cuenta nueva, usar Primer acceso y confirmar el email si el proyecto lo requiere.
+### Agregar un servicio
+Sumá una entrada a `servicios` en `src/site.ts` con su bloque `detalle` y su `page`. La página
+se genera sola desde `src/pages/servicios/[slug].astro`, y entra en el menú, en el sitemap y en
+`/llms.txt` sin tocar nada más. Después corré `npm run og`.
 
-La migración conserva las relaciones entre registros con claves foráneas, controla versiones para evitar sobrescribir cambios y aplica RLS a todas las tablas nuevas. Solo miembros de Traka pueden acceder a datos y documentos.
+### Agregar una guía
+Creá un `.md` en `src/content/guias/`. El frontmatter está tipado en `src/content.config.ts`
+(el build falla si el `title` pasa de 60 caracteres o la `description` de 158). Con `servicio:`
+la guía enlaza sola al servicio que corresponde. Después corré `npm run og`.
 
-Los archivos se suben directamente a Supabase con URLs de carga firmadas; el límite es 20 MB por archivo. Las lecturas usan URLs privadas temporales de 60 segundos. Los ejemplos son temporales y no se guardan como datos reales.
+### Conectar WhatsApp
+Poné el número en `site.whatsapp`, en formato internacional sin `+` (ej. `5492235551234`).
+Hasta entonces los botones se ven pero no abren nada. Cada botón lleva su mensaje precargado y
+un `data-wa` con el origen (header, hero, selector-google, servicio-web, guia-…, flotante…).
 
-## Vercel
+### Medición
+`PUBLIC_GA_ID` en `.env.production` (y en Vercel). Analytics y el aviso de cookies solo se
+cargan en producción y solo si ese ID existe. Hasta que la persona acepta, el consentimiento
+está en `denied`; la elección se guarda en `localStorage` y se puede cambiar desde
+`/legales/cookies/`. Eventos: `click_whatsapp` con `ubicacion` y `servicio`, y `click_como_llegar`.
 
-Repositorio: `joacobonfiglio/traka`. Proyecto: `traka`, equipo `joakobon-5283s-projects`.
+## Imágenes de Open Graph
 
-La rama de producción es `main` y el proyecto está conectado al repositorio mediante la integración Git de Vercel. La primera publicación se realizó con el commit exacto de GitHub desde la API de Vercel. Configurar las variables en Production. Las previews no reciben por defecto acceso a la base de producción.
+`npm run og` genera una imagen por página con satori + resvg, usando la tipografía y los colores
+de la marca, y las deja en `public/og/`. Los PNG se versionan en el repositorio **a propósito**:
+así el deploy no depende de binarios nativos. Hay que volver a correrlo cuando cambia un título
+de servicio o de guía.
 
-## Verificación
+## Control de calidad en celular
 
-```sh
-npm run typecheck
-npm test
+`npm run qa` necesita Playwright y el sitio ya construido y servido:
+
+```bash
 npm run build
+npx astro preview --port 4321 &
+npm i --no-save playwright
+npm run qa
 ```
 
-Además de esos controles, validar al publicar: acceso autorizado, alta de cliente, proyecto y tarea, edición y registro de tiempo, subida y lectura de documento, recarga de página, y denegación a visitantes sin sesión.
+Revisa, en iPhone SE / iPhone 13 / Pixel 7 y sobre las 12 páginas: desborde horizontal (con
+scroll hasta el final y con el menú abierto), el selector y su panel, los acordeones, el
+carrusel, que todos los links de WhatsApp estén medidos, que el zoom siga habilitado y que no
+haya marcadores pendientes a la vista.
+
+## Editar el diseño
+Tokens de color, tipografía y componentes visuales: `src/styles/global.css`.
+
+## Propuestas para clientes
+
+Para compartir una propuesta de web con alguien, dejá la carpeta del cliente en
+`public/propuestas/` y queda publicada en `trakadigital.com/propuestas/<cliente>/`:
+
+```
+public/propuestas/
+  lavanderia-del-sur/
+    index.html        → trakadigital.com/propuestas/lavanderia-del-sur/
+    imagen.jpg
+```
+
+Es HTML suelto: no hay que tocar Astro ni pasar por el build del sitio. Se publica con
+el siguiente despliegue.
+
+Las propuestas **no se indexan**: están bloqueadas en `public/robots.txt` y el
+`vercel.json` les manda una cabecera `X-Robots-Tag: noindex, nofollow`. No aparecen en
+Google ni en el sitemap, pero cualquiera con el link las ve, así que no pongas ahí nada
+que no puedas compartir.

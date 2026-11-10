@@ -1,8 +1,12 @@
-node_modules/
-.next/
-.vercel/
-.env*
-!.env.example
-*.tsbuildinfo
-.test-output/
-next-env.d.ts
+node_modules
+dist
+.astro
+.vercel
+.DS_Store
+
+# Entorno local y capturas de QA
+.env*.local
+shots
+
+# Scripts temporales de capturas
+*.local.mjs

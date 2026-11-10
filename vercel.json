@@ -1,4 +1,14 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "regions": ["dub1"]
+  "trailingSlash": true,
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/servicios", "destination": "/#servicios", "permanent": true },
+    { "source": "/servicios/", "destination": "/#servicios", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/propuestas/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
 }
