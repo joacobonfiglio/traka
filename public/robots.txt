@@ -43,6 +43,7 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /legales/
-Disallow: /propuestas/
+# /propuestas/ no se bloquea a propósito: llevan noindex (meta + X-Robots-Tag en vercel.json)
+# y Google tiene que poder entrar para leerlo. Si se bloquea, la URL puede indexarse igual.
 
 Sitemap: https://trakadigital.com/sitemap-index.xml
