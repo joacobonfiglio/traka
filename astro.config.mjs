@@ -9,10 +9,10 @@ export default defineConfig({
   build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
     icon(),
-    // Las páginas legales van con noindex: fuera del sitemap.
+    // Las páginas legales y las propuestas van con noindex: fuera del sitemap.
     // Sin lastmod: poner la fecha del build en todas las páginas es un dato falso
     // (no cambiaron todas) y Google ignora el lastmod del sitio entero cuando no es fiable.
-    sitemap({ filter: (page) => !page.includes('/legales/') }),
+    sitemap({ filter: (page) => !page.includes('/legales/') && !page.includes('/propuestas/') }),
   ],
   vite: { plugins: [tailwindcss()] },
 });
