@@ -1,26 +1,25 @@
 ---
 interface Props { name: string; kind: string; tone: string; servicio?: string; url?: string; metric?: string }
 const { name, kind, url, metric } = Astro.props;
-const pictures: Record<string, string> = { Aquabon: '/proyectos/aquabon.webp', 'Tintorería Constitución': '/proyectos/constitucion.webp' };
+const shots: Record<string, [string, string]> = {
+  Aquabon: ['aquabon-home', 'Portada de Aquabon con sus servicios y el botón para consultar por WhatsApp'],
+  'Tintorería Constitución': ['constitucion-home', 'Portada de Tintorería Constitución con retiro a domicilio'],
+  Lavi: ['lavi-inicio', 'Panel de facturación, gastos y resultados de Lavi con datos de demostración'],
+};
+const [file, alt] = shots[name];
+const src = `/proyectos/${file}.webp`;
 ---
-<article class="w-[240px] lg:w-auto" data-reveal>
-  {url && pictures[name] ? (
-    <a href={url} class="block overflow-hidden rounded-xl bg-white text-carbon" aria-label={`Visitar la web de ${name}`}>
-      <img src={pictures[name]} alt={`Imagen de la web de ${name}`} class="aspect-[16/10] w-full object-cover" loading="lazy" />
-      <span class="block px-4 py-2 text-sm">{new URL(url).hostname} ↗</span>
-    </a>
-  ) : (
-    <div class="rounded-xl bg-white p-4 text-carbon">
-      <div class="flex items-center justify-between"><strong>Lavi</strong><small>Vista de ejemplo</small></div>
-      <p class="mt-3 font-bold">Pedidos de hoy</p>
-      <div class="mt-2 divide-y divide-carbon/15 text-sm">
-        {[['Valet', 'En proceso'], ['Acolchado', 'Listo'], ['Camisas', 'Entregado']].map(([item, status]) => (
-          <div class="flex justify-between gap-2 py-2"><span>{item}</span><span>{status}</span></div>
-        ))}
-      </div>
-    </div>
-  )}
-  <h3 class="mt-5 text-xl lg:text-2xl">{name}</h3>
-  <p class="meta mt-1.5 text-chispa">{kind}</p>
-  {metric && <p class="mt-3 text-sm">{metric}</p>}
+<article class="case-shot" data-reveal>
+  <a href={url || src} aria-label={url ? `Visitar ${name}` : 'Ampliar el panel de Lavi'}>
+    <img src={src} alt={alt} width="1360" height="800" loading="lazy" />
+  </a>
+  <p class="meta mt-5 text-chispa">{kind}</p>
+  <h3 class="mt-2 text-2xl">{name}</h3>
+  {metric && <p>{metric}</p>}
+  <a href={url || src} class="link mt-3 inline-block text-sm">{url ? 'Visitar sitio ↗' : 'Ampliar panel de ejemplo ↗'}</a>
 </article>
+<style>
+.case-shot{min-width:0;width:min(82vw,360px)}
+.case-shot img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid rgb(255 255 255 / 20%);box-shadow:0 8px 24px #0002}
+@media(min-width:1024px){.case-shot{width:auto}}
+</style>

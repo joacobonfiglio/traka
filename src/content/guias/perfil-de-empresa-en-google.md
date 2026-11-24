@@ -45,6 +45,8 @@ Es el campo que más pesa para decidir en qué búsquedas aparecés. Elegí la c
 
 Un truco honesto: buscá en Maps a los tres competidores que mejor aparecen y mirá qué categoría usan.
 
+<aside style="border-left:4px solid #bc4a26;padding:1rem 1.4rem;background:#fff7ec;border-radius:0 12px 12px 0"><strong>Taller del Puerto</strong><br>Reparación de bicicletas · Mar del Plata<br>Abierto hasta las 18 h<br><small>Ejemplo ilustrativo de categoría, ubicación y horario.</small></aside>
+
 ## 3. Completá lo que casi nadie completa
 
 Acá se separa una ficha común de una buena:
@@ -57,11 +59,13 @@ Acá se separa una ficha común de una buena:
 
 ## 4. Fotos: menos pose, más realidad
 
-Subí fotos propias, no de banco. La fachada tal como se ve desde la vereda (para que la gente te encuentre caminando), el interior, el equipo trabajando y el producto o el trabajo terminado.
+Elegí tres fotos que respondan preguntas distintas:
 
-Dos cosas que importan más de lo que parece: que la foto de portada muestre de qué se trata el negocio en un segundo, y que sigas subiendo fotos de vez en cuando. Una ficha que se actualiza se ve viva.
+- **¿Cómo llego?** Mostrá la entrada desde la vereda, con el cartel visible.
+- **¿Quién me atiende?** Fotografiá al equipo trabajando en el local.
+- **¿Qué puedo esperar?** Mostrá un trabajo terminado y explicá qué servicio recibió.
 
-<figure style="margin:2rem 0"><a href="https://tintoreriaconstitucion.com/"><img loading="lazy" src="/proyectos/constitucion.webp" alt="Percheros de Tintorería Constitución" style="display:block;width:100%;max-height:22rem;object-fit:cover;border-radius:1rem"></a><figcaption>Los percheros de Tintorería Constitución muestran qué tipo de prendas recibe el negocio. Para tu ficha, combiná fotos del trabajo con una de la entrada que ayude a reconocer el local.</figcaption></figure>
+<figure><img src="/guias/perfil-local.svg" width="960" height="460" loading="lazy" style="width:100%;height:auto;border-radius:12px" alt="Campos a comprobar en un perfil de empresa"></figure>
 
 ## 5. Horarios, incluidos los especiales
 

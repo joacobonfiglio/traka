@@ -53,7 +53,7 @@ const jsonLd = [
             return (
               <li class:list={['guia-card', g.data.destacada && 'guia-card--destacada']} data-reveal style={`--d:${i * 80}ms`}>
                 <a href={`/guias/${g.id}/`} class="guia-card__link">
-                  {['google', 'web'].includes(g.data.servicio ?? '') && <img class="mb-5 aspect-[3/1] w-full rounded-lg object-cover" loading="lazy" alt="" src={g.data.servicio === 'google' ? '/proyectos/constitucion.webp' : '/proyectos/aquabon.webp'} />}
+                  {['google', 'web'].includes(g.data.servicio ?? '') && <img class="mb-5 aspect-[48/23] w-full rounded-lg object-cover" loading="lazy" alt="" src={g.data.servicio === 'google' ? '/guias/perfil-local.svg' : '/guias/comparar-presupuestos.svg'} />}
                   <p class="label text-brasa">{g.data.kicker}</p>
                   <h3 class="mt-4 font-display text-2xl font-extrabold leading-tight md:text-3xl">{g.data.h1}</h3>
                   <p class="mt-3 opacity-80">{g.data.resumen}</p>

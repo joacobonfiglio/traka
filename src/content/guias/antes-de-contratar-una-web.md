@@ -32,50 +32,36 @@ Antes de pedir presupuestos, definí en una frase qué tiene que pasar cuando al
 
 Esa frase cambia todo: el tamaño, el precio y hasta quién debería hacerla. Si no la tenés, cualquier presupuesto te va a parecer caro o barato sin saber respecto de qué.
 
-<figure style="margin:2rem 0"><a href="https://aquabonlavanderia.com/"><img loading="lazy" src="/proyectos/aquabon.webp" alt="Portada fotográfica de Aquabon Lavandería" style="display:block;width:100%;max-height:22rem;object-fit:cover;border-radius:1rem"></a><figcaption>Aquabon presenta el servicio de lavandería desde la portada. Al evaluar una web, probá si podés identificar el servicio y encontrar el contacto desde tu celular.</figcaption></figure>
+## Diez preguntas para comparar propuestas
 
-## Las diez preguntas
+| Alcance | Propuesta A | Propuesta B |
+| --- | --- | --- |
+| Diseño | Cinco páginas | Cinco páginas |
+| Textos | Los entrega el negocio | Incluye redacción y carga |
+| Medición | Sin definir | Clics a WhatsApp |
 
-### 1. ¿A nombre de quién queda el dominio?
+**Qué preguntar:** si ambas incluyen cinco páginas, ¿cuánto trabajo queda de tu lado y cómo vas a saber si llegan consultas?
 
-El dominio tiene que estar **a tu nombre**, no a nombre de quien te hace la web. Parece obvio y es el problema más común cuando alguien quiere cambiar de proveedor años después.
+### Propiedad y costos
 
-### 2. ¿Dónde se aloja y quién lo paga?
+1. ¿El dominio queda a tu nombre?
+2. ¿Quién paga el alojamiento y cuánto cuesta renovarlo?
+3. Si cambiás de proveedor, ¿te llevás los accesos y contenidos?
 
-Preguntá dónde va a estar alojada, cuánto cuesta por año y si ese costo está incluido o va aparte. No hay respuesta correcta; hay respuesta clara o confusa.
+### Diseño y contenidos
 
-### 3. ¿Qué pasa si mañana trabajo con otro?
+4. ¿Quién redacta y carga los textos?
+5. ¿Podés actualizar horarios, precios y fotos?
+6. ¿Podés probar un trabajo anterior desde tu celular?
+7. ¿Cómo comprueban el tiempo de carga antes de publicar?
 
-La respuesta sana es: te llevás el dominio, los contenidos y los accesos. Si la respuesta es que la web "vive" en un sistema propio del que no se puede salir, sabelo antes y no después.
+### Resultados y soporte
 
-### 4. ¿Quién escribe los textos?
+8. ¿Vas a poder medir los clics a WhatsApp y los formularios?
+9. ¿Quién se ocupa de los fallos después de publicar?
+10. ¿Qué queda fuera del precio acordado?
 
-Es la pregunta que más presupuestos infla después. Si la redacción no está incluida, te van a pedir los textos a vos, y ahí es donde los proyectos se frenan tres meses.
-
-### 5. ¿Puedo editarla yo?
-
-Aclaralo de entrada: qué vas a poder cambiar solo (horarios, fotos, precios) y qué va a necesitar que alguien lo toque. No siempre conviene poder editar todo; sí conviene saberlo.
-
-### 6. ¿Cómo se ve en el celular?
-
-Pedí ver, en un teléfono, otros trabajos de quien te la va a hacer. Casi todo el tráfico de un comercio entra desde el celular. Si la demo solo existe en computadora, es una señal.
-
-### 7. ¿Cuánto tarda en cargar?
-
-Una web pesada se paga en consultas perdidas. No hace falta que te den una clase técnica: pedí que te pasen un trabajo anterior y pasalo vos por PageSpeed Insights, que es gratis y lo corre cualquiera.
-
-### 8. ¿Cómo se mide si funciona?
-
-
-Que la web esté publicada no es el final. Preguntá si deja instalado algo para medir —Analytics, Search Console— y si los botones de contacto se van a poder contar. Sin eso, dentro de seis meses no vas a poder saber si sirvió.
-
-### 9. ¿Qué pasa después de publicarla?
-
-Quién arregla si algo se rompe, en cuánto tiempo, y si eso tiene costo. Es la parte que casi nunca está escrita y la que más discusiones genera.
-
-### 10. ¿Qué NO incluye?
-
-La pregunta más útil de todas. Un presupuesto honesto tiene una lista de lo que queda afuera.
+<figure><img src="/guias/comparar-presupuestos.svg" width="960" height="460" loading="lazy" style="width:100%;height:auto;border-radius:12px" alt="Comparación ilustrada del alcance de dos webs"></figure>
 
 ## Tres señales de alerta
 
