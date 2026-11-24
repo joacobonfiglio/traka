@@ -32,6 +32,8 @@ Antes de pedir presupuestos, definí en una frase qué tiene que pasar cuando al
 
 Esa frase cambia todo: el tamaño, el precio y hasta quién debería hacerla. Si no la tenés, cualquier presupuesto te va a parecer caro o barato sin saber respecto de qué.
 
+<figure style="margin:2rem 0"><a href="https://aquabonlavanderia.com/"><img loading="lazy" src="/proyectos/aquabon.webp" alt="Portada fotográfica de Aquabon Lavandería" style="display:block;width:100%;max-height:22rem;object-fit:cover;border-radius:1rem"></a><figcaption>Aquabon presenta el servicio de lavandería desde la portada. Al evaluar una web, probá si podés identificar el servicio y encontrar el contacto desde tu celular.</figcaption></figure>
+
 ## Las diez preguntas
 
 ### 1. ¿A nombre de quién queda el dominio?
