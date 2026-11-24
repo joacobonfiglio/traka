@@ -271,8 +271,8 @@ export const needs = [
 
 export const cases = [
   // TODO(cliente): URL pública y métrica verificada de cada caso. Sin dato confirmado no se publica.
-  { name: 'Aquabon', kind: 'Página web', servicio: 'web', tone: 'chispa', url: '', metric: '' },
-  { name: 'Tintorería Constitución', kind: 'Página web', servicio: 'web', tone: 'arena', url: '', metric: '' },
+  { name: 'Aquabon', kind: 'Página web', servicio: 'web', tone: 'chispa', url: 'https://aquabonlavanderia.com/', metric: '' },
+  { name: 'Tintorería Constitución', kind: 'Página web', servicio: 'web', tone: 'arena', url: 'https://tintoreriaconstitucion.com/', metric: '' },
   { name: 'Lavi', kind: 'Plataforma a medida', servicio: 'medida', tone: 'mar', url: '', metric: '' },
 ] as const;
 

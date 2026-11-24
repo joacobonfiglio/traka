@@ -61,6 +61,8 @@ Subí fotos propias, no de banco. La fachada tal como se ve desde la vereda (par
 
 Dos cosas que importan más de lo que parece: que la foto de portada muestre de qué se trata el negocio en un segundo, y que sigas subiendo fotos de vez en cuando. Una ficha que se actualiza se ve viva.
 
+<figure style="margin:2rem 0"><a href="https://tintoreriaconstitucion.com/"><img loading="lazy" src="/proyectos/constitucion.webp" alt="Percheros de Tintorería Constitución" style="display:block;width:100%;max-height:22rem;object-fit:cover;border-radius:1rem"></a><figcaption>Los percheros de Tintorería Constitución muestran qué tipo de prendas recibe el negocio. Para tu ficha, combiná fotos del trabajo con una de la entrada que ayude a reconocer el local.</figcaption></figure>
+
 ## 5. Horarios, incluidos los especiales
 
 Horario equivocado es la forma más rápida de perder un cliente: llega, está cerrado, y a veces lo cuenta en una reseña.
