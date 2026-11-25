@@ -5,7 +5,6 @@
   "outputDirectory": "dist",
   "installCommand": "npm ci",
   "trailingSlash": true,
-  "cleanUrls": true,
   "redirects": [
     { "source": "/servicios", "destination": "/#servicios", "permanent": true },
     { "source": "/servicios/", "destination": "/#servicios", "permanent": true }
