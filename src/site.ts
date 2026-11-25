@@ -337,15 +337,6 @@ export const needs = [
   },
 ] as const;
 
-/* ------------------------------------------------------------------- casos */
-
-export const cases = [
-  // TODO(cliente): URL pública y métrica verificada de cada caso. Sin dato confirmado no se publica.
-  { name: 'Aquabon', kind: 'Página web', servicio: 'web', tone: 'chispa', url: '', metric: '' },
-  { name: 'Tintorería Constitución', kind: 'Página web', servicio: 'web', tone: 'arena', url: '', metric: '' },
-  { name: 'Lavi', kind: 'Plataforma a medida', servicio: 'medida', tone: 'mar', url: '', metric: '' },
-] as const;
-
 /* ------------------------------------------------------- los tres pasos */
 
 /** Cada paso del recorrido de un cliente, con el servicio que lo resuelve. */

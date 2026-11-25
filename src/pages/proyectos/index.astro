@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Mecha from '../../components/Mecha.astro';
+import Burn from '../../components/Burn.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { SITE_URL, servicios } from '../../site';
+
+const proyectos = (await getCollection('proyectos')).sort((a, b) => a.data.orden - b.data.orden);
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Proyectos', item: `${SITE_URL}/proyectos/` },
+  ] },
+  { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Proyectos de Traka',
+    itemListElement: proyectos.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.data.nombre, url: `${SITE_URL}/proyectos/${p.id}/` })) },
+];
+---
+<Base
+  title="Proyectos: páginas y plataformas que hicimos | Traka"
+  description="Las páginas web y las plataformas a medida que venimos construyendo para negocios reales. Mirá qué entregamos y cómo queda."
+  path="/proyectos/"
+  jsonLd={jsonLd}
+>
+  <Mecha>
+    <section class="section s-papel on-light pb-14 pt-10 md:pt-14" aria-labelledby="pr-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <nav aria-label="Migas de pan" class="meta mb-7">
+          <a href="/" class="hover:underline">Inicio</a> / <span aria-current="page">Proyectos</span>
+        </nav>
+        <h1 id="pr-title" class="h-xl">Lo que venimos construyendo</h1>
+        <p class="lede mt-7 max-w-2xl text-carbon/80">
+          Páginas web y plataformas a medida para negocios reales. Acá mostramos qué era cada negocio
+          y qué construimos para él.
+        </p>
+      </div>
+    </section>
+
+    <section class="section s-arena on-light" aria-labelledby="lista-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Proyectos" id="lista-title" title="Negocios reales, vistos como los ve su cliente." />
+        <ul class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {proyectos.map((p) => (
+            <li>
+              <a href={`/proyectos/${p.id}/`} class="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuego">
+                <CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} />
+                <span class="mt-4 inline-flex items-center gap-1.5 font-medium underline underline-offset-4">Ver el proyecto</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <!--
+          TODO(Traka): reemplazar las maquetas de CaseCard por capturas reales en WebP,
+          con alt descriptivo. Las sube otro agente cuando estén.
+        -->
+      </div>
+    </section>
+
+    <section class="section s-arena on-light pt-0" aria-labelledby="svc-title">
+      <div class="wrap">
+        <h2 id="svc-title" class="font-display text-2xl font-extrabold">Con qué servicio se hizo cada uno</h2>
+        <ul class="mt-6 flex flex-wrap gap-3">
+          {servicios.filter((s) => s.page).map((s) => (
+            <li><a class="btn btn-ghost" href={s.page}>{s.name}</a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="fuego" /></div>
+  </Mecha>
+
+  <FinalCta message="Hola, vi los proyectos en la web y quiero hacer una consulta." origin="cta-final" />
+</Base>

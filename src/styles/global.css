@@ -144,6 +144,29 @@ a.link { color: var(--color-chispa); text-decoration: underline; text-underline-
 .btn-arena { background: var(--color-arena); color: var(--color-carbon); }
 .btn-arena:hover { background: #fff; }
 .btn-ghost { border: 2px solid currentColor; color: inherit; }
+
+/* Campos de formulario. Usan currentColor para funcionar sobre fondo claro y oscuro. */
+.campo {
+  width: 100%;
+  min-height: 52px;
+  padding: .85rem 1.1rem;
+  border: 2px solid currentColor;
+  border-radius: 16px;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+  color: inherit;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+.campo::placeholder { color: currentColor; opacity: .45; }
+.campo:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+.campo:focus-visible {
+  outline: none;
+  border-color: var(--color-fuego);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-fuego) 28%, transparent);
+}
+.campo:user-invalid { border-color: var(--color-chispa); }
 .btn-ghost:hover { background: var(--color-arena); color: var(--color-carbon); border-color: var(--color-arena); }
 .on-light .btn-ghost:hover, .s-fuego .btn-ghost:hover { background: var(--color-carbon); color: var(--color-arena); border-color: var(--color-carbon); }
 @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }

@@ -14,10 +14,11 @@ import Process from '../components/Process.astro';
 import Faq from '../components/Faq.astro';
 import FinalCta from '../components/FinalCta.astro';
 import { getCollection } from 'astro:content';
-import { cases, faqs, pasos, servicios, notaPrecios, SITE_URL } from '../site';
+import { faqs, pasos, servicios, notaPrecios, SITE_URL } from '../site';
 
 const servicioDe = (id: string) => servicios.find((s) => s.id === id)!;
 
+const proyectos = (await getCollection('proyectos')).sort((a, b) => a.data.orden - b.data.orden);
 const guias = (await getCollection('guias')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime()).slice(0, 2);
 
 const jsonLd = [
@@ -159,7 +160,7 @@ const jsonLd = [
       <div class="wrap">
         <SectionHead kicker="Proyectos" id="casos-title" title="Negocios reales, vistos como los ve tu cliente." />
         <div class="snap-row snap-row--cases mt-12" data-scrollx tabindex="0" role="group" aria-label="Casos de clientes, deslizá para ver más">
-          {cases.map((c) => <CaseCard name={c.name} kind={c.kind} tone={c.tone} servicio={c.servicio} url={c.url} metric={c.metric} />)}
+          {proyectos.map((p) => <a href={`/proyectos/${p.id}/`} class="block"><CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} url={p.data.url} /></a>)}
         </div>
       </div>
     </section>

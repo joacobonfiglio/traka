@@ -59,4 +59,33 @@ const ciudades = defineCollection({
   }),
 });
 
-export const collections = { guias, ciudades };
+/**
+ * Proyectos. Un archivo por trabajo. Sin métricas: la página muestra qué es el
+ * negocio y qué se construyó, no resultados con números.
+ */
+const proyectos = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/proyectos' }),
+  schema: z.object({
+    nombre: z.string(),
+    /** Qué se entregó: "Página web", "Plataforma a medida". Sale en la tarjeta. */
+    kind: z.string(),
+    /** Id del servicio en site.ts: web, seo, medida, redes. */
+    servicio: z.enum(['web', 'seo', 'medida', 'redes']),
+    /** Color de la banda de la maqueta. */
+    tone: z.enum(['fuego', 'chispa', 'arena', 'mar']),
+    orden: z.number(),
+    title: z.string().max(60, 'El title no puede pasar de 60 caracteres'),
+    metaDescription: z.string().max(158, 'La description no puede pasar de 158 caracteres'),
+    h1: z.string(),
+    /** Qué es el negocio y con qué venía. */
+    negocio: z.string(),
+    /** Qué construimos. Una línea por pieza. */
+    queHicimos: z.array(z.string()).min(2),
+    /** URL pública del sitio. Vacío = no se muestra el enlace. */
+    url: z.string().default(''),
+    /** Cita del cliente. Vacía = no se muestra el bloque. */
+    cita: z.object({ texto: z.string(), autor: z.string() }).optional(),
+  }),
+});
+
+export const collections = { guias, ciudades, proyectos };

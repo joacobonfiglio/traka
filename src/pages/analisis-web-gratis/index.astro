@@ -1,0 +1,182 @@
+---
+/**
+ * Análisis web gratis. El formulario no manda nada a un servidor: arma un
+ * mensaje de WhatsApp con lo que se cargó y abre el chat. Sin backend nuevo.
+ *
+ * Sin JavaScript el formulario no puede armar el mensaje, así que debajo queda
+ * un botón de WhatsApp que funciona igual. El contenido de la página está todo
+ * en el HTML y se lee sin JS.
+ */
+import { Icon } from 'astro-icon/components';
+import Base from '../../layouts/Base.astro';
+import Mecha from '../../components/Mecha.astro';
+import Burn from '../../components/Burn.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import WaButton from '../../components/WaButton.astro';
+import { SITE_URL, site, waHref } from '../../site';
+
+const que = [
+  { t: 'Si te encuentran en Google', d: 'Buscamos tu rubro en tu ciudad y te decimos en qué posición apareces, y quién está arriba.', icon: 'ph:magnifying-glass-bold' },
+  { t: 'Cómo está tu ficha de Google', d: 'Si tu Perfil de Empresa está completo, verificado y con reseñas respondidas, o a medio cargar.', icon: 'ph:map-pin-bold' },
+  { t: 'Cómo se ve en el celular', d: 'Si la web carga rápido, si se lee sin hacer zoom y si hay por dónde escribirte.', icon: 'ph:device-mobile-bold' },
+  { t: 'Qué cambiarías primero', d: 'Tres cosas concretas, ordenadas por lo que más impacto tiene, sin tecnicismos.', icon: 'ph:list-checks-bold' },
+];
+
+const faqs = [
+  { q: '¿De verdad es gratis?', a: 'Sí. Lo mandamos por WhatsApp o por escrito, sin compromiso. Si después querés trabajar con nosotros, bien; si no, te queda el análisis igual.' },
+  { q: '¿Cuánto tarda?', a: 'Entre uno y dos días hábiles desde que nos pasás los datos.' },
+  { q: '¿Sirve si no tengo web?', a: 'Sí. En ese caso miramos tu Instagram y tu ficha de Google, que es lo que la gente encuentra hoy cuando te busca.' },
+  { q: '¿Me van a llamar para venderme algo?', a: 'No llamamos. Te mandamos el análisis por WhatsApp y vos decidís si querés seguir la charla.' },
+];
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Análisis web gratis', item: `${SITE_URL}/analisis-web-gratis/` },
+  ] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+---
+<Base
+  title="Análisis web gratis para tu negocio | Traka"
+  description="Te decimos si te encuentran en Google, cómo está tu ficha y qué cambiarías primero. Gratis, por WhatsApp, en uno o dos días hábiles."
+  path="/analisis-web-gratis/"
+  jsonLd={jsonLd}
+>
+  <Mecha>
+    <section class="section s-papel on-light pb-14 pt-10 md:pt-14" aria-labelledby="aw-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <nav aria-label="Migas de pan" class="meta mb-7">
+          <a href="/" class="hover:underline">Inicio</a> / <span aria-current="page">Análisis web gratis</span>
+        </nav>
+        <h1 id="aw-title" class="h-xl">Análisis web gratis</h1>
+        <p class="lede mt-7 max-w-2xl text-carbon/80">
+          Miramos tu negocio como lo mira alguien que te está buscando en Google, y te decimos
+          qué encontramos y qué cambiarías primero. Sin costo y sin compromiso.
+        </p>
+      </div>
+    </section>
+
+    <section class="section s-arena on-light" aria-labelledby="que-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Qué te mandamos" id="que-title" title="Cuatro cosas concretas, en criollo." />
+        <ul class="mt-12 grid gap-6 md:grid-cols-2">
+          {que.map((q, n) => (
+            <li class="tilt rounded-[26px] border-2 border-carbon/12 bg-papel p-7" data-reveal style={`--d:${n * 70}ms`}>
+              <Icon name={q.icon} class="size-9 text-brasa" aria-hidden="true" />
+              <h3 class="mt-5 text-xl md:text-2xl">{q.t}</h3>
+              <p class="mt-2 opacity-80">{q.d}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="carbon" /></div>
+
+    <section id="pedirlo" class="section s-carbon" aria-labelledby="form-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Pedilo" id="form-title" title="Contanos cuatro datos." lede="Al enviar se abre WhatsApp con el mensaje ya armado. No guardamos nada en ningún servidor." />
+
+        <form id="analisis-form" class="mt-10 grid gap-5" novalidate>
+          <p class="grid gap-2">
+            <label class="label" for="af-nombre">Tu nombre</label>
+            <input class="campo" id="af-nombre" name="nombre" type="text" autocomplete="name" required />
+          </p>
+          <p class="grid gap-2">
+            <label class="label" for="af-negocio">Tu negocio</label>
+            <input class="campo" id="af-negocio" name="negocio" type="text" autocomplete="organization" required />
+          </p>
+          <p class="grid gap-2">
+            <label class="label" for="af-url">Tu web o tu Instagram</label>
+            <input class="campo" id="af-url" name="url" type="text" inputmode="url" placeholder="trakadigital.com o @tunegocio" />
+            <span class="text-sm opacity-70">Si no tenés web, poné tu Instagram.</span>
+          </p>
+          <p class="grid gap-2">
+            <label class="label" for="af-whatsapp">Tu WhatsApp</label>
+            <input class="campo" id="af-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required />
+          </p>
+
+          <p class="mt-2">
+            <button class="btn btn-fuego btn-lg w-full sm:w-auto" type="submit">
+              <Icon name="ph:whatsapp-logo-bold" class="size-5 shrink-0" aria-hidden="true" />
+              <span>Pedir el análisis</span>
+            </button>
+          </p>
+          <p id="af-error" class="text-sm text-chispa" hidden role="alert">Completá tu nombre, tu negocio y tu WhatsApp.</p>
+        </form>
+
+        <!-- Sin JavaScript el formulario no puede armar el mensaje: este botón sí funciona. -->
+        <div class="hairline mt-10 pt-7">
+          <p class="text-sm opacity-75">O escribinos directamente y lo charlamos:</p>
+          <div class="mt-4">
+            <WaButton
+              message="Hola, quiero el análisis web gratis. Te paso los datos de mi negocio."
+              label="Pedirlo por WhatsApp"
+              origin="medio"
+              campaign="analisis-web-gratis"
+              variant="arena"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="s-carbon"><Burn to="arena" /></div>
+
+    <section class="section s-arena on-light" aria-labelledby="faq-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Preguntas frecuentes" id="faq-title" title="Lo que preguntan antes de pedirlo." />
+        <div class="mt-10 divide-y divide-current/15 border-y border-current/15">
+          {faqs.map((f) => (
+            <details class="faq group py-1">
+              <summary class="flex items-center justify-between gap-6 py-5 font-display text-xl font-bold md:text-2xl">
+                <span>{f.q}</span>
+                <Icon name="ph:plus-bold" class="faq__plus size-6 shrink-0 text-fuego" aria-hidden="true" />
+              </summary>
+              <p class="max-w-2xl pb-6 opacity-80">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="fuego" /></div>
+  </Mecha>
+</Base>
+
+<script is:inline define:vars={{ base: waHref('__MSG__', 'analisis-web-gratis'), activo: Boolean(site.whatsapp) }}>
+  (function () {
+    var form = document.getElementById('analisis-form');
+    var error = document.getElementById('af-error');
+    if (!form || !activo) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = function (n) { return (form.elements[n].value || '').trim(); };
+      if (!v('nombre') || !v('negocio') || !v('whatsapp')) {
+        error.hidden = false;
+        return;
+      }
+      error.hidden = true;
+
+      var lineas = [
+        'Hola, quiero el análisis web gratis.',
+        'Nombre: ' + v('nombre'),
+        'Negocio: ' + v('negocio'),
+        v('url') ? 'Web o Instagram: ' + v('url') : 'No tengo web ni Instagram.',
+        'Mi WhatsApp: ' + v('whatsapp'),
+      ];
+      var href = base.replace('__MSG__', encodeURIComponent(lineas.join('\n')));
+
+      var gtag = window.gtag;
+      if (gtag) gtag('event', 'analisis_gratis_submit', { page: location.pathname, ubicacion_cta: 'medio' });
+
+      window.open(href, '_blank', 'noopener');
+    });
+  })();
+</script>

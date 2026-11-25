@@ -1,0 +1,18 @@
+{
+  "nombre": "Lavi",
+  "kind": "Plataforma a medida",
+  "servicio": "medida",
+  "tone": "mar",
+  "orden": 3,
+  "title": "Lavi: una plataforma a medida | Traka",
+  "metaDescription": "La plataforma a medida que desarrollamos para Lavi: relevamiento del proceso real, entrada por usuario y entrega en etapas.",
+  "h1": "Lavi",
+  "negocio": "TODO: validar con Joaco — qué es Lavi y con qué venía antes de la plataforma. Es el único proyecto del que no hay descripción en el repositorio, así que esta sección queda sin escribir a propósito en vez de inventarse.",
+  "queHicimos": [
+    "Relevamiento del proceso real de trabajo antes de proponer nada.",
+    "Una plataforma propia, construida para esa forma de trabajar y no al revés.",
+    "Entrada por usuario: cada persona ve lo que le toca ver.",
+    "TODO: validar con Joaco — qué módulos concretos tiene la plataforma."
+  ],
+  "url": ""
+}

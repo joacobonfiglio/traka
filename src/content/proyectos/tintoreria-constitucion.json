@@ -1,0 +1,18 @@
+{
+  "nombre": "Tintorería Constitución",
+  "kind": "Página web",
+  "servicio": "web",
+  "tone": "arena",
+  "orden": 1,
+  "title": "Tintorería Constitución: su página web | Traka",
+  "metaDescription": "La página web que hicimos para Tintorería Constitución: pensada para el celular, con los servicios claros y botón de WhatsApp en cada sección.",
+  "h1": "Tintorería Constitución",
+  "negocio": "Una tintorería de barrio que trabajaba casi todo de boca en boca y por WhatsApp. El problema no era la falta de clientes, era que quien no la conocía no tenía dónde ver qué servicios daba, cuánto tardaba cada uno ni si pasaban a buscar la ropa. Cada consulta nueva arrancaba de cero por mensaje.",
+  "queHicimos": [
+    "Una web de una sola página, armada primero para el celular, con los servicios y los tiempos de entrega a la vista.",
+    "Botón de WhatsApp en cada sección, con el mensaje ya escrito según desde dónde se toca.",
+    "Las dudas de siempre escritas en la página, para que la web las conteste sola y no haya que repetirlas por mensaje.",
+    "Datos de contacto, zona y horarios en un solo lugar, fáciles de actualizar."
+  ],
+  "url": ""
+}

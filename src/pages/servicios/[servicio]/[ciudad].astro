@@ -21,7 +21,7 @@ import WebMock from '../../../components/WebMock.astro';
 import CaseCard from '../../../components/CaseCard.astro';
 import Process from '../../../components/Process.astro';
 import FinalCta from '../../../components/FinalCta.astro';
-import { SITE_URL, site, cases, notaPrecios, servicioPorSlug, serviciosConCiudad } from '../../../site';
+import { SITE_URL, site, notaPrecios, servicioPorSlug, serviciosConCiudad } from '../../../site';
 
 export async function getStaticPaths() {
   const ciudades = await getCollection('ciudades');
@@ -53,7 +53,9 @@ const otrasCiudades = (await getCollection('ciudades'))
  * ninguno está atado a una ciudad, así que presentarlo como "el caso de acá"
  * sería inventar. Se muestra neutro, sin afirmar de dónde es el cliente.
  */
-const casosDelServicio = cases.filter((c) => c.servicio === svc.id);
+const casosDelServicio = (await getCollection('proyectos'))
+  .filter((c) => c.data.servicio === svc.id)
+  .sort((a, b) => a.data.orden - b.data.orden);
 
 const faqsTodas = [...d.faqs.slice(0, 3), ...loc.faqsCiudad];
 const precioNumero = svc.price.match(/[\d.]+/)?.[0]?.replace(/\./g, '');
@@ -204,7 +206,7 @@ const jsonLd = [
               lede="Lo que construimos para otros negocios, visto como lo ve su cliente."
             />
             <div class="snap-row snap-row--cases mt-12" data-scrollx tabindex="0" role="group" aria-label="Trabajos nuestros, deslizá para ver más">
-              {casosDelServicio.map((c) => <CaseCard name={c.name} kind={c.kind} tone={c.tone} servicio={c.servicio} url={c.url} metric={c.metric} />)}
+              {casosDelServicio.map((c) => <a href={`/proyectos/${c.id}/`} class="block"><CaseCard name={c.data.nombre} kind={c.data.kind} tone={c.data.tone} servicio={c.data.servicio} url={c.data.url} /></a>)}
             </div>
             <p class="mt-10"><a class="link" href="/proyectos/">Ver todos los proyectos</a></p>
           </>

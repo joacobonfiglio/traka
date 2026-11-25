@@ -1,0 +1,18 @@
+{
+  "nombre": "Aquabon",
+  "kind": "Página web",
+  "servicio": "web",
+  "tone": "chispa",
+  "orden": 2,
+  "title": "Aquabon: su página web | Traka",
+  "metaDescription": "La página web que hicimos para Aquabon: pensada para el celular, con los servicios claros y botón de WhatsApp en cada sección.",
+  "h1": "Aquabon",
+  "negocio": "Un lavadero que necesitaba un lugar propio para presentarse. Tenía movimiento por redes y por recomendación, pero nada que mostrara el detalle de los servicios ni que sirviera como referencia cuando alguien lo buscaba por primera vez.",
+  "queHicimos": [
+    "Una web propia, pensada primero para el celular, con los servicios y lo que incluye cada uno.",
+    "Botón de WhatsApp en cada sección, con el mensaje precargado según la parte de la página.",
+    "Estructura y textos escritos con el cliente, sin plantillas ni secciones de relleno.",
+    "Medición de las consultas que entran, para ver qué parte de la página las trae."
+  ],
+  "url": ""
+}

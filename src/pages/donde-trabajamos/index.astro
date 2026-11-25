@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Mecha from '../../components/Mecha.astro';
+import Burn from '../../components/Burn.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { SITE_URL, site, servicioPorSlug, serviciosConCiudad } from '../../site';
+
+const ciudades = (await getCollection('ciudades')).sort((a, b) => a.data.orden - b.data.orden);
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Dónde trabajamos', item: `${SITE_URL}/donde-trabajamos/` },
+  ] },
+  { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Ciudades donde trabaja Traka',
+    itemListElement: ciudades.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.data.ciudadNombre })) },
+];
+---
+<Base
+  title="Dónde trabajamos | Traka"
+  description="Trabajamos con negocios de Mar del Plata, Tandil, Necochea, Balcarce, Miramar y Tres Arroyos, y a distancia en todo el país."
+  path="/donde-trabajamos/"
+  jsonLd={jsonLd}
+>
+  <Mecha>
+    <section class="section s-papel on-light pb-14 pt-10 md:pt-14" aria-labelledby="dt-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <nav aria-label="Migas de pan" class="meta mb-7">
+          <a href="/" class="hover:underline">Inicio</a> / <span aria-current="page">Dónde trabajamos</span>
+        </nav>
+        <h1 id="dt-title" class="h-xl">Dónde trabajamos</h1>
+        <p class="lede mt-7 max-w-2xl text-carbon/80">
+          Tenemos páginas propias para seis ciudades de la región, con el contexto de cada una.
+          Pero el servicio no cambia por dónde estés: trabajamos a distancia con negocios de todo
+          el país y de España, y el precio es el mismo en todos lados.
+        </p>
+      </div>
+    </section>
+
+    <section class="section s-arena on-light" aria-labelledby="ciudades-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Ciudades" id="ciudades-title" title="Elegí tu ciudad y tu servicio." />
+        <ul class="mt-12 grid gap-6 md:grid-cols-2">
+          {ciudades.map((c, n) => (
+            <li class="rounded-[26px] border-2 border-carbon/12 bg-papel p-7" data-reveal style={`--d:${n * 70}ms`}>
+              <h3 class="text-2xl">{c.data.ciudadNombre}</h3>
+              <ul class="mt-5 space-y-2">
+                {serviciosConCiudad.filter((slug) => c.data.servicios[slug]).map((slug) => (
+                  <li>
+                    <a class="link" href={`/servicios/${slug}/${c.id}/`}>{servicioPorSlug(slug)!.name} en {c.data.ciudadNombre}</a>
+                  </li>
+                ))}
+              </ul>
+              <p class="mt-5 text-sm opacity-75">{c.data.atencion}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="carbon" /></div>
+
+    <section class="section s-carbon" aria-labelledby="resto-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Y si no estás en ninguna" id="resto-title" title="Igual trabajamos con vos." />
+        <p class="lede mt-8 opacity-85">
+          Las páginas por ciudad existen porque el contexto de cada lugar es distinto, no porque
+          atendamos solo ahí. Hacemos webs, posicionamiento y plataformas para negocios de
+          {' '}{site.areaServed.join(' y ')}, con la misma atención: una videollamada para arrancar,
+          WhatsApp después y siempre la misma persona siguiendo el proyecto.
+        </p>
+        <p class="mt-8"><a class="link" href="/proyectos/">Ver los proyectos que hicimos</a></p>
+        <!--
+          TODO(Traka): el brief pedía mostrar "el caso más cercano a cada ciudad". Ninguno de los
+          tres proyectos tiene ciudad registrada, así que se enlaza a /proyectos/ completo en vez
+          de atribuirle una ubicación que no está confirmada.
+        -->
+      </div>
+    </section>
+
+    <div class="s-carbon"><Burn to="fuego" /></div>
+  </Mecha>
+
+  <FinalCta message="Hola, quiero saber si trabajan con negocios de mi zona." origin="cta-final" />
+</Base>
