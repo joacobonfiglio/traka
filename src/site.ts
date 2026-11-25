@@ -10,8 +10,8 @@ export const site = {
   url: 'https://trakadigital.com',
   description: 'Webs simples y Perfil de Empresa en Google para comercios y pymes. Precio cerrado, plazos por escrito y una persona que responde por WhatsApp.',
 
-  // TODO(cliente): número de WhatsApp en formato internacional sin "+" (ej. 5492235551234).
-  whatsapp: '',
+  // Formato internacional sin "+": 54 9 223 6769943 (Mar del Plata).
+  whatsapp: '5492236769943',
   // TODO(cliente): email de contacto.
   email: '',
   // TODO(cliente): URL del perfil de Instagram.
