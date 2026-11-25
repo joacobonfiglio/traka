@@ -19,7 +19,7 @@ const guias = defineCollection({
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     /** Temas de la guía, para articleSection y keywords. */
     temas: z.array(z.string()).default([]),
-    servicio: z.enum(['web', 'google', 'medida']).optional(),
+    servicio: z.enum(['web', 'seo', 'medida', 'redes']).optional(),
     destacada: z.boolean().default(false),
   }),
 });
