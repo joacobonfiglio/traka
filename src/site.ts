@@ -42,10 +42,22 @@ export const site = {
 
 export const SITE_URL = site.url;
 
-/** Link de WhatsApp con mensaje precargado. Sin número devuelve "#" (botón visible, sin conectar). */
-export function waHref(message: string): string {
+/**
+ * Link de WhatsApp con mensaje precargado. Sin número devuelve "#" (botón visible, sin conectar).
+ *
+ * `campaign` agrega los UTM que pide el brief. Aviso honesto: wa.me ignora todo
+ * parámetro que no sea `phone` o `text`, así que estos UTM no los lee nadie —
+ * la medición real es el evento `whatsapp_click` de GA4, que lleva el mismo slug.
+ */
+export function waHref(message: string, campaign?: string): string {
   if (!site.whatsapp) return '#';
-  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+  const q = new URLSearchParams({ text: message });
+  if (campaign) {
+    q.set('utm_source', 'web');
+    q.set('utm_medium', 'cta');
+    q.set('utm_campaign', campaign);
+  }
+  return `https://wa.me/${site.whatsapp}?${q}`;
 }
 
 /* ---------------------------------------------------------------- servicios */

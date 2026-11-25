@@ -163,7 +163,14 @@ document.addEventListener('click', (e) => {
   const wa = target?.closest<HTMLAnchorElement>('a[data-wa]');
   if (wa) {
     const gtag = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag;
-    gtag?.('event', 'click_whatsapp', { ubicacion: wa.dataset.wa, servicio: servicioDesdeUrl() });
+    // Nombre y parámetros del evento según el brief de landings.
+    gtag?.('event', 'whatsapp_click', {
+      page: location.pathname,
+      servicio: wa.dataset.servicio || servicioDesdeUrl(),
+      ciudad: wa.dataset.ciudad || '',
+      ubicacion_cta: wa.dataset.wa,
+      campaign: wa.dataset.campaign || '',
+    });
     // Mientras no haya número cargado, el botón se ve pero no navega.
     if (wa.getAttribute('href') === '#') e.preventDefault();
     return;
