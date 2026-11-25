@@ -1,0 +1,113 @@
+{
+  "ciudadNombre": "Tres Arroyos",
+  "areaServed": "Tres Arroyos, Buenos Aires, Argentina",
+  "orden": 6,
+  "atencion": "Trabajamos a distancia: arrancamos con una videollamada con pantalla compartida, así vemos juntos cómo está tu web o tu perfil, y seguimos por WhatsApp. Siempre es la misma persona la que hace el seguimiento, de punta a punta del proyecto, y en horario comercial te contestamos el mismo día. Si el proyecto lo amerita, coordinamos un viaje para el arranque.",
+  "servicios": {
+    "desarrollo-web": {
+      "title": "Diseño web en Tres Arroyos desde $200.000 | Traka",
+      "metaDescription": "Diseño web en Tres Arroyos pensada para el celular, con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas. Seguimiento personal.",
+      "h1": "Diseño web en Tres Arroyos que trae consultas",
+      "bajada": "Tu web propia, armada primero para el celular y con un botón para que te escriban. Precio cerrado por escrito y publicada en 3 o 4 semanas.",
+      "contextoLocal": [
+        "Tres Arroyos funciona como cabecera de una región grande: mucho negocio de acá no atiende solo a la ciudad, atiende a todo el partido y a los pueblos alrededor. Eso significa que tu cliente potencial muchas veces está a treinta o cincuenta kilómetros, no te vio nunca la vidriera y te va a conocer por lo que encuentre en el celular.",
+        "El otro componente es Claromecó, que en verano le cambia el pulso a la zona y suma un visitante que no conoce nada y busca todo desde el teléfono. Son dos públicos: el cliente de la región, que compra todo el año y por confianza, y el de temporada, que decide en el momento."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Trabajan con negocios de Tres Arroyos a distancia?",
+          "a": "Sí, es lo habitual. Arrancamos con una videollamada con pantalla compartida y seguimos por WhatsApp, con una sola persona a cargo del proyecto de punta a punta."
+        },
+        {
+          "q": "Atiendo todo el partido, ¿la web lo refleja?",
+          "a": "Tiene que decirlo explícitamente, sí. Es uno de los primeros puntos que definimos: a qué zona le hablás, para que el que está en otro pueblo entienda que puede comprarte."
+        },
+        {
+          "q": "Tengo negocio también en Claromecó, ¿cuenta aparte?",
+          "a": "Depende de cómo trabajes. Si es el mismo negocio con operación de temporada, va en la misma web; si son dos cosas distintas, lo charlamos al definir el alcance."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Tres Arroyos y quiero una página web",
+      "problemasLocales": [
+        {
+          "t": "Tu cliente está a cincuenta kilómetros",
+          "d": "No pasa por tu puerta ni ve tu cartel: te busca en el celular desde otro pueblo. Si no estás ahí o la web no dice que atendés la zona, no existís para él."
+        },
+        {
+          "t": "No queda claro hasta dónde llegás",
+          "d": "El de otro pueblo no sabe si le vendés, si entregás allá o si tiene que venir. Si la web no lo dice, no pregunta: busca otro."
+        }
+      ]
+    },
+    "posicionamiento-seo": {
+      "title": "SEO en Tres Arroyos: aparecé primero en Google | Traka",
+      "metaDescription": "Posicionamiento SEO en Tres Arroyos: búsquedas de la región, Perfil de Empresa y Maps. Desde $150.000, con informe de lo que entra.",
+      "h1": "Posicionamiento SEO en Tres Arroyos",
+      "bajada": "Que aparezcas cuando alguien busca tu rubro en Tres Arroyos y en la región. Arranca en $150.000 y se presupuesta según la competencia que tengas.",
+      "contextoLocal": [
+        "Acá el SEO tiene una ventaja clara y una trampa. La ventaja es que la competencia por búsqueda local es baja: muchas búsquedas de rubro más ciudad tienen pocos negocios peleándolas, y con el trabajo bien hecho se llega arriba en bastante menos tiempo que en una ciudad grande.",
+        "La trampa es quedarse en la ciudad. Si tu negocio atiende el partido y los pueblos de alrededor, el Perfil de Empresa tiene que declarar esa área de cobertura, y la web tiene que nombrar la zona que cubrís. Si no, apareces solo para el que busca parado en Tres Arroyos y te perdés al cliente que está a cuarenta kilómetros."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Vale la pena hacer SEO acá?",
+          "a": "Suele rendir más rápido que en una ciudad grande, porque hay menos negocios peleando las mismas búsquedas. Lo estimamos al presupuestar, mirando tu rubro."
+        },
+        {
+          "q": "Atiendo el partido y los pueblos, ¿se puede trabajar así?",
+          "a": "Sí, y es lo que recomendamos. Se configura el área de cobertura en el Perfil de Empresa y la web se escribe nombrando la zona, no solo la ciudad."
+        },
+        {
+          "q": "¿Sirve para captar la temporada de Claromecó?",
+          "a": "Sí, se puede trabajar como búsqueda aparte, porque el que va a la playa busca distinto del cliente de todo el año. Se define al armar la estrategia."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Tres Arroyos y quiero trabajar el posicionamiento en Google",
+      "problemasLocales": [
+        {
+          "t": "Aparecés en la ciudad y no en la región",
+          "d": "Atendés todo el partido, pero Google te muestra únicamente a quien busca desde Tres Arroyos. Es configuración del perfil, no falta de alcance."
+        },
+        {
+          "t": "Claromecó y Tres Arroyos no son lo mismo",
+          "d": "Son dos búsquedas con temporadas distintas. Si trabajás las dos, cada una necesita su contenido y su configuración de perfil."
+        }
+      ]
+    },
+    "plataformas-a-medida": {
+      "title": "Plataformas a medida en Tres Arroyos | Traka",
+      "metaDescription": "Plataformas y sistemas internos a medida para negocios de Tres Arroyos. Relevamiento, presupuesto cerrado y soporte después de entregar.",
+      "h1": "Plataformas a medida para negocios de Tres Arroyos",
+      "bajada": "Cuando ningún sistema del mercado hace lo que hacés, lo construimos. Relevamos tu forma de trabajar, presupuesto cerrado y soporte después de entregar.",
+      "contextoLocal": [
+        "Al ser cabecera de región, muchos negocios de Tres Arroyos manejan reparto, logística y clientes repartidos en un radio grande: hojas de ruta, entregas, cuentas corrientes de clientes que están en otros pueblos. Todo eso suele vivir en planillas y en la cabeza del que hace el reparto.",
+        "Del lado del agro el problema es el de siempre, con una vuelta: el dato se genera lejos, en el campo o en el camino, y llega a la oficina días después pasando por un cuaderno. Cuando hay que saber qué se entregó, a quién y qué queda por cobrar, la respuesta está en tres lugares distintos."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Se puede manejar el reparto desde el celular?",
+          "a": "Sí, es uno de los pedidos más habituales: la hoja de ruta en el teléfono, la entrega confirmada en el momento y el dato cargado una sola vez."
+        },
+        {
+          "q": "¿Hacen el relevamiento a distancia?",
+          "a": "Se puede, con videollamadas y pantalla compartida. Si el proceso es muy físico, coordinamos un viaje para verlo una vez en el lugar."
+        },
+        {
+          "q": "¿Sirve para llevar cuentas corrientes?",
+          "a": "Sí. Es uno de los casos donde una herramienta propia se nota enseguida, porque deja de haber dos versiones del mismo saldo."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Tres Arroyos y necesito una plataforma a medida",
+      "problemasLocales": [
+        {
+          "t": "Repartís en un radio grande y lo llevás a mano",
+          "d": "Hojas de ruta en papel, entregas que se confirman por WhatsApp y cuentas corrientes en una planilla. Para saber qué quedó pendiente hay que preguntar a tres personas."
+        },
+        {
+          "t": "Tus cuentas corrientes viven en una planilla",
+          "d": "Clientes de varios pueblos con saldos a mano. Cuando alguien pregunta cuánto debe, la respuesta depende de quién abra el archivo."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "ciudadNombre": "Miramar",
+  "areaServed": "Miramar, Buenos Aires, Argentina",
+  "orden": 5,
+  "atencion": "Estamos a media hora, así que la reunión inicial la podemos hacer en tu local sin problema, o por videollamada si preferís. Después seguimos por WhatsApp, siempre con la misma persona haciendo seguimiento a lo largo del proyecto, y respuesta el mismo día en horario comercial.",
+  "servicios": {
+    "desarrollo-web": {
+      "title": "Diseño web en Miramar desde $200.000 | Traka",
+      "metaDescription": "Diseño web en Miramar pensado para el celular, con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas. Atención personal, a media hora.",
+      "h1": "Diseño web en Miramar que trae consultas",
+      "bajada": "Tu web propia, armada primero para el celular y con un botón para que te escriban. Precio cerrado por escrito y publicada en 3 o 4 semanas.",
+      "contextoLocal": [
+        "Miramar se eligió siempre por lo mismo: es el balneario tranquilo, el de familia. Eso define al que te busca. No es alguien apurado buscando la movida, es un padre o una madre que quiere saber si el lugar sirve para ir con chicos, si hay lugar sin reservar, si se puede llegar caminando. La web que contesta esas preguntas gana la consulta.",
+        "La contracara es la temporada corta y muy concentrada. Hay pocas semanas donde pasa casi todo, y en esas semanas el que decide está en la playa o en el auto, con una mano, mirando el celular. Si la web tarda en cargar o hay que hacer zoom para leer un horario, se cierra y prueba con otro. Y hay un detalle que se pasa por alto: muchos llegan con datos móviles y poca señal, no con wifi. Una web liviana no es un lujo técnico acá, es la diferencia entre que la abran o que la cierren antes de que cargue."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Vienen a Miramar?",
+          "a": "Sí, estamos a media hora: la reunión inicial la hacemos en tu local si querés. Después seguimos por videollamada y WhatsApp."
+        },
+        {
+          "q": "Mi público es familiar, ¿eso cambia la web?",
+          "a": "Cambia qué va arriba. Lo primero tiene que contestar lo que pregunta una familia: si sirve para ir con chicos, horarios, si hace falta reservar y cómo llegar."
+        },
+        {
+          "q": "¿Llego con la web para el verano?",
+          "a": "Si arrancamos con margen, sí: el plazo es de 3 a 4 semanas desde que tenemos el material. En diciembre ya es muy justo."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Miramar y quiero una página web",
+      "problemasLocales": [
+        {
+          "t": "Tu cliente decide con una mano en la playa",
+          "d": "Está con los chicos, con el celular al sol y poca paciencia. Si el horario, la dirección o el botón de WhatsApp no están a la vista, no hay segunda oportunidad."
+        },
+        {
+          "t": "No se entiende si estás abierto",
+          "d": "Fuera de temporada muchos locales cierran o cambian horario. Si la web no lo aclara, el cliente asume lo peor y no escribe."
+        }
+      ]
+    },
+    "posicionamiento-seo": {
+      "title": "SEO en Miramar: aparecé primero en Google | Traka",
+      "metaDescription": "Posicionamiento SEO en Miramar: búsquedas de temporada y de familias, Perfil de Empresa y Maps. Desde $150.000, con informe de lo que entra.",
+      "h1": "Posicionamiento SEO en Miramar",
+      "bajada": "Que aparezcas cuando alguien busca tu rubro en Miramar, en Google y en Maps. Arranca en $150.000 y se presupuesta según la competencia de tu rubro.",
+      "contextoLocal": [
+        "En Miramar el buscador y el visitante son casi la misma persona: alguien que no es de acá, que está por unos días y que busca con el nombre de la ciudad pegado al rubro. Eso es una ventaja, porque son búsquedas muy claras de trabajar, y a la vez una presión, porque si no apareces en esa búsqueda simplemente no existís para ese cliente.",
+        "El peso de las reseñas también es distinto al de una ciudad grande. Cuando el que decide no conoce a nadie y no tiene con quién consultar, lo único que tiene son las estrellas y los comentarios. Un perfil con reseñas recientes y respondidas pesa tanto como estar primero. Hay además una competencia que no se ve: la que viene de Mar del Plata. Muchas búsquedas de la zona devuelven resultados marplatenses aunque la persona esté en Miramar, así que si tu perfil no deja clarísimo dónde estás y qué ofrecés, el resultado de al lado te gana la consulta."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Cuándo tengo que arrancar para la temporada?",
+          "a": "Con varios meses de anticipación. Los cambios técnicos y del Perfil de Empresa se ven en unos 30 días, pero ganar posiciones lleva más tiempo."
+        },
+        {
+          "q": "¿Cuánto importan las reseñas acá?",
+          "a": "Mucho, más que en una ciudad grande: el que decide no conoce a nadie y se guía solo por eso. El plan de reseñas está incluido en el servicio."
+        },
+        {
+          "q": "Mi negocio cierra en invierno, ¿conviene igual?",
+          "a": "Sí, y conviene no bajar el perfil: Google valora la actividad sostenida. Se puede dejar configurado con horarios de temporada para que no quede como cerrado permanente."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Miramar y quiero trabajar el posicionamiento en Google",
+      "problemasLocales": [
+        {
+          "t": "Toda tu búsqueda pasa en pocas semanas",
+          "d": "El volumen se concentra en la temporada, y Google tarda semanas en acomodar los cambios. Si el trabajo arranca tarde, el pico te pasa por al lado."
+        },
+        {
+          "t": "Te buscan junto a Mar del Plata",
+          "d": "Mucha consulta compara las dos ciudades en la misma búsqueda. Si tu contenido no dice qué ofrecés acá, te come el resultado marplatense."
+        }
+      ]
+    },
+    "plataformas-a-medida": {
+      "title": "Plataformas a medida en Miramar | Traka",
+      "metaDescription": "Plataformas y sistemas internos a medida para negocios de Miramar. Relevamiento, presupuesto cerrado y soporte después de entregar.",
+      "h1": "Plataformas a medida para negocios de Miramar",
+      "bajada": "Cuando ningún sistema del mercado hace lo que hacés, lo construimos. Relevamos tu forma de trabajar, presupuesto cerrado y soporte después de entregar.",
+      "contextoLocal": [
+        "La mayoría de los negocios de Miramar vive de una temporada corta, y eso hace que invertir en un sistema anual pesado no cierre por ningún lado. Lo que sí tiene sentido es algo propio y liviano, que resuelva el cuello de botella puntual de esas semanas: reservas, disponibilidad, turnos, caja, personal temporario.",
+        "El patrón que más vemos es el del negocio que durante diez meses se maneja perfecto con una planilla y dos meses al año se le hace ingobernable. No necesita un sistema para todo el año: necesita una herramienta que aguante el pico y que el resto del tiempo no moleste ni cueste."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Conviene si trabajo solo en temporada?",
+          "a": "Puede convenir si el cuello de botella de esas semanas te cuesta plata o clientes. No hace falta un sistema para todo el año: se puede armar algo chico que resuelva el pico."
+        },
+        {
+          "q": "¿Cuánto sale?",
+          "a": "No hay precio de lista: depende del tamaño y del tiempo que lleve. Relevamos cómo trabajás y te damos un presupuesto cerrado antes de arrancar."
+        },
+        {
+          "q": "¿Hacen el relevamiento en Miramar?",
+          "a": "Sí, estamos a media hora. Para entender el flujo real de trabajo conviene verlo en el local una vez, y no tiene costo de viaje."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Miramar y necesito una plataforma a medida",
+      "problemasLocales": [
+        {
+          "t": "Diez meses andás bien y dos te desborda",
+          "d": "La planilla alcanza casi todo el año, pero en temporada hay varias personas cargando a la vez, se pisan los datos y nadie sabe cuál es la versión buena."
+        },
+        {
+          "t": "Tomás reservas por WhatsApp y se superponen",
+          "d": "En el pico entran mensajes más rápido de lo que los anotás, y dos veces por temporada se duplica un turno o una reserva."
+        }
+      ]
+    }
+  }
+}

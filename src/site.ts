@@ -290,6 +290,14 @@ export const servicios: readonly Servicio[] = [
   },
 ];
 
+/** Servicio a partir del slug de su página: 'desarrollo-web' -> el servicio web. */
+export function servicioPorSlug(slug: string): Servicio | undefined {
+  return servicios.find((s) => s.page === `/servicios/${slug}/`);
+}
+
+/** Los tres servicios que tienen páginas por ciudad, en orden. */
+export const serviciosConCiudad = ['desarrollo-web', 'posicionamiento-seo', 'plataformas-a-medida'] as const;
+
 export const notaPrecios = 'Precios en pesos argentinos. El precio final te llega por escrito antes de empezar.';
 
 /* ------------------------------------------------- selector ¿Qué necesitás? */

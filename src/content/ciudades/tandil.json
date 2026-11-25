@@ -1,0 +1,113 @@
+{
+  "ciudadNombre": "Tandil",
+  "areaServed": "Tandil, Buenos Aires, Argentina",
+  "orden": 2,
+  "atencion": "La primera reunión la hacemos por videollamada, con pantalla compartida, así vemos juntos tu web o tu perfil mientras hablamos. Si el proyecto lo amerita viajamos a Tandil para el arranque. Después todo sigue por WhatsApp, con una sola persona haciendo seguimiento de punta a punta, y respuesta el mismo día en horario comercial.",
+  "servicios": {
+    "desarrollo-web": {
+      "title": "Diseño web en Tandil desde $200.000 | Traka",
+      "metaDescription": "Diseño web en Tandil pensado para el celular, con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas. Seguimiento personal del proyecto.",
+      "h1": "Diseño web en Tandil que trae consultas",
+      "bajada": "Tu web propia, armada primero para el celular y con un botón para que te escriban. Precio cerrado por escrito y publicada en 3 o 4 semanas.",
+      "contextoLocal": [
+        "Tandil tiene un visitante muy particular: el que llega el viernes a la tarde y se va el domingo. Ese fin de semana decide todo con el celular, casi siempre desde el auto o desde el alojamiento, y busca cosas concretas: dónde comer, qué visitar en las sierras, dónde comprar quesos o salames para llevar. No tiene tiempo de investigar y elige lo primero que le resuelve la duda.",
+        "Al mismo tiempo hay una ciudad que funciona todo el año, con universidad y un comercio estable que no depende del turismo. Una web tandilense tiene que hablarles a los dos: al que viene por dos días y necesita datos rápidos, y al vecino que ya te conoce y entra para confirmar un horario o un precio."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Trabajan con negocios de Tandil si no están en la ciudad?",
+          "a": "Sí. Arrancamos por videollamada con pantalla compartida y seguimos por WhatsApp, con una sola persona a cargo. Si el proyecto lo amerita, viajamos para la reunión inicial."
+        },
+        {
+          "q": "Mi negocio vive del turismo de fin de semana, ¿qué cambia?",
+          "a": "Cambia el orden de la web. Arriba va lo que el visitante necesita decidir rápido: qué hacés, dónde estás, horarios y cómo escribirte. Lo demás baja."
+        },
+        {
+          "q": "Vendo productos regionales, ¿puedo vender online?",
+          "a": "Nosotros hacemos webs que traen consultas, no tiendas online. Si tu venta arranca por WhatsApp o por encargo, la web está pensada justamente para eso."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Tandil y quiero una página web",
+      "problemasLocales": [
+        {
+          "t": "El que viene el fin de semana no te encuentra",
+          "d": "Llega el viernes, busca en el celular y aparecen los de siempre. Si tu web no está o no carga rápido, perdiste una consulta que no vuelve hasta el próximo feriado."
+        },
+        {
+          "t": "Tu web no carga bien en las sierras",
+          "d": "Buena parte de tu visitante te busca con señal mala, en la ruta o en el campo. Una web pesada ahí no abre, y no hay segundo intento."
+        }
+      ]
+    },
+    "posicionamiento-seo": {
+      "title": "SEO en Tandil: aparecé primero en Google | Traka",
+      "metaDescription": "Posicionamiento SEO en Tandil: búsquedas de visitantes y de vecinos, Perfil de Empresa y Maps. Desde $150.000, con informe de lo que entra.",
+      "h1": "Posicionamiento SEO en Tandil",
+      "bajada": "Que aparezcas cuando alguien busca tu rubro en Tandil, sea un vecino o alguien que llega el fin de semana. Arranca en $150.000 y se presupuesta según tu competencia.",
+      "contextoLocal": [
+        "En Tandil el SEO se juega en dos frentes que casi no se parecen. Uno es la búsqueda del visitante, que escribe cosas como el rubro más la ciudad y decide en el momento: ahí lo que manda es aparecer en el mapa con buenas reseñas y fotos. El otro es la búsqueda del vecino, que ya sabe de vos y busca tu nombre o un servicio puntual.",
+        "La competencia es bastante menor que en las ciudades grandes, y eso es una ventaja concreta: con un Perfil de Empresa bien cargado y contenido que responda las dudas típicas de tu rubro se puede llegar arriba en búsquedas que en Mar del Plata o Buenos Aires serían muy caras de pelear."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Es más fácil posicionar en Tandil que en una ciudad grande?",
+          "a": "En general sí, porque hay menos competencia por las mismas búsquedas. No es automático, pero el mismo trabajo suele rendir antes que en una ciudad con cientos de negocios del mismo rubro."
+        },
+        {
+          "q": "¿Sirve para captar turismo de fin de semana?",
+          "a": "Es justamente donde más se nota, porque ese visitante busca y decide en el momento. Se trabaja el Perfil de Empresa, las reseñas y el contenido que contesta lo que pregunta alguien que no conoce la ciudad."
+        },
+        {
+          "q": "¿Tengo que estar en Tandil para contratarlo?",
+          "a": "No. El trabajo es sobre tu web y tu Perfil de Empresa, y se hace a distancia. Arrancamos con una videollamada y seguimos por WhatsApp."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Tandil y quiero trabajar el posicionamiento en Google",
+      "problemasLocales": [
+        {
+          "t": "Apareces para los vecinos pero no para el que viene",
+          "d": "Quien te busca por tu nombre te encuentra. El que busca tu rubro más Tandil, sin conocerte, no te ve: son dos búsquedas distintas y se trabajan distinto."
+        },
+        {
+          "t": "No te encuentran los que buscan la zona",
+          "d": "Mucha búsqueda tandilense arranca por el paseo o la sierra, no por tu rubro. Si tu contenido no nombra eso, quedás afuera de esa consulta."
+        }
+      ]
+    },
+    "plataformas-a-medida": {
+      "title": "Plataformas a medida en Tandil | Traka",
+      "metaDescription": "Plataformas y sistemas internos a medida para negocios de Tandil. Relevamiento, presupuesto cerrado y soporte después de entregar.",
+      "h1": "Plataformas a medida para negocios de Tandil",
+      "bajada": "Cuando ningún sistema del mercado hace lo que hacés, lo construimos. Relevamos tu forma de trabajar, presupuesto cerrado y soporte después de entregar.",
+      "contextoLocal": [
+        "Tandil tiene una cantidad de productores y elaboradores de alimentos que trabajan con procesos propios: lotes, tiempos de maduración, stock que cambia según la producción y venta que se reparte entre el local, el mayorista y el encargo. Eso no entra bien en un sistema de punto de venta pensado para un kiosco.",
+        "Después hay todo un movimiento de alojamientos y servicios turísticos que depende de la ocupación del fin de semana: reservas, disponibilidad, limpieza, personal que entra solo cuando hay gente. Son procesos que cada negocio resolvió a su manera, y justamente por eso una herramienta genérica no los cubre."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Hacen el relevamiento a distancia?",
+          "a": "Se puede, con videollamadas y pantalla compartida. Si el proceso es muy físico, como una producción con etapas, preferimos ir a verlo una vez y lo coordinamos."
+        },
+        {
+          "q": "Soy productor de alimentos, ¿sirve para mí?",
+          "a": "Es uno de los casos típicos. Se puede armar para seguir lotes, tiempos de elaboración y stock real, con la lógica que ya usás vos y no la de un sistema genérico."
+        },
+        {
+          "q": "¿Se puede conectar con lo que uso hoy?",
+          "a": "En general sí, si la otra herramienta lo permite. Es una de las primeras cosas que miramos en el relevamiento, antes de presupuestar."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Tandil y necesito una plataforma a medida",
+      "problemasLocales": [
+        {
+          "t": "Tu producción no entra en ningún sistema",
+          "d": "Manejás lotes, tiempos de elaboración o stock que cambia según la producción, y las herramientas del mercado asumen que comprás y vendés igual todos los días."
+        },
+        {
+          "t": "Vendés al local, al mayorista y por encargo",
+          "d": "Tres canales con precios y tiempos distintos sobre el mismo stock, y ninguno de los tres se entera de lo que vendió el otro."
+        }
+      ]
+    }
+  }
+}
