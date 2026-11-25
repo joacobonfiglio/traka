@@ -1,0 +1,27 @@
+{
+  "nombre": "Alojamientos temporarios",
+  "orden": 4,
+  "title": "Páginas web para alojamientos temporarios | Traka",
+  "metaDescription": "Páginas web para alojamientos temporarios: fotos, qué incluye y consulta directa por WhatsApp, sin comisión de plataforma.",
+  "h1": "Páginas web para alojamientos temporarios",
+  "bajada": "Una web propia para que te consulten directo, sin pasar por una plataforma que se queda con una parte.",
+  "contexto": [
+    "Casi todo el que alquila temporario arranca en una plataforma, y ahí aprende dos cosas: que la comisión se nota y que el huésped nunca es del todo tuyo. Una web propia no reemplaza a la plataforma, pero le da un lugar donde el que ya te conoce, o el que te encontró por recomendación, puede reservar sin intermediario.",
+    "El que busca alojamiento compara mucho y rápido, casi siempre desde el celular y mirando fotos. Lo que más decide es poder confirmar lo concreto: cuánta gente entra, qué está incluido, si hay cochera, qué tan lejos queda de donde quiere estar. Si eso no está, la consulta se la lleva el que sí lo puso."
+  ],
+  "queNecesita": [
+    { "t": "Fotos que muestren todo", "d": "Cada ambiente, no solo el mejor ángulo del living. El que no ve el baño o la cocina asume lo peor.", "icon": "ph:image-square-bold" },
+    { "t": "Qué incluye, en una lista", "d": "Capacidad real, camas, wifi, aire, cochera, ropa blanca, si se admiten mascotas. Es lo que más se consulta.", "icon": "ph:list-checks-bold" },
+    { "t": "Dónde queda, con referencia", "d": "A cuántas cuadras de lo que le importa al huésped: la playa, el centro, la terminal.", "icon": "ph:map-pin-bold" },
+    { "t": "Cómo se reserva", "d": "Qué seña se pide, cómo se paga, qué pasa si cancela. Decirlo de entrada evita la mitad de los problemas.", "icon": "ph:key-bold" },
+    { "t": "Disponibilidad o temporadas", "d": "Aunque sea por temporada y no un calendario en vivo: qué meses trabajás y cómo se consulta por fechas.", "icon": "ph:calendar-bold" },
+    { "t": "WhatsApp con las fechas", "d": "Un botón con el mensaje ya armado para consultar por fechas, que es con lo que arranca toda conversación.", "icon": "ph:whatsapp-logo-bold" }
+  ],
+  "faqs": [
+    { "q": "¿Reemplaza a las plataformas de alquiler?", "a": "No, y no es la idea. Conviven: la plataforma te trae gente nueva y la web te deja recibir al que ya te conoce o te recomendaron, sin comisión en el medio." },
+    { "q": "¿Se puede poner un calendario de disponibilidad?", "a": "Un calendario en vivo que se sincronice con las plataformas es una plataforma a medida y se presupuesta aparte. En la web se puede mostrar la temporada y resolver las fechas por WhatsApp." },
+    { "q": "¿Sirve si tengo una sola propiedad?", "a": "Sí. Con una sola unidad la web es más simple y más directa, y sigue cumpliendo lo importante: mostrarla bien y recibir la consulta sin intermediario." },
+    { "q": "¿Y si tengo varias?", "a": "Se puede armar con una ficha por propiedad y un botón de consulta por cada una. Lo definimos al acordar el alcance." }
+  ],
+  "whatsappMensaje": "Hola, tengo un alojamiento temporario y quiero una página web"
+}

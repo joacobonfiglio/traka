@@ -88,4 +88,23 @@ const proyectos = defineCollection({
   }),
 });
 
-export const collections = { guias, ciudades, proyectos };
+/** Rubros. Un archivo por rubro: agregar uno es agregar un .json. */
+const rubros = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/rubros' }),
+  schema: z.object({
+    nombre: z.string(),
+    orden: z.number(),
+    title: z.string().max(60, 'El title no puede pasar de 60 caracteres'),
+    metaDescription: z.string().max(158, 'La description no puede pasar de 158 caracteres'),
+    h1: z.string(),
+    bajada: z.string(),
+    /** Dos párrafos sobre cómo busca y decide el cliente de ese rubro. */
+    contexto: z.array(z.string()).length(2),
+    /** Qué tiene que tener la web de ese rubro. */
+    queNecesita: z.array(z.object({ t: z.string(), d: z.string(), icon: z.string() })).min(4),
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).min(3),
+    whatsappMensaje: z.string(),
+  }),
+});
+
+export const collections = { guias, ciudades, proyectos, rubros };

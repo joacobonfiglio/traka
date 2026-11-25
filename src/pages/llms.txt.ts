@@ -5,11 +5,15 @@ import { site, servicios, faqs, steps } from '../site';
 /** Resumen del negocio en texto plano, generado desde src/site.ts. */
 export const GET: APIRoute = async () => {
   const guias = (await getCollection('guias')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+  const ciudades = (await getCollection('ciudades')).sort((a, b) => a.data.orden - b.data.orden);
+  const rubros = (await getCollection('rubros')).sort((a, b) => a.data.orden - b.data.orden);
+  const proyectos = (await getCollection('proyectos')).sort((a, b) => a.data.orden - b.data.orden);
+  const porCiudad = ['desarrollo-web', 'posicionamiento-seo', 'plataformas-a-medida'];
   const L: string[] = [];
   L.push(`# ${site.name}`, '');
   L.push(`> ${site.description}`, '');
   L.push('## Qué es Traka');
-  L.push(`${site.name} es un estudio de ${site.city}, ${site.region}, Argentina. Hace dos cosas: optimiza el Perfil de Empresa en Google (antes Google Mi Negocio) y construye webs simples pensadas para el celular, para comercios y pymes de ${site.areaServed.join(' y ')}.`);
+  L.push(`${site.name} es un estudio digital para comercios y pymes de ${site.areaServed.join(' y ')}. Hace cuatro cosas: construye webs simples pensadas para el celular, trabaja el posicionamiento en Google y en Maps, desarrolla plataformas a medida y pone a punto las redes. Trabaja a distancia en todo el país; su origen es ${site.city}, ${site.region}.`);
   L.push('');
   L.push('## Qué no hace');
   L.push('- No hace tiendas online ni desarrollos complejos.');
@@ -31,7 +35,7 @@ export const GET: APIRoute = async () => {
   steps.forEach((s, i) => L.push(`${i + 1}. ${s.t}: ${s.d}`));
   L.push('');
   L.push('## Contacto');
-  L.push(`- Zona de trabajo: ${site.areaServed.join(', ')}. Base en ${site.city}, ${site.region}.`);
+  L.push(`- Zona de trabajo: ${site.areaServed.join(', ')}, a distancia. Origen: ${site.city}, ${site.region}.`);
   if (site.whatsapp) L.push(`- WhatsApp: +${site.whatsapp}`);
   if (site.email) L.push(`- Email: ${site.email}`);
   if (site.googleBusiness) L.push(`- Perfil de Empresa en Google: ${site.googleBusiness}`);
@@ -49,11 +53,31 @@ export const GET: APIRoute = async () => {
     L.push(`- ${g.data.h1}: ${g.data.resumen} (${site.url}/guias/${g.id}/)`);
   }
   L.push('');
+  L.push('## Ciudades con página propia');
+  L.push('El servicio y el precio son los mismos en todo el país. Estas páginas existen porque el contexto de cada ciudad es distinto, no porque se atienda solo ahí.');
+  for (const c of ciudades) {
+    L.push(`- ${c.data.ciudadNombre}: ${porCiudad.map((sl) => `${site.url}/servicios/${sl}/${c.id}/`).join(' , ')}`);
+  }
+  L.push('');
+  L.push('## Páginas por rubro');
+  for (const r of rubros) {
+    L.push(`- ${r.data.nombre}: ${r.data.bajada} (${site.url}/paginas-web-para/${r.id}/)`);
+  }
+  L.push('');
+  L.push('## Proyectos');
+  L.push('Trabajos entregados. No se publican métricas de resultado.');
+  for (const pr of proyectos) {
+    L.push(`- ${pr.data.nombre} — ${pr.data.kind}: ${pr.data.negocio.startsWith('TODO') ? 'descripción pendiente de confirmar' : pr.data.negocio} (${site.url}/proyectos/${pr.id}/)`);
+  }
+  L.push('');
   L.push('## Páginas');
   L.push(`- ${site.url}/ — Inicio: servicios con precio y selector de necesidades.`);
   for (const sv of servicios) {
     if (sv.page) L.push(`- ${site.url}${sv.page} — ${sv.name}: qué incluye, precio y plazo.`);
   }
+  L.push(`- ${site.url}/proyectos/ — Los trabajos entregados.`);
+  L.push(`- ${site.url}/donde-trabajamos/ — Las ciudades con página propia y cómo se atiende.`);
+  L.push(`- ${site.url}/analisis-web-gratis/ — Análisis gratuito del estado de un negocio en Google.`);
   L.push(`- ${site.url}/guias/ — Guías prácticas sobre Google, webs y medición.`);
   L.push(`- ${site.url}/sobre-nosotros/ — Origen, el nombre y cómo se trabaja.`);
   L.push('');

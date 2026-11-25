@@ -1,0 +1,27 @@
+{
+  "nombre": "Salud y bienestar",
+  "orden": 3,
+  "title": "Páginas web para salud y bienestar | Traka",
+  "metaDescription": "Páginas web para consultorios, estética y bienestar: servicios, turnos y confianza. Desde $200.000 y lista en 3 a 4 semanas.",
+  "h1": "Páginas web para salud y bienestar",
+  "bajada": "Una web que genere confianza antes de la primera consulta: quién atiende, qué hace, dónde y cómo pedir turno.",
+  "contexto": [
+    "En salud y bienestar la decisión no es por precio: es por confianza. Antes de pedir un turno la persona quiere saber quién la va a atender, con qué formación, en qué lugar y qué le van a hacer exactamente. Una web anónima, sin cara y sin nombre, genera la duda que hace que siga buscando.",
+    "Es también un rubro donde el pudor pesa: muchas consultas no se hacen por teléfono porque la persona no quiere explicar su situación a un desconocido. Si la web contesta las dudas por escrito y el primer contacto puede ser un mensaje en vez de una llamada, se saca una barrera grande de encima."
+  ],
+  "queNecesita": [
+    { "t": "Quién atiende", "d": "Nombre, foto y formación de quien va a estar del otro lado. Es lo que más mira alguien que te está evaluando.", "icon": "ph:user-circle-bold" },
+    { "t": "Qué hacés, explicado simple", "d": "Cada servicio en palabras que entienda un paciente, no en lenguaje técnico ni en nombres comerciales.", "icon": "ph:text-aa-bold" },
+    { "t": "Cómo se pide turno", "d": "Un solo camino claro, sin vueltas: por WhatsApp, por teléfono o por donde trabajes. Y qué pasa después.", "icon": "ph:calendar-check-bold" },
+    { "t": "Dónde y cómo llegar", "d": "Dirección, referencia de la zona, si hay escalera o ascensor, si se puede estacionar.", "icon": "ph:map-pin-bold" },
+    { "t": "Las dudas contestadas", "d": "Cuánto dura, si duele, si hace falta preparación, obras sociales, medios de pago. Por escrito, sin tener que preguntar.", "icon": "ph:question-bold" },
+    { "t": "WhatsApp discreto", "d": "Un botón con el mensaje armado, para que el primer contacto sea un mensaje y no una llamada incómoda.", "icon": "ph:whatsapp-logo-bold" }
+  ],
+  "faqs": [
+    { "q": "¿Puedo poner precios?", "a": "Podés, aunque en este rubro muchos prefieren no hacerlo. Lo charlamos: si no los publicás, conviene al menos aclarar cómo se cotiza para no generar una consulta a ciegas." },
+    { "q": "¿Hace falta mostrar mi cara?", "a": "No es obligatorio, pero ayuda mucho: es lo que más genera confianza en salud. Si preferís no hacerlo, trabajamos la confianza por otro lado." },
+    { "q": "¿Hacen sistema de turnos online?", "a": "La web lleva a WhatsApp o al canal que uses. Si necesitás una agenda con disponibilidad real, eso es una plataforma a medida y se presupuesta aparte." },
+    { "q": "¿Qué cuidados hay con los datos del paciente?", "a": "La web no recibe ni guarda datos de salud: el contacto va directo a tu WhatsApp. Es la forma más simple de no manejar información sensible en un servidor." }
+  ],
+  "whatsappMensaje": "Hola, trabajo en salud y bienestar y quiero una página web"
+}
