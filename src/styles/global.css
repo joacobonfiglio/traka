@@ -145,6 +145,11 @@ a.link { color: var(--color-chispa); text-decoration: underline; text-underline-
 .btn-arena:hover { background: #fff; }
 .btn-ghost { border: 2px solid currentColor; color: inherit; }
 
+/* Etiqueta del tipo de trabajo en las tarjetas de proyecto. Chispa sobre fondo
+   oscuro; sobre fondo claro no contrasta, así que ahí va brasa. */
+.caso-kind { color: var(--color-chispa); }
+.on-light .caso-kind { color: var(--color-brasa); }
+
 /* Campos de formulario. Usan currentColor para funcionar sobre fondo claro y oscuro. */
 .campo {
   width: 100%;

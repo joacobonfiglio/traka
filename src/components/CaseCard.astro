@@ -1,7 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
-interface Props { name: string; kind: string; tone: string; servicio?: string; url?: string; metric?: string }
-const { name, kind, tone, servicio = 'web', url = '', metric = '' } = Astro.props;
+interface Props {
+  name: string; kind: string; tone: string; servicio?: string; url?: string; metric?: string;
+  /** 'h3' por defecto. 'p' cuando el nombre ya es el H1 de la página y repetirlo
+   *  como encabezado saltearía un nivel (h1 -> h3). */
+  nameAs?: 'h3' | 'p';
+}
+const { name, kind, tone, servicio = 'web', url = '', metric = '', nameAs = 'h3' } = Astro.props;
+const Nombre = nameAs;
 const esPanel = servicio === 'medida';
 const bg: Record<string, string> = { fuego: 'bg-fuego', chispa: 'bg-chispa', arena: 'bg-arena', mar: 'bg-mar' };
 const banda = bg[tone] ?? 'bg-arena';
@@ -55,8 +61,8 @@ const banda = bg[tone] ?? 'bg-arena';
     </div>
   </div>
 
-  <h3 class="mt-5 text-xl lg:text-2xl">{name}</h3>
-  <p class="meta mt-1.5 text-chispa">{kind}</p>
+  <Nombre class="mt-5 font-display text-xl font-extrabold leading-tight lg:text-2xl">{name}</Nombre>
+  <p class="caso-kind meta mt-1.5">{kind}</p>
   {metric && <p class="mt-3 text-sm opacity-85">{metric}</p>}
   {url && <p class="mt-3"><a class="link text-sm" href={url} rel="noopener">Ver el sitio</a></p>}
 </article>
