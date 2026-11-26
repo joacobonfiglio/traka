@@ -8,8 +8,8 @@ Las páginas de servicio ya existen y están bien armadas, pero una página sola
 Google necesita ver que el sitio sabe del tema. Este plan define **qué guías escribir y cómo
 enlazarlas** para que el peso caiga sobre las páginas de servicio, que son las que convierten.
 
-No es un calendario de redes ni un plan de blog por volumen. Son 19 piezas con un trabajo
-asignado cada una.
+No es un calendario de redes ni un plan de blog por volumen. Son 15 piezas con un trabajo
+asignado cada una, revisadas y aprobadas una por una.
 
 ## Advertencia sobre los datos
 
@@ -66,7 +66,7 @@ diferencial frente a la competencia y evita prometer lo que no se controla.
 
 ---
 
-## Las 19 piezas: palabra clave e interlinkeado
+## Las 15 piezas aprobadas: palabra clave e interlinkeado
 
 Prioridad: **A** = arrancar ya, **B** = segunda ola, **C** = cuando haya tiempo.
 
@@ -88,10 +88,9 @@ Ya existe: *Qué mirar antes de contratar una web*.
 | # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
 |---|---|---|---|---|---|
 | 1 | Cuánto cuesta una página web en Argentina | cuánto cuesta una página web | desarrollo-web (bloque precio), las 6 de ciudad, analisis-web-gratis | desarrollo-web, las 6 de ciudad (FAQ de precio), home | **A** |
-| 2 | Cuánto tarda hacer una página web | cuánto tarda hacer una página web | desarrollo-web, proyectos | desarrollo-web, guía #1 | **A** |
-| 3 | Web o Instagram: para qué sirve cada uno | necesito una web si tengo Instagram | desarrollo-web, redes-sociales | desarrollo-web, redes-sociales, guía #17 | **B** |
+| 2 | Cuánto tarda en hacerse una página web | cuánto tarda en hacerse una página web | desarrollo-web, proyectos | desarrollo-web, guía #1 | **A** |
+| 3 | ¿Me conviene una web o una cuenta de Instagram? | me conviene una web o Instagram | desarrollo-web, redes-sociales, los rubros que existan | desarrollo-web, redes-sociales, guía #17 | **B** |
 | 4 | Qué tiene que tener la web de un comercio | qué tiene que tener la web de un negocio | desarrollo-web, los 4 rubros | desarrollo-web, los 4 rubros | **B** |
-| 5 | Qué tener listo antes de que te hagan la web | qué necesito para hacer una página web | desarrollo-web | desarrollo-web, guía #2 | **C** |
 
 ### Clúster 2 · Posicionamiento SEO → `/servicios/posicionamiento-seo/`
 
@@ -112,9 +111,7 @@ Ya existe: *Cómo optimizar tu Perfil de Empresa en Google*.
 | # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
 |---|---|---|---|---|---|
 | 11 | Cuándo alcanza una planilla y cuándo necesitás un sistema | cuándo dejar de usar Excel en mi negocio | plataformas-a-medida, proyectos/lavi | plataformas-a-medida, las 6 de ciudad de plataformas | **A** |
-| 12 | Cuánto cuesta un sistema a medida y de qué depende | cuánto cuesta un sistema a medida | plataformas-a-medida, guía #13 | plataformas-a-medida, guía #11 | **A** |
-| 13 | Qué es un relevamiento y por qué va antes del presupuesto | qué es un relevamiento de software | plataformas-a-medida | plataformas-a-medida, guía #12 | **B** |
-| 14 | Sistema del mercado o a medida: cómo decidir | software a medida o enlatado | plataformas-a-medida, guía #11 | plataformas-a-medida | **C** |
+| 12 | Cuánto cuesta un software a medida y de qué depende | software a medida precio | plataformas-a-medida, proyectos/lavi | plataformas-a-medida, guía #11 | **A** |
 
 ### Clúster 4 · Redes sociales → `/servicios/redes-sociales/`
 
@@ -131,10 +128,9 @@ Ya existe: *Cómo optimizar tu Perfil de Empresa en Google*.
 | # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
 |---|---|---|---|---|---|
 | 18 | Cómo aparecer en Google Maps en tu ciudad | cómo aparecer en Google Maps | posicionamiento-seo, **las 6 de ciudad de SEO**, guía del Perfil de Empresa | posicionamiento-seo, donde-trabajamos, las 6 de ciudad | **A** |
-| 19 | Cómo vender todo el año con un negocio de temporada | cómo vender en temporada baja | Mar del Plata, Necochea y Miramar (los 3 servicios), desarrollo-web | las 3 ciudades costeras, rubro alojamientos | **B** |
 
-La #18 es la única pieza pensada específicamente para empujar las 18 páginas de ciudad, que hoy
-sólo reciben enlaces del footer y de su servicio nacional.
+La #18 queda como la única pieza que empuja las 18 páginas de ciudad, que hoy sólo reciben
+enlaces del footer y de su servicio nacional. Era una de dos; la otra no se aprobó.
 
 ---
 
@@ -185,16 +181,64 @@ A dos guías por mes, que es un ritmo sostenible para un equipo chico:
 |---|---|---|
 | 1 | #1 (precio web), #6 (no aparezco en Google) | Las dos de mayor intención comercial, una por clúster principal |
 | 2 | #11 (planilla o sistema), #18 (Maps en tu ciudad) | Abre el clúster vacío de mayor ticket y empuja las 18 de ciudad |
-| 3 | #12 (precio sistema), #2 (cuánto tarda una web) | Completa las dos de precio, que son las que más convierten |
+| 3 | #12 (precio software a medida), #2 (cuánto tarda una web) | Completa las dos de precio, que son las que más convierten |
 | 4 | #7 (reseñas), #8 (cuánto tarda el SEO) | Táctica buscada + manejo de expectativas |
-| 5 | #3 (web o Instagram), #9 (qué es SEO local) | Comparativas y definiciones, cabeza de embudo |
-| 6 | #4 (web de un comercio), #19 (negocio de temporada) | Conecta con rubros y con las ciudades costeras |
-
-Las de prioridad C entran después, o antes si Search Console muestra que una búsqueda que no
-estaba en el radar trae gente.
+| 5 | #3 (web o Instagram), #9 (qué es el SEO local) | Comparativa y definición, cabeza de embudo |
+| 6 | #4 (web de un comercio), #10 (por qué palabras te buscan) | Conecta con rubros y cierra el clúster de SEO |
+| 7 | #15 (bio de Instagram), #16 (destacados) | Abre el clúster de redes |
+| 8 | #17 (link de la bio) | Cierra redes y cruza a desarrollo web |
 
 **Las cuatro de prioridad A son la mitad del valor del plan.** Si el ritmo se cae, que no se
-caigan esas.
+caigan esas: #1, #6, #11 y #18, más #12 que es A pero cae en el mes 3.
+
+---
+
+## Descartadas
+
+No se aprobaron. Quedan anotadas para que no se vuelvan a proponer:
+
+| Pieza | Clúster |
+|---|---|
+| Qué tener listo antes de que te hagan la web | Desarrollo web |
+| Qué es un relevamiento y por qué va antes del presupuesto | Plataformas a medida |
+| Sistema del mercado o a medida: cómo decidir | Plataformas a medida |
+| Cómo vender todo el año con un negocio de temporada | Transversal |
+
+---
+
+## Decisiones abiertas sobre dos piezas
+
+**#3, la comparativa web o Instagram.** Aprobada con el pedido de hacerla más específica por
+rubro (tienda de ropa, peluquería, estética). Dos caminos:
+
+- **Una pieza pilar** con una sección propia por rubro. Menos trabajo, menos riesgo de contenido
+  fino, pero pelea una sola búsqueda.
+- **Una pieza por rubro.** Cada una gana su búsqueda larga, pero son tres o cuatro piezas y el
+  riesgo de que se parezcan entre sí es alto, que es justo lo que el plan evita en las ciudades.
+
+Hay un problema de destino: los rubros nombrados no tienen página. "Peluquería" y "estética"
+entran parcialmente en `salud-y-bienestar`; "tienda de ropa" no existe. Si las piezas por rubro
+no tienen a dónde enlazar, se desperdicia la mitad del valor.
+
+**TODO: decidir con Joaco** — si el interés es por rubro, conviene primero crear las páginas de
+rubro (`/paginas-web-para/indumentaria/`, `/paginas-web-para/peluquerias-y-estetica/`), que son
+comerciales y ganan búsquedas del tipo "páginas web para peluquerías", y después una sola
+comparativa que las enlace a todas.
+
+**#12, la palabra clave de plataformas.** Se cambió de "sistema a medida" a **"software a medida"**.
+Razonamiento: "software a medida" es el término instalado en el rubro y el que más probablemente
+escriba alguien que busca esto; "sistema de gestión" es el otro candidato fuerte. "Plataforma" y
+"herramienta" son palabras de agencia, no de buscador: describen bien el servicio pero casi nadie
+las tipea.
+
+Esto abre algo más grande, y vale mirarlo: **la página de servicio se llama "Plataformas a
+medida", así que hoy no es elegible para la búsqueda principal del rubro.** La guía puede capturar
+"software a medida" y pasarle el peso, que es exactamente para lo que sirve el contenido satélite.
+Pero conviene además que el cuerpo y las FAQs de la página de servicio usen "software a medida" y
+"sistema de gestión" junto con el nombre de marca, sin renombrar el H1.
+
+Sin datos de búsqueda esto es razonamiento, no medición. Es de lo primero que hay que confirmar
+cuando Search Console tenga datos.
 
 ---
 
