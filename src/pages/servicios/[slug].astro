@@ -21,10 +21,11 @@ export function getStaticPaths() {
 const { svc } = Astro.props;
 const d = svc.detalle!;
 const otros = servicios.filter((s) => s.id !== svc.id);
+// Todas las guías del clúster, no las 2 más nuevas: son el enlace de vuelta que
+// concentra el peso en esta página.
 const guias = (await getCollection('guias'))
   .filter((g) => g.data.servicio === svc.id)
-  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime())
-  .slice(0, 2);
+  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
 const precioNumero = svc.price.match(/[\d.]+/)?.[0]?.replace(/\./g, '');
 
 const jsonLd = [
