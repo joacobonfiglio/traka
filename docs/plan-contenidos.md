@@ -66,83 +66,114 @@ diferencial frente a la competencia y evita prometer lo que no se controla.
 
 ---
 
-## Las 19 piezas, por clúster
+## Las 19 piezas: palabra clave e interlinkeado
 
 Prioridad: **A** = arrancar ya, **B** = segunda ola, **C** = cuando haya tiempo.
+
+**Sobre las palabras clave:** son la consulta que la pieza tiene que ganar, derivada de intención,
+no de volumen medido. Se escriben como las tipea la gente. Validar y reordenar con Search Console
+a los 30-60 días.
+
+Dos columnas de enlaces, porque el interlinkeado va en los dos sentidos y es lo que hace que el
+peso caiga en las páginas de servicio:
+
+- **Enlaza hacia**: lo que la guía enlaza. Define a quién le pasa autoridad.
+- **Recibe desde**: qué página existente tiene que enlazarla. Sin esto la guía queda huérfana y
+  Google tarda en encontrarla.
 
 ### Clúster 1 · Desarrollo web → `/servicios/desarrollo-web/`
 
 Ya existe: *Qué mirar antes de contratar una web*.
 
-| # | Guía | Intención | Enlaza a | Pri |
-|---|---|---|---|---|
-| 1 | Cuánto cuesta una página web en Argentina | Precio, altísima intención comercial | desarrollo-web, los 6 de ciudad | **A** |
-| 2 | Cuánto tarda hacer una página web | Plazo, duda previa clásica | desarrollo-web | **A** |
-| 3 | Web o Instagram: para qué sirve cada uno | Comparativa, duda muy común en pymes | desarrollo-web, redes-sociales | **B** |
-| 4 | Qué tiene que tener la web de un comercio | Checklist, atrae por rubro | desarrollo-web, los 4 rubros | **B** |
-| 5 | Qué necesitás tener listo antes de que te hagan la web | Preparación | desarrollo-web | **C** |
-
-La #1 es la pieza más valiosa de todo el plan: el sitio **publica el precio**, y casi nadie en el
-rubro lo hace. Una guía honesta sobre lo que cuesta una web y por qué, con el rango real y de qué
-depende, es contenido que la competencia no puede copiar sin exponerse.
-
-La #5 sirve dos veces: rankea y se le manda al cliente cuando firma, así el proyecto no se frena
-esperando material.
+| # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
+|---|---|---|---|---|---|
+| 1 | Cuánto cuesta una página web en Argentina | cuánto cuesta una página web | desarrollo-web (bloque precio), las 6 de ciudad, analisis-web-gratis | desarrollo-web, las 6 de ciudad (FAQ de precio), home | **A** |
+| 2 | Cuánto tarda hacer una página web | cuánto tarda hacer una página web | desarrollo-web, proyectos | desarrollo-web, guía #1 | **A** |
+| 3 | Web o Instagram: para qué sirve cada uno | necesito una web si tengo Instagram | desarrollo-web, redes-sociales | desarrollo-web, redes-sociales, guía #17 | **B** |
+| 4 | Qué tiene que tener la web de un comercio | qué tiene que tener la web de un negocio | desarrollo-web, los 4 rubros | desarrollo-web, los 4 rubros | **B** |
+| 5 | Qué tener listo antes de que te hagan la web | qué necesito para hacer una página web | desarrollo-web | desarrollo-web, guía #2 | **C** |
 
 ### Clúster 2 · Posicionamiento SEO → `/servicios/posicionamiento-seo/`
 
 Ya existe: *Cómo optimizar tu Perfil de Empresa en Google*.
 
-| # | Guía | Intención | Enlaza a | Pri |
-|---|---|---|---|---|
-| 6 | Por qué no aparezco en Google cuando busco mi negocio | La pregunta número uno del rubro | posicionamiento-seo, los 6 de ciudad | **A** |
-| 7 | Cómo conseguir reseñas en Google y cómo responderlas | Táctica concreta, muy buscada | posicionamiento-seo | **A** |
-| 8 | Cuánto tarda el SEO en dar resultados | Expectativa; filtra clientes equivocados | posicionamiento-seo | **B** |
-| 9 | Qué es el SEO local y a quién le sirve | Definición, cabeza del embudo local | posicionamiento-seo, donde-trabajamos | **B** |
-| 10 | Cómo saber por qué palabras te busca la gente | Search Console para principiantes | posicionamiento-seo | **C** |
-
-La #6 es la puerta de entrada natural a todo el clúster local: la escribe alguien que está
-googleando su propio negocio y no se encuentra. Desde ahí se enlaza a las seis ciudades.
-
-La #8 parece que espanta clientes y hace lo contrario: el que llega sabiendo que esto lleva meses
-es el que no se va a los dos meses.
+| # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
+|---|---|---|---|---|---|
+| 6 | Por qué no aparezco en Google cuando busco mi negocio | por qué no aparece mi negocio en Google | posicionamiento-seo, las 6 de ciudad, guía del Perfil de Empresa | posicionamiento-seo, las 6 de ciudad, home | **A** |
+| 7 | Cómo conseguir reseñas en Google y cómo responderlas | cómo conseguir reseñas en Google | posicionamiento-seo, guía del Perfil de Empresa | posicionamiento-seo, guía #6 | **A** |
+| 8 | Cuánto tarda el SEO en dar resultados | cuánto tarda el SEO en dar resultados | posicionamiento-seo | posicionamiento-seo, guía #6 | **B** |
+| 9 | Qué es el SEO local y a quién le sirve | qué es el SEO local | posicionamiento-seo, donde-trabajamos, las 6 de ciudad | posicionamiento-seo, donde-trabajamos | **B** |
+| 10 | Cómo saber por qué palabras te busca la gente | cómo saber por qué palabras me buscan en Google | posicionamiento-seo | posicionamiento-seo, guía #8 | **C** |
 
 ### Clúster 3 · Plataformas a medida → `/servicios/plataformas-a-medida/`
 
-**No tiene ninguna guía todavía.** Es el clúster más vacío y el de ticket más alto.
+**Sin guías hoy.** El clúster más vacío y el de ticket más alto.
 
-| # | Guía | Intención | Enlaza a | Pri |
-|---|---|---|---|---|
-| 11 | Cuándo alcanza una planilla y cuándo necesitás un sistema | La pregunta que califica al cliente | plataformas-a-medida | **A** |
-| 12 | Cuánto cuesta un sistema a medida y de qué depende | Precio sin precio de lista | plataformas-a-medida | **A** |
-| 13 | Qué es un relevamiento y por qué va antes del presupuesto | Proceso, genera confianza | plataformas-a-medida | **B** |
-| 14 | Sistema del mercado o a medida: cómo decidir | Comparativa | plataformas-a-medida | **C** |
-
-La #12 resuelve un problema de ventas real: el servicio es "a presupuesto" y eso frena consultas.
-Una guía que explique de qué depende el número deja que el cliente se autocalifique antes de
-escribir.
+| # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
+|---|---|---|---|---|---|
+| 11 | Cuándo alcanza una planilla y cuándo necesitás un sistema | cuándo dejar de usar Excel en mi negocio | plataformas-a-medida, proyectos/lavi | plataformas-a-medida, las 6 de ciudad de plataformas | **A** |
+| 12 | Cuánto cuesta un sistema a medida y de qué depende | cuánto cuesta un sistema a medida | plataformas-a-medida, guía #13 | plataformas-a-medida, guía #11 | **A** |
+| 13 | Qué es un relevamiento y por qué va antes del presupuesto | qué es un relevamiento de software | plataformas-a-medida | plataformas-a-medida, guía #12 | **B** |
+| 14 | Sistema del mercado o a medida: cómo decidir | software a medida o enlatado | plataformas-a-medida, guía #11 | plataformas-a-medida | **C** |
 
 ### Clúster 4 · Redes sociales → `/servicios/redes-sociales/`
 
-**Tampoco tiene guías.** Es el clúster de ticket más bajo, así que va último en prioridad, pero
-son las piezas más fáciles de escribir.
+**Sin guías hoy.** Ticket más bajo, pero las piezas más rápidas de escribir.
 
-| # | Guía | Intención | Enlaza a | Pri |
-|---|---|---|---|---|
-| 15 | Qué tiene que decir la bio de tu Instagram | Táctica, muy buscada | redes-sociales | **B** |
-| 16 | Cómo ordenar los destacados de un negocio | Táctica | redes-sociales | **C** |
-| 17 | Qué poner en el link de la bio | Táctica; cruza a web | redes-sociales, desarrollo-web | **C** |
+| # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
+|---|---|---|---|---|---|
+| 15 | Qué tiene que decir la bio de tu Instagram | qué poner en la bio de Instagram de un negocio | redes-sociales | redes-sociales | **B** |
+| 16 | Cómo ordenar los destacados de un negocio | cómo organizar los destacados de Instagram | redes-sociales | redes-sociales, guía #15 | **C** |
+| 17 | Qué poner en el link de la bio | qué poner en el link de la bio | redes-sociales, desarrollo-web | redes-sociales, guía #15, guía #3 | **C** |
 
 ### Transversales · alimentan las páginas de ciudad
 
-| # | Guía | Intención | Enlaza a | Pri |
-|---|---|---|---|---|
-| 18 | Cómo aparecer en Google Maps en tu ciudad | Local, cabeza del embudo | posicionamiento-seo, **las 6 de ciudad** | **A** |
-| 19 | Cómo vender todo el año con un negocio de temporada | Local y de rubro | Mar del Plata, Necochea, Miramar; desarrollo-web | **B** |
+| # | Guía | Palabra clave objetivo | Enlaza hacia | Recibe desde | Pri |
+|---|---|---|---|---|---|
+| 18 | Cómo aparecer en Google Maps en tu ciudad | cómo aparecer en Google Maps | posicionamiento-seo, **las 6 de ciudad de SEO**, guía del Perfil de Empresa | posicionamiento-seo, donde-trabajamos, las 6 de ciudad | **A** |
+| 19 | Cómo vender todo el año con un negocio de temporada | cómo vender en temporada baja | Mar del Plata, Necochea y Miramar (los 3 servicios), desarrollo-web | las 3 ciudades costeras, rubro alojamientos | **B** |
 
 La #18 es la única pieza pensada específicamente para empujar las 18 páginas de ciudad, que hoy
-sólo reciben enlaces del footer y de su servicio nacional. La #19 apunta a las tres ciudades
-costeras, donde la estacionalidad es el eje del contexto local que ya está escrito.
+sólo reciben enlaces del footer y de su servicio nacional.
+
+---
+
+## Mecánica del interlinkeado
+
+Parte está automatizada en el repo y parte hay que escribirla a mano. Conviene tenerlo claro para
+no duplicar ni olvidarse.
+
+### Ya es automático
+
+| Enlace | Cómo sale |
+|---|---|
+| Guía → su servicio | Bloque lateral con precio y CTA, por el campo `servicio:` del frontmatter |
+| Servicio → sus guías | Bloque de guías del clúster, **pero capado en 2** |
+| Guía → otras guías | Bloque al final, **pero sin filtrar por clúster**: salen cualesquiera |
+| `/guias/` → todas | Listado, ordenado por fecha |
+
+### Hay que escribirlo en el cuerpo del `.md`
+
+Todo lo demás: los enlaces a páginas de ciudad, a rubros, a `/proyectos/`, a
+`/analisis-web-gratis/` y los cruces entre guías del mismo clúster.
+
+Dos reglas para esos enlaces:
+
+1. **Texto descriptivo, nunca "hacé clic acá".** El enlace dice `posicionamiento SEO en Tandil`,
+   que es la señal que le dice a Google de qué es la página que recibe.
+2. **Dentro del texto, no sólo al final.** Un enlace en medio de un párrafo que viene al caso vale
+   más que una lista de enlaces relacionados al pie.
+
+### Y hay que cambiar esto en el código
+
+| # | Qué | Por qué |
+|---|---|---|
+| 1 | La página de servicio muestra sólo 2 guías (`slice(0, 2)` en `src/pages/servicios/[slug].astro`) | Con 5 guías por clúster, 3 quedan invisibles desde la página que se quiere potenciar |
+| 2 | Las páginas de ciudad no muestran ninguna guía | El enlace interno va en un solo sentido |
+| 3 | `/guias/` no está agrupada por servicio | Con 21 guías una lista plana deja de servir |
+| 4 | El bloque "otras guías" no filtra por clúster (`todas.filter(...).slice(0, 2)`) | Dispersa el peso en vez de concentrarlo en el clúster |
+
+Son cuatro cambios acotados. Conviene hacerlos antes de publicar la cuarta guía.
 
 ---
 
@@ -164,26 +195,6 @@ estaba en el radar trae gente.
 
 **Las cuatro de prioridad A son la mitad del valor del plan.** Si el ritmo se cae, que no se
 caigan esas.
-
----
-
-## Qué hay que cambiar en el código
-
-El plan choca con tres cosas del sitio tal como está hoy. Las tres son chicas.
-
-**1. La página de servicio muestra sólo 2 guías.** En `src/pages/servicios/[slug].astro` hay un
-`.slice(0, 2)` sobre las guías del servicio, ordenadas por fecha. Con 5 guías por clúster, 3
-quedan invisibles desde la página que se quiere potenciar, y el enlace de vuelta no existe. Hay
-que mostrar todas las del clúster.
-
-**2. Las páginas de ciudad no muestran guías.** La plantilla de servicio-ciudad no tiene bloque
-de guías. Conviene que muestre las del servicio, para que el visitante de Tandil también entre al
-contenido y el enlace interno fluya en los dos sentidos.
-
-**3. `/guias/` no está agrupada por servicio.** Con 21 guías, una lista plana ordenada por fecha
-deja de servir. Agrupar por clúster hace legible la estructura, para la persona y para Google.
-
-Son tres cambios acotados. Puedo hacerlos cuando digas; conviene antes de publicar la cuarta guía.
 
 ---
 
