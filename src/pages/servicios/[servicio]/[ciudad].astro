@@ -1,0 +1,293 @@
+---
+/**
+ * Plantilla servicio + ciudad. Los 9 bloques del brief, en orden.
+ *
+ * Las rutas salen de src/content/ciudades/*.json cruzadas con los tres servicios
+ * que tienen página por ciudad. Agregar una ciudad es agregar un .json: salen sus
+ * tres páginas, sus enlaces entre ciudades y sus entradas del sitemap.
+ *
+ * Lo fijo de cada servicio (qué incluye, proceso, FAQs) se hereda de src/site.ts y
+ * vive una sola vez. Lo propio de la ciudad sale del .json.
+ */
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Mecha from '../../../components/Mecha.astro';
+import Burn from '../../../components/Burn.astro';
+import Chispa from '../../../components/Chispa.astro';
+import SectionHead from '../../../components/SectionHead.astro';
+import WaButton from '../../../components/WaButton.astro';
+import WebMock from '../../../components/WebMock.astro';
+import CaseCard from '../../../components/CaseCard.astro';
+import Process from '../../../components/Process.astro';
+import FinalCta from '../../../components/FinalCta.astro';
+import { SITE_URL, site, notaPrecios, servicioPorSlug, serviciosConCiudad } from '../../../site';
+
+export async function getStaticPaths() {
+  const ciudades = await getCollection('ciudades');
+  return ciudades.flatMap((c) =>
+    serviciosConCiudad
+      .filter((slug) => c.data.servicios[slug])
+      .map((slug) => ({
+        params: { servicio: slug, ciudad: c.id },
+        props: { ciudad: c, slug },
+      })),
+  );
+}
+
+const { ciudad, slug } = Astro.props;
+const svc = servicioPorSlug(slug)!;
+const d = svc.detalle!;
+const loc = ciudad.data.servicios[slug]!;
+const nombre = ciudad.data.ciudadNombre;
+const path = `/servicios/${slug}/${ciudad.id}/`;
+const campaign = `${slug}-${ciudad.id}`;
+
+// Otras ciudades del mismo servicio, para los enlaces del final.
+const otrasCiudades = (await getCollection('ciudades'))
+  .filter((c) => c.id !== ciudad.id && c.data.servicios[slug])
+  .sort((a, b) => a.data.orden - b.data.orden);
+
+/**
+ * Caso destacado. Se elige por servicio, no por ciudad: sólo hay tres casos y
+ * ninguno está atado a una ciudad, así que presentarlo como "el caso de acá"
+ * sería inventar. Se muestra neutro, sin afirmar de dónde es el cliente.
+ */
+const casosDelServicio = (await getCollection('proyectos'))
+  .filter((c) => c.data.servicio === svc.id)
+  .sort((a, b) => a.data.orden - b.data.orden);
+
+const faqsTodas = [...d.faqs.slice(0, 3), ...loc.faqsCiudad];
+const precioNumero = svc.price.match(/[\d.]+/)?.[0]?.replace(/\./g, '');
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Servicios', item: `${SITE_URL}/#servicios` },
+    { '@type': 'ListItem', position: 3, name: svc.name, item: `${SITE_URL}${svc.page}` },
+    { '@type': 'ListItem', position: 4, name: nombre, item: `${SITE_URL}${path}` },
+  ] },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: `${svc.name} en ${nombre} — ${site.name}`,
+    description: loc.metaDescription,
+    url: `${SITE_URL}${path}`,
+    parentOrganization: { '@id': `${SITE_URL}/#org` },
+    areaServed: { '@type': 'City', name: ciudad.data.areaServed },
+    serviceType: svc.name,
+    ...(precioNumero
+      ? { offers: {
+          '@type': 'Offer',
+          url: `${SITE_URL}${path}`,
+          availability: 'https://schema.org/InStock',
+          priceSpecification: { '@type': 'PriceSpecification', minPrice: Number(precioNumero), priceCurrency: 'ARS', valueAddedTaxIncluded: false },
+        } }
+      : {}),
+  },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqsTodas.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+---
+<Base title={loc.title} description={loc.metaDescription} path={path} jsonLd={jsonLd} ogSlug={svc.id}>
+  <Mecha>
+    <!-- 1 · HERO -->
+    <section id="hero" class="section s-papel on-light relative overflow-hidden pb-14 pt-10 md:pt-14" aria-labelledby="ciudad-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="glow glow--fuego left-[-16%] top-[-18%] size-[38rem]" aria-hidden="true"></div>
+
+      <div class="wrap relative grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
+        <div>
+          <nav aria-label="Migas de pan" class="meta mb-7">
+            <a href="/" class="hover:underline">Inicio</a> / <a href="/#servicios" class="hover:underline">Servicios</a> / <a href={svc.page} class="hover:underline">{d.kicker}</a> / <span aria-current="page">{nombre}</span>
+          </nav>
+          <p class="label flex items-center gap-2.5"><span class="pulse-dot" aria-hidden="true"></span>{d.kicker} en {nombre}</p>
+          <h1 id="ciudad-title" class="h-xl mt-5">{loc.h1}</h1>
+          <p class="lede mt-7 max-w-xl text-carbon/80">{loc.bajada}</p>
+
+          <div class="hairline mt-9 grid max-w-xl gap-x-8 gap-y-5 pt-7 sm:grid-cols-3">
+            <div>
+              <p class="label">Precio</p>
+              <p class="svc__price mt-1" style="font-size:clamp(1.5rem,1.05rem + 1.3vw,2rem)">{svc.price}</p>
+            </div>
+            <div>
+              <p class="label">Plazo</p>
+              <p class="mt-1 font-display text-xl font-bold md:text-2xl">{d.plazo}</p>
+            </div>
+            <div>
+              <p class="label">Dónde</p>
+              <p class="mt-1 font-display text-xl font-bold md:text-2xl">{nombre}</p>
+            </div>
+          </div>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <WaButton message={loc.whatsappMensaje} label={svc.cta} origin="hero" campaign={campaign} servicio={slug} ciudad={ciudad.id} size="lg" />
+            <a href="#incluye" class="btn btn-ghost btn-lg">Ver qué incluye</a>
+          </div>
+        </div>
+
+        <WebMock variant={svc.id === 'seo' ? 'mapa' : svc.id === 'medida' ? 'panel' : 'web'} />
+      </div>
+    </section>
+
+    <!--
+      2 · PRUEBA — reseñas de Google y logos de clientes.
+      TODO(Traka): todavía no hay reseñas publicadas ni logos cargados. El bloque
+      queda fuera del HTML a propósito: no se muestra un marco vacío ni se inventa
+      prueba social. Se activa cuando haya datos reales.
+    -->
+
+    <!-- 3 · CONTEXTO LOCAL -->
+    <section id="contexto" class="section s-arena on-light" aria-labelledby="ctx-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker={`Negocios de ${nombre}`} id="ctx-title" title={`Cómo se busca, y cómo se decide, en ${nombre}.`} />
+        <div class="mt-10 space-y-6 text-lg leading-relaxed">
+          {loc.contextoLocal.map((parrafo) => <p class="opacity-85">{parrafo}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="carbon" /></div>
+
+    <!-- 4 · PROBLEMAS QUE RESUELVE -->
+    <section id="problemas" class="section s-carbon" aria-labelledby="prob-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Qué resuelve" id="prob-title" title="Si te pasa alguna de estas, es por acá." />
+        <ul class="mt-12 grid gap-6 md:grid-cols-2">
+          {[...d.casos.slice(0, 2), ...loc.problemasLocales].map((c, n) => (
+            <li class="flex gap-4 rounded-[26px] border-2 border-arena/15 bg-arena/[.04] p-7" data-reveal style={`--d:${n * 70}ms`}>
+              <Chispa class="mt-1 size-7 shrink-0 text-fuego" stroke={50} />
+              <div>
+                <h3 class="text-xl md:text-2xl">{c.t}</h3>
+                <p class="mt-2 opacity-85">{c.d}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="s-carbon"><Burn to="papel" /></div>
+
+    <!-- 5 · QUÉ INCLUYE (heredado del servicio) -->
+    <section id="incluye" class="section s-papel on-light" aria-labelledby="inc-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead
+          kicker="Qué incluye"
+          id="inc-title"
+          title="Todo lo que hace falta para que funcione."
+          lede={`Es lo mismo que en el resto del país: no cobramos ni entregamos distinto por estar en ${nombre}.`}
+        />
+        <ul class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {d.incluye.map((i, n) => (
+            <li class="tilt rounded-[26px] border-2 border-carbon/12 bg-papel p-7" data-reveal style={`--d:${n * 70}ms`}>
+              <Icon name={i.icon} class="size-9 text-brasa" aria-hidden="true" />
+              <h3 class="mt-5 text-xl md:text-2xl">{i.t}</h3>
+              <p class="mt-2 opacity-80">{i.d}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-10 text-sm opacity-75">{notaPrecios}</p>
+      </div>
+    </section>
+
+    <!-- 6 · CASO DESTACADO -->
+    <section id="caso" class="section s-mar" aria-labelledby="caso-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        {casosDelServicio.length > 0 ? (
+          <>
+            <SectionHead
+              kicker="Un trabajo nuestro"
+              id="caso-title"
+              title="Así se ve lo que entregamos."
+              lede="Lo que construimos para otros negocios, visto como lo ve su cliente."
+            />
+            <div class="snap-row snap-row--cases mt-12" data-scrollx tabindex="0" role="group" aria-label="Trabajos nuestros, deslizá para ver más">
+              {casosDelServicio.map((c) => <a href={`/proyectos/${c.id}/`} class="block"><CaseCard name={c.data.nombre} kind={c.data.kind} tone={c.data.tone} servicio={c.data.servicio} url={c.data.url} /></a>)}
+            </div>
+            <p class="mt-10"><a class="link" href="/proyectos/">Ver todos los proyectos</a></p>
+          </>
+        ) : (
+          <>
+            <SectionHead
+              kicker="Nuestros trabajos"
+              id="caso-title"
+              title="Mirá lo que venimos construyendo."
+              lede="Páginas y plataformas que hicimos para otros negocios."
+            />
+            <p class="mt-8"><a class="link" href="/proyectos/">Ver todos los proyectos</a></p>
+          </>
+        )}
+      </div>
+    </section>
+
+    <div class="s-mar"><Burn to="arena" /></div>
+
+    <!-- 7 · CÓMO TE ATENDEMOS -->
+    <section id="atencion" class="section s-arena on-light" aria-labelledby="at-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Cómo te atendemos" id="at-title" title={`Una persona, y siempre la misma.`} />
+        <p class="lede mt-8 text-carbon/80">{ciudad.data.atencion}</p>
+      </div>
+    </section>
+
+    <!-- 8 · PROCESO (heredado del servicio) -->
+    <section id="proceso" class="section s-papel on-light" aria-labelledby="proc-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Cómo funciona" id="proc-title" title="De la charla a la entrega, en cuatro pasos." />
+        <div class="mt-12"><Process /></div>
+      </div>
+    </section>
+
+    <!-- 9 · PREGUNTAS + CTA -->
+    <section id="preguntas" class="section s-arena on-light" aria-labelledby="faq-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Preguntas frecuentes" id="faq-title" title={`Lo que preguntan antes de arrancar en ${nombre}.`} />
+        <div class="mt-10 divide-y divide-current/15 border-y border-current/15">
+          {faqsTodas.map((f) => (
+            <details class="faq group py-1">
+              <summary class="flex items-center justify-between gap-6 py-5 font-display text-xl font-bold md:text-2xl">
+                <span>{f.q}</span>
+                <Icon name="ph:plus-bold" class="faq__plus size-6 shrink-0 text-fuego" aria-hidden="true" />
+              </summary>
+              <p class="max-w-2xl pb-6 opacity-80">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <WaButton message={loc.whatsappMensaje} label={svc.cta} origin="final" campaign={campaign} servicio={slug} ciudad={ciudad.id} size="lg" />
+          <a href="/analisis-web-gratis/" class="btn btn-ghost btn-lg">Pedir un análisis gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enlaces a las otras ciudades y al servicio nacional -->
+    <section id="otras-ciudades" class="section s-arena on-light pt-0" aria-labelledby="oc-title">
+      <div class="wrap">
+        <h2 id="oc-title" class="font-display text-2xl font-extrabold">{d.kicker} en otras ciudades</h2>
+        <ul class="mt-6 flex flex-wrap gap-3">
+          {otrasCiudades.map((c) => (
+            <li>
+              <a class="btn btn-ghost" href={`/servicios/${slug}/${c.id}/`}>{c.data.ciudadNombre}</a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+          <a class="link" href={svc.page}>Ver {svc.name.toLowerCase()} sin ciudad</a>
+          <a class="link" href="/donde-trabajamos/">Dónde trabajamos</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="fuego" /></div>
+  </Mecha>
+
+  <FinalCta message={loc.whatsappMensaje} origin="cta-final" />
+</Base>

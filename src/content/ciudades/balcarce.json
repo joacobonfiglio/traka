@@ -1,0 +1,113 @@
+{
+  "ciudadNombre": "Balcarce",
+  "areaServed": "Balcarce, Buenos Aires, Argentina",
+  "orden": 4,
+  "atencion": "Arrancamos con una videollamada y, si el proyecto lo amerita, viajamos a Balcarce para la reunión inicial: estamos a poco más de una hora. Después seguimos por WhatsApp, con una sola persona haciendo seguimiento de punta a punta del proyecto, y respuesta el mismo día en horario comercial.",
+  "servicios": {
+    "desarrollo-web": {
+      "title": "Diseño web en Balcarce desde $200.000 | Traka",
+      "metaDescription": "Diseño web en Balcarce pensado para el celular, con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas. Seguimiento personal.",
+      "h1": "Diseño web en Balcarce que trae consultas",
+      "bajada": "Tu web propia, armada primero para el celular y con un botón para que te escriban. Precio cerrado por escrito y publicada en 3 o 4 semanas.",
+      "contextoLocal": [
+        "Balcarce es una ciudad donde buena parte de la actividad gira alrededor del campo: proveedores de insumos, servicios para la producción, maquinaria, transporte y todo el comercio que vive de eso. Son negocios donde la venta se cierra por confianza y por recomendación, y donde la web no reemplaza al vínculo, pero sí decide si un cliente nuevo te toma en serio.",
+        "A eso se suma un turismo puntual y concentrado, con el Museo Fangio como gran referencia: gente que llega por el día, muchas veces de paso, y que busca en el celular dónde comer o qué hacer mientras está acá. Es una ventana corta, y el que aparece primero se la lleva."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "Mi negocio es proveedor del agro, ¿me sirve una web?",
+          "a": "Sí, y el enfoque cambia: funciona como carta de presentación ante un cliente nuevo o un proveedor que te está evaluando. Qué vendés, con qué trabajás y cómo contactarte, sin vueltas."
+        },
+        {
+          "q": "¿Vienen a Balcarce?",
+          "a": "Si el proyecto lo amerita, sí, para la reunión inicial: estamos a poco más de una hora. El resto se trabaja por videollamada y WhatsApp."
+        },
+        {
+          "q": "¿Cuánto sale una web acá?",
+          "a": "Desde $200.000, el mismo precio que en cualquier otra ciudad: no cobramos distinto por zona. El final depende del alcance y te llega por escrito."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Balcarce y quiero una página web",
+      "problemasLocales": [
+        {
+          "t": "Vendés al campo y no tenés dónde mostrarlo",
+          "d": "Tu cliente te conoce de boca en boca, pero el que no te conoce te busca y no encuentra nada: ni qué vendés, ni tu capacidad, ni cómo contactarte."
+        },
+        {
+          "t": "El turismo te ve solo de paso",
+          "d": "Llega por el día, busca dónde comer o qué hacer y decide en minutos. Si no estás en esa búsqueda, ese cliente no vuelve."
+        }
+      ]
+    },
+    "posicionamiento-seo": {
+      "title": "SEO en Balcarce: aparecé primero en Google | Traka",
+      "metaDescription": "Posicionamiento SEO en Balcarce: búsquedas locales y de la zona, Perfil de Empresa y Maps. Desde $150.000, con informe de lo que entra.",
+      "h1": "Posicionamiento SEO en Balcarce",
+      "bajada": "Que aparezcas cuando alguien busca tu rubro en Balcarce y en la zona. Arranca en $150.000 y se presupuesta según la competencia que tengas.",
+      "contextoLocal": [
+        "En una ciudad del tamaño de Balcarce la competencia por búsqueda local es baja, y eso cambia completamente el juego: muchas búsquedas de rubro más ciudad tienen pocos negocios peleándolas, así que con un Perfil de Empresa bien cargado y una web correcta se puede llegar arriba bastante rápido.",
+        "La oportunidad más grande, igual, no es la ciudad sino la zona. Muchos negocios balcarceños atienden partidos vecinos y clientes que están a varios kilómetros, y ahí lo que importa es tener bien definida el área de cobertura en el Perfil de Empresa: así apareces para quien busca desde afuera, no solo para el que ya está acá."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Vale la pena hacer SEO en una ciudad chica?",
+          "a": "Suele rendir más que en una ciudad grande, justamente porque hay menos competencia por las mismas búsquedas. Con el trabajo bien hecho se puede llegar arriba en menos tiempo."
+        },
+        {
+          "q": "Atiendo toda la zona, ¿se puede trabajar así?",
+          "a": "Sí, y es lo que recomendamos. El Perfil de Empresa permite declarar un área de cobertura en vez de una dirección, y la web se arma hablándole a esa zona, no solo a la ciudad."
+        },
+        {
+          "q": "¿Necesito tener local a la calle?",
+          "a": "No. Google admite negocios que atienden a domicilio o en una zona determinada: en ese caso se configura como área de cobertura y funciona igual."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Balcarce y quiero trabajar el posicionamiento en Google",
+      "problemasLocales": [
+        {
+          "t": "Atendés la zona pero solo aparecés en la ciudad",
+          "d": "Trabajás para partidos vecinos, pero Google te muestra únicamente a quien busca dentro de Balcarce. Es un problema de configuración, no de alcance real."
+        },
+        {
+          "t": "Tu rubro casi no tiene búsquedas de ciudad",
+          "d": "Si vendés al campo, nadie busca tu rubro más Balcarce: busca el producto o el servicio. Hay que trabajar esas consultas, no la genérica."
+        }
+      ]
+    },
+    "plataformas-a-medida": {
+      "title": "Plataformas a medida en Balcarce | Traka",
+      "metaDescription": "Plataformas y sistemas internos a medida para negocios de Balcarce. Relevamiento, presupuesto cerrado y soporte después de entregar.",
+      "h1": "Plataformas a medida para negocios de Balcarce",
+      "bajada": "Cuando ningún sistema del mercado hace lo que hacés, lo construimos. Relevamos tu forma de trabajar, presupuesto cerrado y soporte después de entregar.",
+      "contextoLocal": [
+        "Los negocios ligados a la producción manejan información que los sistemas comerciales no contemplan: campañas, lotes, hectáreas, maquinaria con sus horas de uso, trabajos a terceros, fletes. Casi siempre todo eso vive en planillas que armó alguien de la empresa y que solo esa persona entiende del todo.",
+        "El otro problema típico es la distancia. El dato se genera en el campo o en el camino, no en el escritorio, y para cuando llega a la oficina ya pasó por un cuaderno y un par de mensajes de WhatsApp. Una herramienta propia que se cargue desde el celular, en el momento, corta esa cadena."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Se puede cargar desde el celular, en el campo?",
+          "a": "Sí, y en estos casos es casi siempre el punto de partida: se arma para que la carga se haga donde pasa la cosa, desde el celular, y no después en la oficina."
+        },
+        {
+          "q": "Manejo campañas y maquinaria, ¿entra en un sistema?",
+          "a": "En uno genérico, difícil. Por eso se hace a medida: se modela con tus unidades y tus etapas, no con las de un software pensado para otro negocio."
+        },
+        {
+          "q": "¿Hacen el relevamiento acá?",
+          "a": "Sí, si el proceso lo necesita. Estamos a poco más de una hora y para entender un proceso físico conviene verlo una vez en el lugar."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Balcarce y necesito una plataforma a medida",
+      "problemasLocales": [
+        {
+          "t": "El dato se genera lejos de la oficina",
+          "d": "Lo que pasa en el campo o en el camino se anota en un cuaderno y se carga días después, si se carga. Cuando querés saber cómo viene la campaña, los números están viejos."
+        },
+        {
+          "t": "Trabajás por campaña, no por mes",
+          "d": "Tu año no se mide en meses calendario sino en campañas, y los sistemas contables te obligan a traducir todo a su formato."
+        }
+      ]
+    }
+  }
+}

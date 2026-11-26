@@ -10,8 +10,8 @@ export const site = {
   url: 'https://trakadigital.com',
   description: 'Webs simples y Perfil de Empresa en Google para comercios y pymes. Precio cerrado, plazos por escrito y una persona que responde por WhatsApp.',
 
-  // TODO(cliente): número de WhatsApp en formato internacional sin "+" (ej. 5492235551234).
-  whatsapp: '',
+  // Formato internacional sin "+": 54 9 223 6769943 (Mar del Plata).
+  whatsapp: '5492236769943',
   // TODO(cliente): email de contacto.
   email: '',
   // TODO(cliente): URL del perfil de Instagram.
@@ -42,10 +42,22 @@ export const site = {
 
 export const SITE_URL = site.url;
 
-/** Link de WhatsApp con mensaje precargado. Sin número devuelve "#" (botón visible, sin conectar). */
-export function waHref(message: string): string {
+/**
+ * Link de WhatsApp con mensaje precargado. Sin número devuelve "#" (botón visible, sin conectar).
+ *
+ * `campaign` agrega los UTM que pide el brief. Aviso honesto: wa.me ignora todo
+ * parámetro que no sea `phone` o `text`, así que estos UTM no los lee nadie —
+ * la medición real es el evento `whatsapp_click` de GA4, que lleva el mismo slug.
+ */
+export function waHref(message: string, campaign?: string): string {
   if (!site.whatsapp) return '#';
-  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+  const q = new URLSearchParams({ text: message });
+  if (campaign) {
+    q.set('utm_source', 'web');
+    q.set('utm_medium', 'cta');
+    q.set('utm_campaign', campaign);
+  }
+  return `https://wa.me/${site.whatsapp}?${q}`;
 }
 
 /* ---------------------------------------------------------------- servicios */
@@ -98,7 +110,7 @@ export const servicios: readonly Servicio[] = [
     featured: true,
     page: '/servicios/desarrollo-web/',
     detalle: {
-      title: 'Desarrollo de páginas web desde $200.000 | Traka',
+      title: 'Diseño y desarrollo web desde $200.000 | Traka',
       description: 'Diseñamos y programamos tu web desde cero, pensada para el celular y con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas.',
       kicker: 'Desarrollo web',
       h1: 'Desarrollo de páginas web que traen consultas.',
@@ -111,8 +123,8 @@ export const servicios: readonly Servicio[] = [
         { t: 'Pensada para el celular', d: 'Se arma primero en pantalla chica, que es por donde te va a entrar casi todo el mundo.', icon: 'ph:device-mobile-bold' },
         { t: 'Textos incluidos', d: 'Escribimos las secciones con vos. No te dejamos un documento vacío para completar.', icon: 'ph:text-aa-bold' },
         { t: 'WhatsApp en cada sección', d: 'Cada botón abre el chat con el mensaje ya escrito según la página donde está.', icon: 'ph:whatsapp-logo-bold' },
-        { t: 'SEO local', d: 'Títulos, descripciones, datos estructurados y tu Perfil de Empresa en Google conectado.', icon: 'ph:magnifying-glass-bold' },
-        { t: 'Medición desde el día uno', d: 'Analytics y Search Console configurados, para ver qué páginas traen consultas.', icon: 'ph:chart-line-up-bold' },
+        { t: 'Carga rápida', d: 'Sin plugins de más ni librerías pesadas: la web abre rápido también con datos del celular.', icon: 'ph:lightning-bold' },
+        { t: 'Medición desde el día uno', d: 'Analytics configurado, para ver qué secciones traen consultas y cuáles no.', icon: 'ph:chart-line-up-bold' },
       ],
       casos: [
         { t: 'No tenés web', d: 'Hoy te encuentran por Instagram o de boca en boca, y se te caen consultas en el camino.' },
@@ -123,64 +135,65 @@ export const servicios: readonly Servicio[] = [
       faqs: [
         { q: '¿Cuánto tarda una web?', a: 'Entre 3 y 4 semanas desde que tenemos el material y el alcance acordado. El plazo queda por escrito antes de empezar.' },
         { q: '¿Qué necesitás de mí?', a: 'Tu logo si lo tenés, fotos de tu negocio y un rato para contarnos cómo trabajás. Si no tenés fotos, lo charlamos antes de arrancar.' },
-        { q: '¿Qué incluye el precio?', a: 'Diseño, desarrollo, textos, el botón de WhatsApp, el SEO local y la medición. Desde $200.000; el precio final depende del alcance y te llega por escrito.' },
+        { q: '¿Qué incluye el precio?', a: 'Diseño, desarrollo, textos, el botón de WhatsApp y la medición. Desde $200.000; el precio final depende del alcance y te llega por escrito.' },
+        { q: '¿El posicionamiento en Google va aparte?', a: 'Sí. La web sale bien armada y rápida, que es la base, pero trabajar el posicionamiento es otro servicio: lo ves en posicionamiento SEO.' },
         { q: '¿Hacen tiendas online?', a: 'No. Hacemos webs simples que traen consultas: quién sos, qué hacés, dónde estás y cómo escribirte.' },
         { q: '¿La web es mía?', a: 'Sí. El material que creamos para vos queda a tu nombre una vez cancelado el trabajo.' },
-        { q: '¿Y después de publicarla?', a: 'La dejamos publicada y midiendo, y te mostramos los números. Si querés que la sigamos manteniendo, lo charlamos aparte.' },
       ],
     },
   },
   {
-    id: 'google',
-    name: 'Google y redes sociales',
-    price: 'Desde $100.000',
-    summary: 'Mejora y optimización de tu Perfil de Empresa en Google (Google My Business) y de tus redes.',
+    id: 'seo',
+    name: 'Posicionamiento SEO',
+    price: 'Desde $150.000',
+    priceNote: 'Se presupuesta con cada cliente según el rubro y la competencia que haya.',
+    summary: 'Que aparezcas cuando alguien busca lo que hacés, en Google y en Maps.',
     items: [
+      'Búsquedas por las que te conviene aparecer',
       'Perfil de Empresa en Google optimizado',
-      'Fotos, horarios y servicios al día',
-      'Plan de reseñas',
-      'Puesta a punto de tus redes',
+      'SEO técnico y contenido de la web',
+      'Informe de lo que entra, con números',
     ],
-    cta: 'Quiero mejorar mi Google',
-    message: 'Hola, quiero mejorar mi Perfil de Empresa en Google y mis redes. Vi que arranca en $100.000.',
-    icon: 'ph:map-pin-bold',
-    page: '/servicios/google-y-redes/',
+    cta: 'Quiero aparecer en Google',
+    message: 'Hola, quiero trabajar el posicionamiento en Google de mi negocio. Vi que arranca en $150.000.',
+    icon: 'ph:magnifying-glass-bold',
+    page: '/servicios/posicionamiento-seo/',
     detalle: {
-      title: 'Perfil de Empresa en Google desde $100.000 | Traka',
-      description: 'Optimizamos tu Perfil de Empresa en Google (Google My Business) y tus redes para que aparezcas en Maps y te escriban. Desde $100.000, en unos 10 días.',
-      kicker: 'Google y redes',
-      h1: 'Perfil de Empresa en Google: que te encuentren en Maps.',
-      intro: 'Ponemos tu ficha de Google como corresponde y dejamos tus redes diciendo qué hacés y cómo contactarte. Es lo más rápido que podés hacer para que te lleguen consultas.',
-      plazo: 'Unos 10 días',
-      alcance: 'Perfil + redes',
-      precioNota: 'El precio depende de cuántas sucursales y redes haya que poner a punto, y de si la ficha existe o hay que crearla y verificarla desde cero.',
+      title: 'Posicionamiento SEO desde $150.000 | Traka',
+      description: 'Trabajamos tu posicionamiento en Google y en Maps: búsquedas, SEO técnico, contenido y Perfil de Empresa. Desde $150.000, con informe de lo que entra.',
+      kicker: 'Posicionamiento SEO',
+      h1: 'Posicionamiento SEO: que te encuentren cuando te buscan.',
+      intro: 'Primero vemos por qué búsquedas te conviene aparecer y cómo estás hoy. Después trabajamos la web, tu Perfil de Empresa en Google y el contenido, y te mostramos qué cambia con números.',
+      plazo: 'Primeros cambios en 30 días',
+      alcance: 'Web + Perfil de Empresa',
+      precioNota: 'El SEO se presupuesta con cada cliente: depende del rubro, de la competencia que tengas en tu zona y de cómo esté la web hoy. Arranca en $150.000 y lo cerramos antes de empezar.',
       incluye: [
-        { t: 'Ficha completa y verificada', d: 'Categorías, servicios, zona de cobertura, horarios y datos de contacto, cargados como Google los pide.', icon: 'ph:seal-check-bold' },
-        { t: 'Fotos y publicaciones', d: 'Dejamos la ficha con fotos ordenadas y publicaciones cargadas, no vacía.', icon: 'ph:image-square-bold' },
+        { t: 'Las búsquedas que importan', d: 'Qué escribe la gente para encontrar lo que hacés, y cuáles de esas búsquedas te pueden traer consultas de verdad.', icon: 'ph:magnifying-glass-bold' },
+        { t: 'SEO técnico', d: 'Títulos, descripciones, encabezados, datos estructurados, sitemap y velocidad de carga.', icon: 'ph:wrench-bold' },
+        { t: 'Perfil de Empresa en Google', d: 'Categorías, servicios, zona de cobertura, horarios y fotos, cargados como Google los pide, para aparecer en Maps.', icon: 'ph:map-pin-bold' },
         { t: 'Plan de reseñas', d: 'Un sistema simple para pedirlas después de cada trabajo y un criterio para responderlas todas.', icon: 'ph:star-bold' },
-        { t: 'Preguntas y respuestas', d: 'Cargamos las dudas que ya te hacen, para que la ficha las conteste sola.', icon: 'ph:question-bold' },
-        { t: 'Puesta a punto de tus redes', d: 'Bio, enlaces, destacados y datos de contacto, alineados con lo que dice la web.', icon: 'ph:instagram-logo-bold' },
-        { t: 'Informe de lo que entra', d: 'Qué buscó la gente, cuántos pidieron cómo llegar y cuántos te escribieron.', icon: 'ph:chart-bar-bold' },
+        { t: 'Contenido que responde dudas', d: 'Las preguntas que ya te hacen, escritas en la web, que es lo que Google busca para mostrarte.', icon: 'ph:text-aa-bold' },
+        { t: 'Informe con números', d: 'Search Console y Analytics configurados: qué buscó la gente, qué páginas aparecen y cuántos escribieron.', icon: 'ph:chart-bar-bold' },
       ],
       casos: [
-        { t: 'No aparecés en Maps', d: 'Buscan tu rubro cerca y aparecen todos menos vos.' },
-        { t: 'Tu ficha tiene datos viejos', d: 'Horarios que ya no son, un teléfono que no atendés o fotos de hace años.' },
-        { t: 'Tenés reseñas sin responder', d: 'Las buenas sin agradecer y las malas sin contestar, que es lo que más mira la gente.' },
-        { t: 'Tus redes no dicen qué hacés', d: 'Entran al perfil y no entienden a qué te dedicás ni cómo escribirte.' },
+        { t: 'No aparecés cuando te buscan', d: 'Buscan tu rubro en tu zona y aparecen todos menos vos.' },
+        { t: 'Tenés web pero no entra nadie', d: 'La web está linda y publicada, pero no llega gente desde Google.' },
+        { t: 'No estás en Maps', d: 'Tu negocio no figura en el mapa, o figura con datos que ya no son.' },
+        { t: 'Te hicieron SEO y no viste nada', d: 'Pagaste y nunca te mostraron un número. Acá el informe es parte del trabajo.' },
       ],
       faqs: [
-        { q: '¿Qué es el Perfil de Empresa en Google?', a: 'Es la ficha que aparece en Google y en Maps cuando alguien busca tu negocio o tu rubro: dirección, horarios, fotos, reseñas y botón para llamarte. Antes se llamaba Google Mi Negocio.' },
-        { q: '¿Me garantizan aparecer primero?', a: 'No, y desconfiá de quien te lo prometa. Lo que hacemos es que tu ficha esté completa y activa, que es lo que Google mira, y te mostramos qué cambió con datos.' },
-        { q: '¿Cuánto tarda?', a: 'Unos 10 días. Si la ficha no existe todavía, hay que esperar a que Google la verifique, y ese plazo lo maneja Google.' },
-        { q: '¿Necesito un local a la calle?', a: 'No necesariamente. Google también admite negocios que atienden a domicilio o en una zona: en ese caso se configura como área de cobertura en vez de dirección.' },
-        { q: '¿Me manejan las redes todos los meses?', a: 'Esto es la puesta a punto, no la gestión mensual. Si querés que publiquemos todos los meses, lo charlamos aparte.' },
-        { q: '¿Sirve si ya tengo la ficha creada?', a: 'Sí. En general el problema no es que no exista, sino que está a medio cargar. Revisamos todo y completamos lo que falta.' },
+        { q: '¿Me garantizan el primer puesto?', a: 'No, y desconfiá de quien te lo prometa: el orden lo decide Google. Lo que hacemos es trabajar todo lo que sí está en nuestras manos y mostrarte con datos qué se movió.' },
+        { q: '¿Cuánto tarda en verse?', a: 'Los primeros cambios técnicos se ven en unos 30 días. Posicionar una búsqueda con competencia lleva más: lo charlamos al presupuestar, con lo que vemos de tu rubro.' },
+        { q: '¿Cuánto sale?', a: 'Arranca en $150.000 y se presupuesta con cada cliente, porque depende del rubro, de la competencia de tu zona y de cómo esté la web hoy.' },
+        { q: '¿Sirve si no tengo web?', a: 'Se puede trabajar el Perfil de Empresa en Google sin web, y ya es un salto. Pero para posicionar en serio conviene tener una: lo vemos juntos antes de arrancar.' },
+        { q: '¿Qué es el Perfil de Empresa en Google?', a: 'Es la ficha que aparece en Google y en Maps cuando alguien busca tu negocio o tu rubro: dirección, horarios, fotos, reseñas y botón para escribirte. Antes se llamaba Google Mi Negocio.' },
+        { q: '¿Es un pago único o mensual?', a: 'Hay un trabajo inicial, que es el que arranca en $150.000, y después podés seguir con un acompañamiento mensual. Lo segundo es opcional y se charla aparte.' },
       ],
     },
   },
   {
     id: 'medida',
-    name: 'Herramientas y plataformas a medida',
+    name: 'Plataformas a medida',
     price: 'A presupuesto',
     priceNote: 'Depende del tamaño y del tiempo que lleve hacerlo, por eso lo charlamos antes.',
     summary: 'Sistemas internos, paneles y plataformas propias para lo que tu negocio necesita.',
@@ -191,42 +204,99 @@ export const servicios: readonly Servicio[] = [
       'Soporte después de entregar',
     ],
     cta: 'Pedir presupuesto',
-    message: 'Hola, necesito una herramienta o plataforma a medida y quiero pedir un presupuesto.',
+    message: 'Hola, necesito una plataforma a medida y quiero pedir un presupuesto.',
     icon: 'ph:squares-four-bold',
-    page: '/servicios/herramientas-a-medida/',
+    page: '/servicios/plataformas-a-medida/',
     detalle: {
-      title: 'Herramientas y plataformas a medida | Traka',
+      title: 'Plataformas a medida para tu negocio | Traka',
       description: 'Sistemas internos, paneles y plataformas propias para lo que tu negocio necesita. Relevamiento, presupuesto cerrado y soporte después de entregar.',
       kicker: 'A medida',
-      h1: 'Herramientas y plataformas a medida para tu negocio.',
-      intro: 'Cuando ningún sistema de los que se compran hace lo que necesitás, lo construimos. Primero entendemos cómo trabajás, después te pasamos un presupuesto cerrado.',
+      h1: 'Plataformas a medida para lo que tu negocio necesita.',
+      intro: 'Cuando la planilla ya no alcanza y ningún sistema del mercado hace exactamente lo que hacés, lo construimos. Primero entendemos tu trabajo, después lo programamos.',
       plazo: 'Según el alcance',
-      alcance: 'A medida',
-      precioNota: 'No hay un precio de lista porque no hay dos negocios iguales. Hacemos un relevamiento, te pasamos el alcance y el precio por escrito, y recién ahí decidís.',
+      alcance: 'A definir juntos',
+      precioNota: 'No hay precio de lista porque no hay dos plataformas iguales. Relevamos cómo trabajás, te damos un presupuesto cerrado y recién entonces se arranca.',
       incluye: [
-        { t: 'Relevamiento de cómo trabajás', d: 'Vemos tu circuito real: qué cargás, dónde se traba y qué estás haciendo dos veces.', icon: 'ph:clipboard-text-bold' },
-        { t: 'Alcance y precio por escrito', d: 'Antes de escribir una línea de código sabés qué se hace, en cuánto tiempo y cuánto cuesta.', icon: 'ph:file-text-bold' },
-        { t: 'Desarrollo a medida', d: 'Solo lo que necesitás, sin módulos que nunca vas a abrir.', icon: 'ph:code-bold' },
-        { t: 'Puesta en marcha con tu equipo', d: 'Lo dejamos funcionando y mostramos cómo se usa a quien lo va a usar todos los días.', icon: 'ph:users-three-bold' },
-        { t: 'Soporte después de entregar', d: 'No desaparecemos el día de la entrega: quedamos para los ajustes que aparezcan.', icon: 'ph:lifebuoy-bold' },
-        { t: 'Acceso desde el celular', d: 'Pensado para usarse donde está el trabajo, no solo sentado frente a una computadora.', icon: 'ph:device-mobile-bold' },
+        { t: 'Relevamiento primero', d: 'Nos sentamos a ver cómo trabajás hoy, paso por paso, antes de proponer nada.', icon: 'ph:clipboard-text-bold' },
+        { t: 'Presupuesto cerrado', d: 'Alcance, plazo y precio por escrito antes de escribir la primera línea de código.', icon: 'ph:file-text-bold' },
+        { t: 'Desarrollo a medida', d: 'Se construye para tu forma de trabajar, no al revés.', icon: 'ph:code-bold' },
+        { t: 'Entrada por usuario', d: 'Cada persona entra con su cuenta y ve lo que le toca ver.', icon: 'ph:users-bold' },
+        { t: 'Entrega en etapas', d: 'Lo vas viendo funcionar mientras se hace, no al final de todo.', icon: 'ph:steps-bold' },
+        { t: 'Soporte después', d: 'Queda andando y acompañado. Si algo falla, hay alguien que responde.', icon: 'ph:lifebuoy-bold' },
       ],
       casos: [
-        { t: 'Llevás el negocio en planillas', d: 'Funciona hasta que son varias, cada uno tiene la suya y ya nadie sabe cuál es la buena.' },
-        { t: 'Cargás los mismos datos dos veces', d: 'Una en el cuaderno, otra en el sistema, y a veces una tercera en el chat.' },
-        { t: 'No ves cómo va el negocio', d: 'Para saber cómo cerró el mes hay que sentarse a sumar a mano.' },
-        { t: 'Compraste un sistema que no encaja', d: 'Pagás todos los meses por algo que hace la mitad de lo que necesitás.' },
+        { t: 'Vivís en planillas', d: 'Tenés diez archivos que nadie más entiende y se rompen cuando los toca otra persona.' },
+        { t: 'Ningún sistema te sirve', d: 'Probaste herramientas del mercado y ninguna hace exactamente lo que hacés.' },
+        { t: 'Cargás lo mismo dos veces', d: 'El mismo dato va a mano a dos lugares distintos, y alguna vez no coincide.' },
+        { t: 'No sabés en qué estás', d: 'Para saber cómo viene el mes hay que sentarse a sumar a mano.' },
       ],
       faqs: [
-        { q: '¿Por qué no hay precio de lista?', a: 'Porque depende del tamaño y del tiempo que lleve hacerlo. Hacemos el relevamiento, te pasamos el presupuesto cerrado por escrito y decidís con el número delante.' },
-        { q: '¿Cómo arranca?', a: 'Con una charla para entender cómo trabajás hoy. De ahí sale el alcance, el plazo y el precio. Recién cuando lo aceptás empieza el desarrollo.' },
-        { q: '¿El sistema es mío?', a: 'Sí. Lo que desarrollamos para vos queda a tu nombre una vez cancelado el trabajo.' },
-        { q: '¿Y si después necesito cambios?', a: 'Es lo normal: cuando lo empezás a usar aparecen ideas. Los ajustes se presupuestan aparte, con el mismo criterio.' },
-        { q: '¿Trabajan sobre lo que ya tengo?', a: 'Puede ser. Si ya tenés un sistema o planillas armadas, lo miramos en el relevamiento y te decimos si conviene aprovecharlo o empezar de nuevo.' },
+        { q: '¿Cuánto sale una plataforma?', a: 'No hay precio de lista: depende del tamaño y del tiempo que lleve. Relevamos cómo trabajás y te damos un presupuesto cerrado antes de arrancar.' },
+        { q: '¿Cuánto tarda?', a: 'Según el alcance. Lo partimos en etapas y vas viendo funcionar cada una, con los plazos por escrito.' },
+        { q: '¿Y si necesito cambios después?', a: 'Se pueden hacer. Los cambios chicos entran en el soporte; si es algo grande, se presupuesta aparte.' },
+        { q: '¿La plataforma es mía?', a: 'Sí. Lo que construimos para vos queda a tu nombre una vez cancelado el trabajo.' },
+        { q: '¿Se puede conectar con lo que ya uso?', a: 'En general sí, si la otra herramienta lo permite. Es una de las primeras cosas que miramos en el relevamiento.' },
+        { q: '¿Sirve para un negocio chico?', a: 'Sí. No se trata del tamaño, sino de si tenés un proceso propio que ninguna herramienta cubre.' },
+      ],
+    },
+  },
+  {
+    id: 'redes',
+    name: 'Redes sociales',
+    price: 'Desde $100.000',
+    summary: 'Tus redes diciendo qué hacés, cómo contactarte y por qué elegirte.',
+    items: [
+      'Bio, enlaces y destacados al día',
+      'Identidad visual aplicada',
+      'Plantillas para que sigas vos',
+      'Alineado con lo que dice tu web',
+    ],
+    cta: 'Quiero ordenar mis redes',
+    message: 'Hola, quiero poner a punto las redes de mi negocio. Vi que arranca en $100.000.',
+    icon: 'ph:instagram-logo-bold',
+    page: '/servicios/redes-sociales/',
+    detalle: {
+      title: 'Redes sociales para tu negocio desde $100.000 | Traka',
+      description: 'Ponemos a punto tus redes: bio, enlaces, destacados, identidad visual y plantillas para que sigas vos. Desde $100.000, en unos 10 días.',
+      kicker: 'Redes sociales',
+      h1: 'Redes que dicen qué hacés y cómo escribirte.',
+      intro: 'Mucha gente te va a buscar primero en Instagram. Dejamos tu perfil diciendo a qué te dedicás, dónde estás y cómo contactarte, con la misma identidad que tu web.',
+      plazo: 'Unos 10 días',
+      alcance: 'Puesta a punto',
+      precioNota: 'El precio depende de cuántas redes haya que poner a punto y de cuánto material tengas listo. Esto es la puesta a punto, no la gestión mensual.',
+      incluye: [
+        { t: 'Bio y enlaces', d: 'Qué hacés, dónde estás y un enlace que lleve a donde querés que vayan.', icon: 'ph:link-bold' },
+        { t: 'Destacados ordenados', d: 'Las dudas de siempre y lo que más vendés, a un toque y con portada propia.', icon: 'ph:bookmark-bold' },
+        { t: 'Identidad aplicada', d: 'Los colores y la tipografía de tu marca, los mismos de la web, puestos en el perfil.', icon: 'ph:palette-bold' },
+        { t: 'Plantillas para seguir vos', d: 'Te dejamos piezas armadas y editables, para que publicar no dependa de nosotros.', icon: 'ph:layout-bold' },
+        { t: 'Datos de contacto', d: 'Botones de WhatsApp y de ubicación configurados, para que te escriban desde ahí.', icon: 'ph:whatsapp-logo-bold' },
+        { t: 'Alineado con la web', d: 'Lo que dice el perfil y lo que dice la web cuentan la misma historia.', icon: 'ph:arrows-left-right-bold' },
+      ],
+      casos: [
+        { t: 'Tu perfil no dice qué hacés', d: 'Entran, leen la bio y se van sin entender a qué te dedicás.' },
+        { t: 'No hay por dónde escribirte', d: 'Tienen que preguntar por mensaje privado porque no hay botón ni enlace.' },
+        { t: 'Cada posteo parece de otra marca', d: 'Colores y tipografías distintas en cada pieza, sin un criterio que se repita.' },
+        { t: 'No sabés qué publicar', d: 'Querés mantenerlo vivo pero cada vez arrancás de cero.' },
+      ],
+      faqs: [
+        { q: '¿Me manejan las redes todos los meses?', a: 'Esto es la puesta a punto, no la gestión mensual. Si querés que publiquemos todos los meses, lo charlamos aparte.' },
+        { q: '¿Qué redes incluye?', a: 'Normalmente Instagram y Facebook, que son las que más usan los negocios con los que trabajamos. Si usás otra, decinos y lo vemos.' },
+        { q: '¿Necesito tener fotos?', a: 'Ayuda mucho. Si no tenés, lo charlamos antes de arrancar y vemos cómo resolverlo.' },
+        { q: '¿Y el Perfil de Empresa en Google?', a: 'Ese va en posicionamiento SEO, porque es lo que te hace aparecer en Google y en Maps. Son dos cosas distintas y se pueden hacer juntas.' },
+        { q: '¿Cuánto tarda?', a: 'Unos 10 días desde que tenemos el material. Si hay que crear perfiles desde cero, puede llevar un poco más.' },
+        { q: '¿Qué me queda al terminar?', a: 'El perfil puesto a punto y las plantillas editables, para que puedas seguir publicando vos.' },
       ],
     },
   },
 ];
+
+/** Servicio a partir del slug de su página: 'desarrollo-web' -> el servicio web. */
+export function servicioPorSlug(slug: string): Servicio | undefined {
+  return servicios.find((s) => s.page === `/servicios/${slug}/`);
+}
+
+/** Los tres servicios que tienen páginas por ciudad, en orden. */
+export const serviciosConCiudad = ['desarrollo-web', 'posicionamiento-seo', 'plataformas-a-medida'] as const;
 
 export const notaPrecios = 'Precios en pesos argentinos. El precio final te llega por escrito antes de empezar.';
 
@@ -267,15 +337,6 @@ export const needs = [
   },
 ] as const;
 
-/* ------------------------------------------------------------------- casos */
-
-export const cases = [
-  // TODO(cliente): URL pública y métrica verificada de cada caso. Sin dato confirmado no se publica.
-  { name: 'Aquabon', kind: 'Página web', servicio: 'web', tone: 'chispa', url: '', metric: '' },
-  { name: 'Tintorería Constitución', kind: 'Página web', servicio: 'web', tone: 'arena', url: '', metric: '' },
-  { name: 'Lavi', kind: 'Plataforma a medida', servicio: 'medida', tone: 'mar', url: '', metric: '' },
-] as const;
-
 /* ------------------------------------------------------- los tres pasos */
 
 /** Cada paso del recorrido de un cliente, con el servicio que lo resuelve. */
@@ -283,7 +344,7 @@ export const pasos = [
   {
     n: '01',
     t: 'Te encuentran',
-    servicio: 'google',
+    servicio: 'seo',
     d: 'Alguien busca lo que hacés. Aparecés en Google, en Maps y en tu Perfil de Empresa, con horarios, fotos y reseñas al día.',
     tags: ['Google', 'Maps', 'Perfil de Empresa'],
     icon: 'ph:magnifying-glass-bold',

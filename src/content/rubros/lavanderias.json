@@ -1,0 +1,27 @@
+{
+  "nombre": "Lavanderías y tintorerías",
+  "orden": 2,
+  "title": "Páginas web para lavanderías | Traka",
+  "metaDescription": "Páginas web para lavanderías y tintorerías: servicios, tiempos de entrega y si pasan a buscar. Desde $200.000 y lista en 3 a 4 semanas.",
+  "h1": "Páginas web para lavanderías y tintorerías",
+  "bajada": "Una web que conteste las tres preguntas de siempre: qué lavan, cuánto tardan y si pasan a buscar la ropa.",
+  "contexto": [
+    "El cliente de una lavandería no compara diseños: compara practicidad. Quiere saber si le lavan eso puntual que tiene, cuánto tarda y si tiene que llevarlo o se lo pasan a buscar. Son tres datos, y cuando no están en la web la consulta se va por mensaje, se contesta a mano y a veces se pierde.",
+    "Es además un servicio de repetición: el que te elige una vez vuelve. Eso cambia la prioridad de la web: no se trata tanto de deslumbrar como de ser el lugar donde el cliente de siempre encuentra el horario, el teléfono y la zona de reparto sin tener que preguntar de nuevo."
+  ],
+  "queNecesita": [
+    { "t": "Los servicios con su detalle", "d": "Qué prendas sí y qué prendas no: trajes, vestidos de fiesta, acolchados, cortinas, calzado. Lo puntual es lo que buscan.", "icon": "ph:t-shirt-bold" },
+    { "t": "Tiempos de entrega", "d": "Cuánto tarda cada servicio, y si hay opción exprés. Es la segunda pregunta de todos.", "icon": "ph:clock-bold" },
+    { "t": "Si pasás a buscar", "d": "Zona de retiro y entrega, días y cómo coordinarlo. Para muchos clientes esto define la decisión.", "icon": "ph:truck-bold" },
+    { "t": "Precios o rango", "d": "Aunque sea un desde, por prenda o por kilo. La web que no dice nada de precio genera una consulta más que no siempre cierra.", "icon": "ph:tag-bold" },
+    { "t": "Las dudas contestadas", "d": "Qué pasa si una mancha no sale, si tienen seguro, cómo entregan, qué medios de pago aceptan.", "icon": "ph:question-bold" },
+    { "t": "WhatsApp con el mensaje armado", "d": "Un botón por servicio, con la consulta ya escrita, para que no arranque siempre de cero.", "icon": "ph:whatsapp-logo-bold" }
+  ],
+  "faqs": [
+    { "q": "¿Puedo mostrar precios por prenda?", "a": "Sí, y suele convenir: filtra consultas y te llega gente más decidida. Si preferís no publicarlos, se puede poner un desde o dejarlo para el presupuesto." },
+    { "q": "¿Se puede cargar la zona de reparto?", "a": "Sí, se muestra como zona de cobertura con los barrios o la referencia que uses, y queda fácil de actualizar." },
+    { "q": "¿Sirve si tengo más de una sucursal?", "a": "Sí. Se puede armar con las direcciones y horarios de cada una, y que el botón de WhatsApp lleve a la que corresponde." },
+    { "q": "¿Qué pasa con los clientes de siempre?", "a": "Ganan comodidad: encuentran horario, zona y teléfono sin preguntar. En un servicio de repetición eso vale tanto como traer clientes nuevos." }
+  ],
+  "whatsappMensaje": "Hola, tengo una lavandería y quiero una página web"
+}

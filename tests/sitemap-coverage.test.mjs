@@ -10,6 +10,10 @@ import { join, relative } from 'node:path';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const SITE = 'https://trakadigital.com';
+// Las propuestas son HTML suelto en public/: no pasan por Base.astro, así que no les
+// corresponde el contrato de página (H1, canonical, JSON-LD). Sí les corresponde
+// llevar noindex y quedar fuera del sitemap, y eso se sigue verificando más abajo.
+const esPropuesta = (route) => route.startsWith('/propuestas/');
 
 const html = [];
 (function walk(dir) {
@@ -38,6 +42,8 @@ for (const file of html) {
     else assert.ok(sitemap.includes(loc), `${route} es indexable y falta en el sitemap`);
   });
 
+  if (esPropuesta(route)) continue;
+
   test(`${route} tiene un solo H1, canonical, title y description`, () => {
     const h1 = body.match(/<h1[\s>]/g) || [];
     assert.equal(h1.length, 1, `${route} tiene ${h1.length} H1`);
@@ -52,6 +58,7 @@ for (const file of html) {
 test('el JSON-LD de cada página es válido', () => {
   for (const file of html) {
     const route = '/' + relative(DIST, file).replace(/index\.html$/, '');
+    if (esPropuesta(route)) continue;
     const blocks = [...readFileSync(file, 'utf8').matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
     assert.ok(blocks.length >= 2, `${route} sin JSON-LD`);
     for (const [, raw] of blocks) {

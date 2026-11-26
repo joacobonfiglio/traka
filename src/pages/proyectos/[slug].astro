@@ -1,0 +1,135 @@
+---
+/**
+ * Página de un proyecto. Sin métricas: muestra qué es el negocio y qué se
+ * construyó. El bloque de cita sólo aparece si hay una cargada.
+ */
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Mecha from '../../components/Mecha.astro';
+import Burn from '../../components/Burn.astro';
+import Chispa from '../../components/Chispa.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { SITE_URL, servicios } from '../../site';
+
+export async function getStaticPaths() {
+  const proyectos = await getCollection('proyectos');
+  return proyectos.map((p) => ({ params: { slug: p.id }, props: { p } }));
+}
+
+const { p } = Astro.props;
+const d = p.data;
+const svc = servicios.find((s) => s.id === d.servicio);
+const path = `/proyectos/${p.id}/`;
+const otros = (await getCollection('proyectos')).filter((o) => o.id !== p.id).sort((a, b) => a.data.orden - b.data.orden);
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Proyectos', item: `${SITE_URL}/proyectos/` },
+    { '@type': 'ListItem', position: 3, name: d.nombre, item: `${SITE_URL}${path}` },
+  ] },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: `${d.nombre} — ${d.kind}`,
+    headline: d.h1,
+    description: d.metaDescription,
+    url: `${SITE_URL}${path}`,
+    creator: { '@id': `${SITE_URL}/#org` },
+    about: d.kind,
+    ...(d.url ? { sameAs: d.url } : {}),
+  },
+];
+---
+<Base title={d.title} description={d.metaDescription} path={path} jsonLd={jsonLd}>
+  <Mecha>
+    <!-- Negocio y problema -->
+    <section class="section s-papel on-light pb-14 pt-10 md:pt-14" aria-labelledby="pr-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap grid items-start gap-12 lg:grid-cols-[1.05fr_.95fr]">
+        <div>
+          <nav aria-label="Migas de pan" class="meta mb-7">
+            <a href="/" class="hover:underline">Inicio</a> / <a href="/proyectos/" class="hover:underline">Proyectos</a> / <span aria-current="page">{d.nombre}</span>
+          </nav>
+          <p class="label flex items-center gap-2.5"><span class="pulse-dot" aria-hidden="true"></span>{d.kind}</p>
+          <h1 id="pr-title" class="h-xl mt-5">{d.h1}</h1>
+          <p class="lede mt-7 max-w-xl text-carbon/80">{d.negocio}</p>
+          {d.url && <p class="mt-7"><a class="link" href={d.url} rel="noopener">Ver el sitio publicado</a></p>}
+        </div>
+        <CaseCard name={d.nombre} kind={d.kind} tone={d.tone} servicio={d.servicio} nameAs="p" />
+      </div>
+    </section>
+
+    <div class="s-papel"><Burn to="carbon" /></div>
+
+    <!-- Qué hicimos -->
+    <section class="section s-carbon" aria-labelledby="qh-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Qué hicimos" id="qh-title" title="Lo que construimos." />
+        <ul class="mt-10 space-y-5">
+          {d.queHicimos.map((linea) => (
+            <li class="flex gap-4">
+              <Chispa class="mt-1.5 size-6 shrink-0 text-fuego" stroke={50} />
+              <p class="opacity-85">{linea}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="s-carbon"><Burn to="arena" /></div>
+
+    {d.cita?.texto && (
+      <section class="section s-arena on-light" aria-labelledby="cita-title">
+        <span class="node" aria-hidden="true"></span>
+        <div class="wrap wrap-narrow">
+          <h2 id="cita-title" class="sr-only">Lo que dice el cliente</h2>
+          <blockquote class="font-display text-2xl font-bold leading-snug md:text-3xl">
+            <p>{d.cita.texto}</p>
+            <footer class="meta mt-6 not-italic text-brasa">{d.cita.autor}</footer>
+          </blockquote>
+        </div>
+      </section>
+    )}
+
+    <!--
+      TODO(Traka): capturas antes/después en WebP con alt descriptivo, y la cita
+      del cliente. Las sube otro agente. Hasta entonces se muestra la maqueta y
+      el bloque de cita no se renderiza.
+    -->
+
+    <!-- Servicio usado -->
+    {svc?.page && (
+      <section class="section s-arena on-light" aria-labelledby="svc-title">
+        <span class="node" aria-hidden="true"></span>
+        <div class="wrap">
+          <SectionHead kicker="Servicio" id="svc-title" title={`Esto se hizo con ${svc.name.toLowerCase()}.`} />
+          <p class="lede mt-6 max-w-xl text-carbon/80">{svc.summary}</p>
+          <p class="mt-7 flex flex-wrap gap-x-6 gap-y-2">
+            <a class="link" href={svc.page}>Ver {svc.name.toLowerCase()}</a>
+            <a class="link" href="/donde-trabajamos/">Dónde trabajamos</a>
+          </p>
+        </div>
+      </section>
+    )}
+
+    {otros.length > 0 && (
+      <section class="section s-arena on-light pt-0" aria-labelledby="otros-title">
+        <div class="wrap">
+          <h2 id="otros-title" class="font-display text-2xl font-extrabold">Otros proyectos</h2>
+          <ul class="mt-6 flex flex-wrap gap-3">
+            {otros.map((o) => <li><a class="btn btn-ghost" href={`/proyectos/${o.id}/`}>{o.data.nombre}</a></li>)}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <div class="s-arena"><Burn to="fuego" /></div>
+  </Mecha>
+
+  <FinalCta message={`Hola, vi el proyecto de ${d.nombre} en la web y quiero una consulta.`} origin="cta-final" />
+</Base>

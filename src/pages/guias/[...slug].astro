@@ -17,7 +17,11 @@ const { g, todas } = Astro.props;
 const { Content, headings } = await render(g);
 const d = g.data;
 const sv = servicios.find((s) => s.id === d.servicio);
-const otras = todas.filter((x) => x.id !== g.id).slice(0, 2);
+// Primero las del mismo clúster: así el peso se queda en el servicio y no se
+// dispersa. Si el clúster no alcanza, se completa con el resto.
+const resto = todas.filter((x) => x.id !== g.id);
+const mismoClúster = resto.filter((x) => x.data.servicio && x.data.servicio === d.servicio);
+const otras = [...mismoClúster, ...resto.filter((x) => !mismoClúster.includes(x))].slice(0, 2);
 const url = `${SITE_URL}/guias/${g.id}/`;
 const fmt = (date: Date) => new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
 const indice = headings.filter((h) => h.depth === 2);

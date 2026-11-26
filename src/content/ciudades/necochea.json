@@ -1,0 +1,113 @@
+{
+  "ciudadNombre": "Necochea",
+  "areaServed": "Necochea, Buenos Aires, Argentina",
+  "orden": 3,
+  "atencion": "Arrancamos con una videollamada para ver juntos cómo estás hoy, y si hace falta viajamos a Necochea para la reunión inicial. Después todo por WhatsApp, con la misma persona haciendo seguimiento durante todo el proyecto. En horario comercial te contestamos el mismo día, y sabemos que en temporada los tiempos corren distinto.",
+  "servicios": {
+    "desarrollo-web": {
+      "title": "Diseño web en Necochea desde $200.000 | Traka",
+      "metaDescription": "Diseño web en Necochea pensado para el celular, con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas. Seguimiento personal.",
+      "h1": "Diseño web en Necochea que trae consultas",
+      "bajada": "Tu web propia, armada primero para el celular y con un botón para que te escriban. Precio cerrado por escrito y publicada en 3 o 4 semanas.",
+      "contextoLocal": [
+        "Necochea tiene una estacionalidad más marcada que la de ciudades más grandes: el verano concentra buena parte del movimiento y el resto del año la ciudad funciona con otra escala. Para un negocio eso significa que la web tiene que trabajar fuerte en pocas semanas, cuando llega gente que no conoce nada y busca todo desde el celular.",
+        "Al lado está Quequén y la actividad del puerto, que le da a la ciudad un pulso que no depende del turismo: pesca, logística, servicios y proveedores que trabajan todo el año. Son dos públicos con necesidades distintas, y conviene que la web deje claro a cuál le hablás, o cómo le hablás a los dos."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Llegan a tener la web lista para la temporada?",
+          "a": "Depende de cuándo arranquemos. El plazo es de 3 a 4 semanas desde que tenemos el material, así que conviene empezar con margen y no en diciembre."
+        },
+        {
+          "q": "Trabajo con el puerto, no con turismo. ¿Me sirve?",
+          "a": "Sí, y el enfoque es distinto: ahí la web funciona como carta de presentación ante clientes y proveedores, con lo que hacés, tu capacidad y cómo contactarte, sin la urgencia del verano."
+        },
+        {
+          "q": "¿Vienen a Necochea?",
+          "a": "Si el proyecto lo amerita, sí, para la reunión inicial. El resto se trabaja por videollamada y WhatsApp, con una sola persona a cargo del proyecto."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Necochea y quiero una página web",
+      "problemasLocales": [
+        {
+          "t": "Toda tu facturación pasa en dos meses",
+          "d": "Si en enero la web no está impecable, el año se complica. Y si en junio dice lo mismo que en enero, el cliente de todo el año no encuentra lo que busca."
+        },
+        {
+          "t": "La web dice lo mismo todo el año",
+          "d": "En enero tenés que mostrar disponibilidad y horarios extendidos; en julio, otra cosa. Si no podés cambiarlo solo, queda desactualizada."
+        }
+      ]
+    },
+    "posicionamiento-seo": {
+      "title": "SEO en Necochea: aparecé primero en Google | Traka",
+      "metaDescription": "Posicionamiento SEO en Necochea: búsquedas de temporada, Perfil de Empresa en Google y Maps. Desde $150.000, con informe de lo que entra.",
+      "h1": "Posicionamiento SEO en Necochea",
+      "bajada": "Que aparezcas cuando alguien busca tu rubro en Necochea, en Google y en Maps. Arranca en $150.000 y se presupuesta según la competencia de tu rubro.",
+      "contextoLocal": [
+        "El SEO en Necochea tiene un calendario muy claro: hay meses en que la búsqueda local se multiplica y meses en que casi no existe. Eso cambia la estrategia respecto de una ciudad de movimiento parejo, porque el trabajo hay que tenerlo hecho antes del pico, no durante. Google no acomoda los cambios de un día para el otro.",
+        "También pesa mucho el \"cerca de mí\" y la búsqueda por zona: playa, centro, Quequén. El que llega de afuera no conoce los barrios y busca por referencia física, así que el Perfil de Empresa con la ubicación y la zona de cobertura bien cargadas vale tanto como la web. Y hay una asimetría que conviene aprovechar: fuera de temporada casi nadie trabaja el posicionamiento, así que los meses de poco movimiento son los más baratos para ganar terreno y llegar al verano con el trabajo hecho."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Cuándo conviene arrancar para llegar a la temporada?",
+          "a": "Con varios meses de anticipación. Los cambios técnicos y del Perfil de Empresa se ven en unos 30 días, pero ganar posiciones lleva más, así que cuanto antes mejor."
+        },
+        {
+          "q": "¿Sirve si mi negocio no es de temporada?",
+          "a": "Sí. Los negocios que trabajan todo el año, como los que atienden al puerto o a proveedores, compiten con mucha menos gente por sus búsquedas, y eso suele rendir rápido."
+        },
+        {
+          "q": "¿Incluye el Perfil de Empresa en Google?",
+          "a": "Sí, está incluido en el servicio de SEO: categorías, servicios, zona de cobertura, horarios y fotos, más el plan de reseñas."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Necochea y quiero trabajar el posicionamiento en Google",
+      "problemasLocales": [
+        {
+          "t": "Arrancás el SEO en diciembre y ya es tarde",
+          "d": "Google tarda semanas en acomodar los cambios. Si el trabajo empieza cuando ya llegó la gente, el pico de búsquedas te pasa por al lado."
+        },
+        {
+          "t": "Quequén y Necochea son dos búsquedas",
+          "d": "Quien busca en el puerto y quien busca en la playa no escriben lo mismo. Si trabajás los dos lados, hay que cubrir las dos consultas."
+        }
+      ]
+    },
+    "plataformas-a-medida": {
+      "title": "Plataformas a medida en Necochea | Traka",
+      "metaDescription": "Plataformas y sistemas internos a medida para negocios de Necochea. Relevamiento, presupuesto cerrado y soporte después de entregar.",
+      "h1": "Plataformas a medida para negocios de Necochea",
+      "bajada": "Cuando ningún sistema del mercado hace lo que hacés, lo construimos. Relevamos tu forma de trabajar, presupuesto cerrado y soporte después de entregar.",
+      "contextoLocal": [
+        "Los negocios que más pelean con la gestión en Necochea son los que trabajan contra la estacionalidad: alquileres y alojamientos con temporada corta, gastronomía que pasa de dos mesas a sala llena, servicios que contratan personal solo unos meses. Todo eso se suele resolver a mano porque los sistemas asumen una operación estable.",
+        "Del lado de Quequén y el puerto el problema es otro: trazabilidad, remitos, movimientos y proveedores. Son procesos con mucho papel y mucha carga repetida, donde el mismo dato viaja a dos o tres lugares distintos y en algún momento deja de coincidir."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Se puede armar algo para manejar la temporada?",
+          "a": "Sí, es uno de los pedidos más habituales: usuarios que entran y salen, turnos, disponibilidad y un panel que te diga cómo viene el mes sin sumar a mano."
+        },
+        {
+          "q": "Trabajo con remitos y proveedores, ¿sirve?",
+          "a": "Sí. Ese tipo de proceso, con mucha carga repetida y datos que viajan entre planillas, es exactamente donde una plataforma propia se paga sola."
+        },
+        {
+          "q": "¿Cuánto tarda?",
+          "a": "Según el alcance. Lo partimos en etapas, vas viendo funcionar cada una y los plazos quedan por escrito en el presupuesto."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Necochea y necesito una plataforma a medida",
+      "problemasLocales": [
+        {
+          "t": "Contratás personal solo unos meses",
+          "d": "En temporada entran varias personas a cargar datos y después se van. Necesitás que cada una tenga su usuario, vea solo lo suyo y no haya que explicarle todo de nuevo cada verano."
+        },
+        {
+          "t": "Manejás trazabilidad en papel",
+          "d": "Remitos, lotes y movimientos anotados a mano y cargados después. Cuando hay que rastrear algo, se pierde media mañana."
+        }
+      ]
+    }
+  }
+}

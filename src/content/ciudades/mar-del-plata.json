@@ -1,0 +1,113 @@
+{
+  "ciudadNombre": "Mar del Plata",
+  "areaServed": "Mar del Plata, Buenos Aires, Argentina",
+  "orden": 1,
+  "atencion": "Somos de acá, así que la primera reunión la hacemos donde te quede cómodo: en tu local, en un café del centro o por videollamada si estás corto de tiempo. Después seguimos por WhatsApp y hay una persona atrás, siempre la misma, haciendo seguimiento a lo largo de todo el proyecto. Si escribís en horario comercial, te contestamos el mismo día.",
+  "servicios": {
+    "desarrollo-web": {
+      "title": "Diseño web en Mar del Plata desde $200.000 | Traka",
+      "metaDescription": "Diseño web en Mar del Plata pensado para el celular, con botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas. Atención personal, acá.",
+      "h1": "Diseño web en Mar del Plata que trae consultas",
+      "bajada": "Tu web propia, armada primero para el celular, con un botón para que te escriban. Nos juntamos en persona, cerramos el precio por escrito y en 3 o 4 semanas está publicada.",
+      "contextoLocal": [
+        "En Mar del Plata casi todos los rubros conviven con dos ciudades distintas: la de enero y febrero, con la calle llena y gente que no conoce nada, y la del resto del año, con clientes de toda la vida. Esas dos ciudades buscan de maneras distintas, y una web que solo sirve para una de las dos te deja la mitad del año a media máquina.",
+        "El visitante que llega en temporada no te conoce, no tiene tu teléfono y decide con el celular en la mano, muchas veces parado en la vereda. Si entra a tu web y no encuentra en diez segundos qué hacés, dónde estás y cómo escribirte, se va al local de al lado. Para el cliente de todo el año, la web es lo que lo convence de que seguís abierto y de que sos en serio."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Trabajan con negocios de Mar del Plata en persona?",
+          "a": "Sí. Somos de Mar del Plata, así que la reunión inicial la hacemos donde te quede cómodo, en tu local o en el centro. Después seguimos por WhatsApp y videollamada."
+        },
+        {
+          "q": "Mi negocio es de temporada, ¿me sirve igual?",
+          "a": "Sí, y es uno de los casos donde más se nota. La web se arma para que puedas cambiar horarios y servicios según la época sin depender de nosotros, y para que el que llega de afuera entienda todo rápido."
+        },
+        {
+          "q": "¿Cuánto sale una web acá?",
+          "a": "Desde $200.000, igual que en el resto del país: no cobramos distinto por ciudad. El precio final depende del alcance y te llega por escrito antes de arrancar."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Mar del Plata y quiero una página web",
+      "problemasLocales": [
+        {
+          "t": "Vivís de la temporada y la web no acompaña",
+          "d": "En enero te desborda el WhatsApp y en junio no entra nada. La web no dice qué cambia entre una época y la otra: horarios, servicios ni qué conviene reservar antes."
+        },
+        {
+          "t": "Competís con cadenas que tienen web",
+          "d": "En Mar del Plata tu competencia incluye locales de cadena con sitio propio y presupuesto. Sin web, en la comparación ni apareces."
+        }
+      ]
+    },
+    "posicionamiento-seo": {
+      "title": "SEO en Mar del Plata: aparecé primero en Google | Traka",
+      "metaDescription": "Posicionamiento SEO en Mar del Plata: búsquedas locales, Perfil de Empresa en Google y Maps. Desde $150.000, con informe de lo que entra.",
+      "h1": "Posicionamiento SEO en Mar del Plata",
+      "bajada": "Trabajamos para que aparezcas cuando alguien busca tu rubro en Mar del Plata, en Google y en Maps. Arranca en $150.000 y se presupuesta según la competencia que tengas.",
+      "contextoLocal": [
+        "Mar del Plata es una de las ciudades del interior con más competencia por búsqueda local: en casi cualquier rubro hay decenas de negocios peleando las mismas palabras, y en temporada se suman las búsquedas de gente que no es de acá y no conoce ninguna marca. Ahí el orden en que aparecés decide a quién le escriben.",
+        "La otra particularidad es el peso de Maps. Mucha búsqueda marplatense termina en \"cerca de mí\" o con el nombre de un barrio, y lo que se juega no es tanto la web como el Perfil de Empresa: categorías bien puestas, horarios reales, fotos y reseñas al día. Un perfil a medio cargar te saca del mapa aunque tengas la mejor web de la ciudad."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Se puede competir en Mar del Plata siendo chico?",
+          "a": "Sí, pero no peleando las búsquedas más generales de entrada. Se arranca por las búsquedas de tu barrio y de tu servicio puntual, que traen menos visitas pero mucho más parejas, y desde ahí se crece."
+        },
+        {
+          "q": "¿Cuánto tarda en verse acá?",
+          "a": "Los cambios técnicos y del Perfil de Empresa se ven en unos 30 días. Posicionar una búsqueda con la competencia que hay en Mar del Plata lleva más, y eso lo estimamos al presupuestar mirando tu rubro."
+        },
+        {
+          "q": "¿Conviene arrancar antes de la temporada?",
+          "a": "Sí. Si querés que el trabajo esté funcionando para enero, lo ideal es arrancar con varios meses de anticipación: Google tarda en acomodar los cambios y la temporada no espera."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Mar del Plata y quiero trabajar el posicionamiento en Google",
+      "problemasLocales": [
+        {
+          "t": "Te tapan los negocios del centro",
+          "d": "Si tu local no está en la zona más buscada, las búsquedas genéricas te dejan abajo. Hay que trabajar por barrio y por servicio, no solo por rubro."
+        },
+        {
+          "t": "Tu ficha no dice que atendés en temporada",
+          "d": "Horarios de verano, servicios que solo das en enero, reservas: si el perfil no lo refleja, el que llega de afuera asume que no lo hacés."
+        }
+      ]
+    },
+    "plataformas-a-medida": {
+      "title": "Plataformas a medida en Mar del Plata | Traka",
+      "metaDescription": "Plataformas y sistemas internos a medida para negocios de Mar del Plata. Relevamiento, presupuesto cerrado y soporte después de entregar.",
+      "h1": "Plataformas a medida para negocios de Mar del Plata",
+      "bajada": "Cuando la planilla ya no alcanza y ningún sistema del mercado hace lo que hacés, lo construimos. Relevamos cómo trabajás, presupuesto cerrado y soporte después.",
+      "contextoLocal": [
+        "Los negocios marplatenses que más se complican con la gestión son los que tienen que escalar y desescalar: el que en temporada triplica el personal y los turnos, y en abril vuelve a ser cuatro personas. Los sistemas pensados para una estructura fija no acompañan ese movimiento, y lo que termina pasando es que cada verano se improvisa con planillas nuevas.",
+        "Pasa parecido con los rubros que trabajan por turno o por servicio: gastronomía, alquileres, lavaderos, estética, oficios. El dato existe pero vive repartido entre un cuaderno, un WhatsApp y una planilla, y cuando querés saber cómo viene el mes hay que sentarse a sumar a mano."
+      ],
+      "faqsCiudad": [
+        {
+          "q": "¿Hacen relevamiento en persona en Mar del Plata?",
+          "a": "Sí, y en esto lo recomendamos: para entender cómo trabajás conviene ver el local y el flujo real de trabajo, no solo escucharlo. Somos de acá, así que no hay costo de viaje."
+        },
+        {
+          "q": "¿Sirve para un negocio de temporada?",
+          "a": "Es uno de los casos donde más rinde. Se puede armar para que en temporada entren varias personas con su usuario y en invierno quede simple, sin pagar por una estructura que no usás."
+        },
+        {
+          "q": "¿Cuánto sale?",
+          "a": "No hay precio de lista: depende del tamaño y del tiempo que lleve. Hacemos el relevamiento, te damos un presupuesto cerrado y recién entonces se arranca."
+        }
+      ],
+      "whatsappMensaje": "Hola, tengo un negocio en Mar del Plata y necesito una plataforma a medida",
+      "problemasLocales": [
+        {
+          "t": "Tu operación cambia de tamaño con la temporada",
+          "d": "En enero necesitás que entren varias personas a cargar al mismo tiempo y en invierno sos vos solo. El sistema tiene que servir para las dos cosas sin rehacerse."
+        },
+        {
+          "t": "Tenés más de un local o punto",
+          "d": "Varias sucursales o puestos cargando por separado, y para tener el número del día hay que juntar planillas de cada uno."
+        }
+      ]
+    }
+  }
+}

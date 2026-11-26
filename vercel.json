@@ -6,13 +6,46 @@
   "installCommand": "npm ci",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/servicios", "destination": "/#servicios", "permanent": true },
-    { "source": "/servicios/", "destination": "/#servicios", "permanent": true }
+    {
+      "source": "/servicios/herramientas-a-medida/",
+      "destination": "/servicios/plataformas-a-medida/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/herramientas-a-medida",
+      "destination": "/servicios/plataformas-a-medida/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/google-y-redes/",
+      "destination": "/servicios/redes-sociales/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/google-y-redes",
+      "destination": "/servicios/redes-sociales/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios",
+      "destination": "/#servicios",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/",
+      "destination": "/#servicios",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/propuestas/(.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

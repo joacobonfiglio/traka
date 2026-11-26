@@ -6,16 +6,27 @@ interface Props {
   label?: string;
   variant?: 'fuego' | 'carbon' | 'arena' | 'ghost';
   size?: 'md' | 'lg';
-  /** Desde dónde se escribe. Va al evento click_whatsapp de GA4. */
+  /** Dónde está el botón en la página: hero, medio o final. Va a GA4 como ubicacion_cta. */
   origin: string;
+  /** Slug de la página, para el utm_campaign y para el evento de GA4. */
+  campaign?: string;
+  /** Servicio y ciudad de la página, cuando corresponde. Van a GA4. */
+  servicio?: string;
+  ciudad?: string;
   class?: string;
 }
-const { message, label = 'Quiero más información', variant = 'fuego', size = 'md', origin, class: cls = '' } = Astro.props;
+const {
+  message, label = 'Quiero más información', variant = 'fuego', size = 'md',
+  origin, campaign, servicio, ciudad, class: cls = '',
+} = Astro.props;
 ---
 <a
-  href={waHref(message)}
+  href={waHref(message, campaign)}
   class:list={['btn', `btn-${variant}`, size === 'lg' && 'btn-lg', cls]}
   data-wa={origin}
+  data-campaign={campaign}
+  data-servicio={servicio}
+  data-ciudad={ciudad}
   rel="noopener"
 >
   <Icon name="ph:whatsapp-logo-bold" class="size-5 shrink-0" aria-hidden="true" />

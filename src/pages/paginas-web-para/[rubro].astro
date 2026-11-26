@@ -1,0 +1,190 @@
+---
+/**
+ * Páginas por rubro. Un archivo en src/content/rubros/ por rubro.
+ *
+ * No se filtran casos por rubro: hay tres proyectos y dividirlos no aporta,
+ * así que todas enlazan a /proyectos/ completo.
+ */
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Mecha from '../../components/Mecha.astro';
+import Burn from '../../components/Burn.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import WaButton from '../../components/WaButton.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import Process from '../../components/Process.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { SITE_URL, servicioPorSlug, notaPrecios } from '../../site';
+
+export async function getStaticPaths() {
+  const rubros = await getCollection('rubros');
+  return rubros.map((r) => ({ params: { rubro: r.id }, props: { r } }));
+}
+
+const { r } = Astro.props;
+const d = r.data;
+const path = `/paginas-web-para/${r.id}/`;
+const web = servicioPorSlug('desarrollo-web')!;
+const proyectos = (await getCollection('proyectos'))
+  .filter((p) => p.data.servicio === 'web')
+  .sort((a, b) => a.data.orden - b.data.orden);
+const ciudades = (await getCollection('ciudades')).sort((a, b) => a.data.orden - b.data.orden);
+const otros = (await getCollection('rubros')).filter((o) => o.id !== r.id).sort((a, b) => a.data.orden - b.data.orden);
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Páginas web para', item: `${SITE_URL}${path}` },
+    { '@type': 'ListItem', position: 3, name: d.nombre, item: `${SITE_URL}${path}` },
+  ] },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Páginas web para ${d.nombre.toLowerCase()}`,
+    serviceType: web.name,
+    description: d.metaDescription,
+    provider: { '@id': `${SITE_URL}/#org` },
+    url: `${SITE_URL}${path}`,
+    audience: { '@type': 'BusinessAudience', name: d.nombre },
+  },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: d.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+---
+<Base title={d.title} description={d.metaDescription} path={path} jsonLd={jsonLd} ogSlug="web">
+  <Mecha>
+    <section class="section s-papel on-light pb-14 pt-10 md:pt-14" aria-labelledby="ru-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="glow glow--fuego left-[-16%] top-[-18%] size-[38rem]" aria-hidden="true"></div>
+      <div class="wrap relative">
+        <nav aria-label="Migas de pan" class="meta mb-7">
+          <a href="/" class="hover:underline">Inicio</a> / <a href={web.page} class="hover:underline">Desarrollo web</a> / <span aria-current="page">{d.nombre}</span>
+        </nav>
+        <p class="label flex items-center gap-2.5"><span class="pulse-dot" aria-hidden="true"></span>{d.nombre}</p>
+        <h1 id="ru-title" class="h-xl mt-5">{d.h1}</h1>
+        <p class="lede mt-7 max-w-2xl text-carbon/80">{d.bajada}</p>
+
+        <div class="hairline mt-9 grid max-w-xl gap-x-8 gap-y-5 pt-7 sm:grid-cols-2">
+          <div>
+            <p class="label">Precio</p>
+            <p class="svc__price mt-1" style="font-size:clamp(1.5rem,1.05rem + 1.3vw,2rem)">{web.price}</p>
+          </div>
+          <div>
+            <p class="label">Plazo</p>
+            <p class="mt-1 font-display text-xl font-bold md:text-2xl">{web.detalle!.plazo}</p>
+          </div>
+        </div>
+
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <WaButton message={d.whatsappMensaje} label={web.cta} origin="hero" campaign={`rubro-${r.id}`} servicio="desarrollo-web" size="lg" />
+          <a href="#necesita" class="btn btn-ghost btn-lg">Qué tiene que tener</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section s-arena on-light" aria-labelledby="ctx-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Cómo decide tu cliente" id="ctx-title" title={`Qué mira alguien que busca ${d.nombre.toLowerCase()}.`} />
+        <div class="mt-10 space-y-6 text-lg leading-relaxed">
+          {d.contexto.map((p) => <p class="opacity-85">{p}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="carbon" /></div>
+
+    <section id="necesita" class="section s-carbon" aria-labelledby="nec-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Qué tiene que tener" id="nec-title" title={`Lo que no puede faltar en la web de ${d.nombre.toLowerCase()}.`} />
+        <ul class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {d.queNecesita.map((q, n) => (
+            <li class="rounded-[26px] border-2 border-arena/15 bg-arena/[.04] p-7" data-reveal style={`--d:${n * 70}ms`}>
+              <Icon name={q.icon} class="size-9 text-chispa" aria-hidden="true" />
+              <h3 class="mt-5 text-xl md:text-2xl">{q.t}</h3>
+              <p class="mt-2 opacity-85">{q.d}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="s-carbon"><Burn to="papel" /></div>
+
+    <section class="section s-papel on-light" aria-labelledby="proc-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Cómo funciona" id="proc-title" title="De la charla a la entrega, en cuatro pasos." />
+        <div class="mt-12"><Process /></div>
+        <p class="mt-10 text-sm opacity-75">{notaPrecios}</p>
+      </div>
+    </section>
+
+    <section class="section s-mar" aria-labelledby="pr-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap">
+        <SectionHead kicker="Nuestros trabajos" id="pr-title" title="Mirá lo que venimos construyendo." lede="Páginas que hicimos para otros negocios." />
+        <div class="snap-row snap-row--cases mt-12" data-scrollx tabindex="0" role="group" aria-label="Trabajos nuestros, deslizá para ver más">
+          {proyectos.map((p) => (
+            <a href={`/proyectos/${p.id}/`} class="block">
+              <CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} url={p.data.url} />
+            </a>
+          ))}
+        </div>
+        <p class="mt-10"><a class="link" href="/proyectos/">Ver todos los proyectos</a></p>
+      </div>
+    </section>
+
+    <div class="s-mar"><Burn to="arena" /></div>
+
+    <section class="section s-arena on-light" aria-labelledby="faq-title">
+      <span class="node" aria-hidden="true"></span>
+      <div class="wrap wrap-narrow">
+        <SectionHead kicker="Preguntas frecuentes" id="faq-title" title={`Lo que preguntan en ${d.nombre.toLowerCase()}.`} />
+        <div class="mt-10 divide-y divide-current/15 border-y border-current/15">
+          {d.faqs.map((f) => (
+            <details class="faq group py-1">
+              <summary class="flex items-center justify-between gap-6 py-5 font-display text-xl font-bold md:text-2xl">
+                <span>{f.q}</span>
+                <Icon name="ph:plus-bold" class="faq__plus size-6 shrink-0 text-fuego" aria-hidden="true" />
+              </summary>
+              <p class="max-w-2xl pb-6 opacity-80">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <WaButton message={d.whatsappMensaje} label={web.cta} origin="final" campaign={`rubro-${r.id}`} servicio="desarrollo-web" size="lg" />
+          <a href="/analisis-web-gratis/" class="btn btn-ghost btn-lg">Pedir un análisis gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section s-arena on-light pt-0" aria-labelledby="enl-title">
+      <div class="wrap">
+        <h2 id="enl-title" class="font-display text-2xl font-extrabold">Seguir mirando</h2>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+          <a class="link" href={web.page}>Desarrollo web</a>
+          <a class="link" href="/donde-trabajamos/">Dónde trabajamos</a>
+        </p>
+        <h3 class="mt-9 label">Desarrollo web por ciudad</h3>
+        <ul class="mt-4 flex flex-wrap gap-3">
+          {ciudades.map((c) => <li><a class="btn btn-ghost" href={`/servicios/desarrollo-web/${c.id}/`}>{c.data.ciudadNombre}</a></li>)}
+        </ul>
+        {otros.length > 0 && (
+          <>
+            <h3 class="mt-9 label">Otros rubros</h3>
+            <ul class="mt-4 flex flex-wrap gap-3">
+              {otros.map((o) => <li><a class="btn btn-ghost" href={`/paginas-web-para/${o.id}/`}>{o.data.nombre}</a></li>)}
+            </ul>
+          </>
+        )}
+      </div>
+    </section>
+
+    <div class="s-arena"><Burn to="fuego" /></div>
+  </Mecha>
+
+  <FinalCta message={d.whatsappMensaje} origin="cta-final" />
+</Base>

@@ -6,7 +6,7 @@ kicker: "Google y Maps"
 resumen: "La ficha de Google es, para la mayoría de los comercios, la primera impresión. Esta es la lista de lo que hay que completar y en qué orden."
 fecha: 2026-11-03
 lectura: 8
-servicio: google
+servicio: seo
 destacada: true
 clave:
   - "La categoría principal es el campo que más decide en qué búsquedas aparecés."
@@ -37,7 +37,7 @@ Entrá a Google con la cuenta que vaya a quedar como dueña —usá una cuenta d
 
 > Si el negocio atiende a domicilio o en una zona, no hace falta mostrar una dirección: se configura como área de cobertura.
 
-Si preferís no hacerlo vos, esto es exactamente lo que incluye nuestro servicio de [Perfil de Empresa en Google y redes](/servicios/google-y-redes/).
+Si preferís no hacerlo vos, el Perfil de Empresa entra en nuestro servicio de [posicionamiento SEO](/servicios/posicionamiento-seo/).
 
 ## 2. Elegí bien la categoría principal
 

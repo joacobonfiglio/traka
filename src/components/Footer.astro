@@ -1,8 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
 import WaButton from './WaButton.astro';
+import { getCollection } from 'astro:content';
 import { site, servicios } from '../site';
 const year = new Date().getFullYear();
+// Las páginas de ciudad no van en el menú: se enlazan desde acá.
+const ciudades = (await getCollection('ciudades')).sort((a, b) => a.data.orden - b.data.orden);
 const conPagina = servicios.filter((s) => s.page);
 const legales = [
   { href: '/legales/privacidad/', label: 'Privacidad' },
@@ -12,7 +15,7 @@ const legales = [
 ---
 <footer class="pie s-carbon relative z-10 border-t border-arena/10">
   <div class="mx-auto max-w-[1480px] px-5 py-12 md:px-8">
-    <div class="grid gap-x-10 gap-y-9 md:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
+    <div class="grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-[1.25fr_1fr_.85fr_.9fr_1.05fr]">
       <div>
         <img src="/brand/traka-logo-negativo.svg" alt="Traka" width="118" height="40" class="h-9 w-auto" loading="lazy" />
         <p class="mt-4 max-w-xs text-sm opacity-80">Webs y Google para negocios reales.</p>
@@ -41,9 +44,20 @@ const legales = [
       <nav aria-labelledby="pie-traka">
         <h2 id="pie-traka" class="meta mb-3 text-chispa">Traka</h2>
         <ul>
+          <li><a class="pie-link" href="/proyectos/">Proyectos</a></li>
           <li><a class="pie-link" href="/guias/">Guías</a></li>
           <li><a class="pie-link" href="/sobre-nosotros/">Sobre nosotros</a></li>
-          <li><a class="pie-link" href="/#que-necesitas">¿Qué necesitás?</a></li>
+          <li><a class="pie-link" href="/analisis-web-gratis/">Análisis web gratis</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="pie-ciudades">
+        <h2 id="pie-ciudades" class="meta mb-3 text-chispa">Dónde trabajamos</h2>
+        <ul>
+          {ciudades.map((c) => (
+            <li><a class="pie-link" href={`/servicios/desarrollo-web/${c.id}/`}>{c.data.ciudadNombre}</a></li>
+          ))}
+          <li><a class="pie-link" href="/donde-trabajamos/">Ver todas</a></li>
         </ul>
       </nav>
 

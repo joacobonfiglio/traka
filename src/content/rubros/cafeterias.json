@@ -1,0 +1,27 @@
+{
+  "nombre": "Cafeterías",
+  "orden": 1,
+  "title": "Páginas web para cafeterías | Traka",
+  "metaDescription": "Páginas web para cafeterías: carta siempre al día, horarios visibles y botón de WhatsApp. Desde $200.000 y lista en 3 a 4 semanas.",
+  "h1": "Páginas web para cafeterías",
+  "bajada": "Una web que conteste lo que la gente pregunta antes de entrar: qué tienen, cuánto sale, si hay sin TACC y hasta qué hora abren.",
+  "contexto": [
+    "El cliente de una cafetería decide en menos de un minuto y casi siempre parado en la calle o de camino. Busca en el celular, mira las fotos, chequea el horario y arranca. No lee un sitio: lo escanea. Si el horario de hoy no está a la vista o la carta es un PDF que tarda en abrir, se va al lugar de al lado.",
+    "La otra mitad de la decisión son las preguntas que se repiten: si hay opciones sin gluten, si se puede ir con el perro, si tienen wifi, si aceptan tarjeta, si se puede reservar. Cada una de esas dudas sin responder es una consulta que te llega por mensaje privado o un cliente que no viene."
+  ],
+  "queNecesita": [
+    { "t": "La carta en la propia web", "d": "No un PDF que hay que bajar y agrandar: la carta como texto, que carga al instante y se puede actualizar sin rehacer nada.", "icon": "ph:coffee-bold" },
+    { "t": "El horario de hoy, visible", "d": "Lo primero que mira alguien que está decidiendo si sale. Arriba, grande, y con los días especiales aclarados.", "icon": "ph:clock-bold" },
+    { "t": "Fotos reales del lugar", "d": "La gente quiere ver dónde se va a sentar. Fotos propias, bien recortadas y que no frenen la carga.", "icon": "ph:image-square-bold" },
+    { "t": "Las dudas contestadas", "d": "Sin TACC, vegano, si se puede ir con mascotas, wifi, medios de pago. Escritas en la página, no en un mensaje privado.", "icon": "ph:question-bold" },
+    { "t": "Cómo llegar, en un toque", "d": "Dirección enlazada a Maps y, si hace falta, una referencia en criollo de dónde queda.", "icon": "ph:map-pin-bold" },
+    { "t": "WhatsApp para reservas y pedidos", "d": "Un botón con el mensaje ya escrito según de dónde se toca: reservar mesa, consultar por un encargo, pedir para llevar.", "icon": "ph:whatsapp-logo-bold" }
+  ],
+  "faqs": [
+    { "q": "¿Puedo cambiar la carta yo?", "a": "Sí, te dejamos la carta donde la puedas editar sin tocar el diseño ni depender de nosotros. Es el cambio más frecuente en una cafetería." },
+    { "q": "¿Hacen pedidos online con pago?", "a": "No. Hacemos webs que traen consultas y encargos por WhatsApp. Si necesitás cobrar online, te decimos con qué herramienta conviene y la conectamos." },
+    { "q": "¿Necesito fotos profesionales?", "a": "Ayudan mucho, pero se puede arrancar con fotos buenas de celular bien elegidas. Lo charlamos antes de empezar." },
+    { "q": "¿Sirve si vendo solo por Instagram?", "a": "Sí, y es el caso más común. La web es el lugar donde está todo ordenado y siempre disponible, y el link de la bio deja de llevar a la nada." }
+  ],
+  "whatsappMensaje": "Hola, tengo una cafetería y quiero una página web"
+}
