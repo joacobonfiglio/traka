@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+<rect width="960" height="600" fill="#e9efea"/><path d="M0 170L960 500M90 0L680 600M650 0L290 600M0 430L960 180" stroke="#fff" stroke-width="42"/>
+<path d="M0 170L960 500M90 0L680 600M650 0L290 600M0 430L960 180" stroke="#d9e3dc" stroke-width="2"/>
+<rect x="62" y="58" width="555" height="88" rx="44" fill="#fff"/><circle cx="109" cy="99" r="15" fill="none" stroke="#2e4940" stroke-width="4"/><path d="M121 111l13 13" stroke="#2e4940" stroke-width="4"/>
+<text x="158" y="112" font-family="Arial,sans-serif" font-size="27" fill="#2e4940">Tu servicio + tu ciudad</text>
+<circle cx="617" cy="338" r="120" fill="#ff5b21" opacity=".1"/><circle cx="617" cy="338" r="80" fill="#ff5b21" opacity=".12"/>
+<path d="M617 190c-47 0-85 37-85 83 0 65 85 139 85 139s85-74 85-139c0-46-38-83-85-83z" fill="#ff5b21"/><circle cx="617" cy="272" r="29" fill="#fff"/>
+<rect x="92" y="300" width="327" height="218" rx="22" fill="#fff"/><rect x="116" y="326" width="65" height="65" rx="15" fill="#f8bf42"/>
+<path d="M130 355h38v22h-38zm-4 0l9-17h29l9 17" fill="none" stroke="#30251a" stroke-width="3" stroke-linejoin="round"/>
+<text x="204" y="352" font-family="Arial,sans-serif" font-weight="700" font-size="24" fill="#24372e">Tu negocio</text><text x="204" y="382" font-family="Arial,sans-serif" font-size="18" fill="#52645a">Servicio · Ubicación</text>
+<path d="M120 415h269" stroke="#e0e7e1" stroke-width="2"/><rect x="117" y="440" width="181" height="47" rx="23" fill="#245b51"/><text x="143" y="471" font-family="Arial,sans-serif" font-size="21" fill="#fff">Ver servicios</text>
+<text x="740" y="550" font-family="Arial,sans-serif" font-size="19" fill="#3b5145">ESQUEMA LOCAL</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+<rect width="960" height="600" fill="#f5e6bc"/><circle cx="870" cy="600" r="250" fill="#edb944"/><circle cx="60" cy="60" r="180" fill="#faf2da"/>
+<path d="M145 100h490a28 28 0 0 1 28 28v193a28 28 0 0 1-28 28H255l-85 73v-73h-25a28 28 0 0 1-28-28V128a28 28 0 0 1 28-28" fill="#fffaf1"/>
+<g fill="#e99812"><path d="m240 144 18 38 42 6-30 29 7 42-37-20-37 20 7-42-30-29 42-6z"/><path d="m390 144 18 38 42 6-30 29 7 42-37-20-37 20 7-42-30-29 42-6z"/><path d="m540 144 18 38 42 6-30 29 7 42-37-20-37 20 7-42-30-29 42-6z"/></g>
+<text x="390" y="307" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#4f3918">Una opinión honesta</text>
+<path d="M440 375h345a25 25 0 0 1 25 25v84a25 25 0 0 1-25 25h-25v50l-65-50H440a25 25 0 0 1-25-25v-84a25 25 0 0 1 25-25" fill="#245b62"/>
+<text x="610" y="435" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" fill="#fff">Gracias por contarnos</text><text x="610" y="473" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#d9e8e5">Escuchar también es parte del servicio.</text>
+<text x="115" y="530" font-family="Arial,sans-serif" font-size="20" fill="#705c35">PEDIR · ESCUCHAR · RESPONDER</text>
+</svg>

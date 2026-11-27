@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600"><rect width="960" height="600" fill="#dce9e9"/><circle cx="170" cy="510" r="260" fill="#bdd6d4"/><rect x="207" y="58" width="546" height="484" rx="26" fill="#fff"/>
+<rect x="235" y="85" width="490" height="122" rx="14" fill="#245b62"/><path d="M439 141h78v47h-78zm-9 0 16-35h65l16 35" fill="none" stroke="#f6c34d" stroke-width="7" stroke-linejoin="round"/>
+<text x="252" y="252" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#243e40">Tu negocio, bien presentado</text>
+<g fill="#e8f1ed"><circle cx="269" cy="300" r="18"/><circle cx="269" cy="360" r="18"/><circle cx="269" cy="420" r="18"/><circle cx="269" cy="480" r="18"/></g>
+<g fill="none" stroke="#245b62" stroke-width="3" stroke-linecap="round"><path d="m261 300 6 6 11-12m-17 66 6 6 11-12m-17 66 6 6 11-12m-17 66 6 6 11-12"/></g>
+<g font-family="Arial,sans-serif" font-size="25" fill="#365659"><text x="310" y="308">Servicios y categoría</text><text x="310" y="368">Ubicación y horarios</text><text x="310" y="428">Fotos del negocio</text><text x="310" y="488">Contacto actualizado</text></g>
+<circle cx="785" cy="155" r="58" fill="#ff5b21"/><path d="M785 123c-18 0-31 13-31 30 0 23 31 51 31 51s31-28 31-51c0-17-13-30-31-30z" fill="white"/><circle cx="785" cy="153" r="10" fill="#ff5b21"/>
+</svg>

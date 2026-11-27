@@ -1,79 +1,72 @@
 ---
-import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Mecha from '../../components/Mecha.astro';
-import Burn from '../../components/Burn.astro';
 import FinalCta from '../../components/FinalCta.astro';
-import { SITE_URL, servicios } from '../../site';
-
-const guias = (await getCollection('guias')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
-const fmt = (d: Date) => new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-const servicioDe = (id?: string) => servicios.find((s) => s.id === id);
-
+import GuideCard from '../../components/GuideCard.astro';
+import { guideTopics } from '../../guide-visuals';
+import { SITE_URL } from '../../site';
+const guias = (await getCollection('guias')).sort((a,b) => Number(b.data.destacada)-Number(a.data.destacada) || b.data.fecha.getTime()-a.data.fecha.getTime());
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/` },
-    { '@type': 'ListItem', position: 2, name: 'Guías', item: `${SITE_URL}/guias/` },
-  ] },
-  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Guías de Traka', url: `${SITE_URL}/guias/`,
-    hasPart: guias.map((g) => ({ '@type': 'Article', headline: g.data.h1, url: `${SITE_URL}/guias/${g.id}/` })) },
+ { '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+ {'@type':'ListItem',position:1,name:'Inicio',item:`${SITE_URL}/`},
+ {'@type':'ListItem',position:2,name:'Guías',item:`${SITE_URL}/guias/`}]},
+ { '@context':'https://schema.org','@type':'CollectionPage',name:'Guías de Traka',url:`${SITE_URL}/guias/`,hasPart:guias.map(g=>({'@type':'Article',headline:g.data.h1,url:`${SITE_URL}/guias/${g.id}/`})) }
 ];
 ---
-<Base
-  title="Guías para que te encuentren en internet | Traka"
-  description="Guías prácticas sobre Perfil de Empresa en Google, webs que traen consultas y cómo medir lo que funciona. Escritas para dueños de negocios."
-  path="/guias/"
-  jsonLd={jsonLd}
-  ogSlug="guias"
->
-  <Mecha>
-    <section id="hero" class="section s-papel on-light relative overflow-hidden pb-12 pt-10 md:pt-14" aria-labelledby="g-title">
-      <span class="node" aria-hidden="true"></span>
-      <div class="glow glow--chispa right-[-10%] top-[-20%] size-[32rem]" aria-hidden="true"></div>
-      <div class="wrap relative">
-        <nav aria-label="Migas de pan" class="meta mb-7 ">
-          <a href="/" class="hover:underline">Inicio</a> / <span aria-current="page">Guías</span>
-        </nav>
-        <p class="label flex items-center gap-2.5"><span class="pulse-dot" aria-hidden="true"></span>Guías</p>
-        <h1 id="g-title" class="h-xl mt-5 max-w-4xl">Lo que sabemos, escrito para que lo hagas vos.</h1>
-        <p class="lede mt-7 max-w-2xl text-carbon/80">
-          Guías prácticas sobre Google, webs y medición. Sin tecnicismos y sin vender humo: si podés resolverlo solo, acá está cómo.
-        </p>
-      </div>
-    </section>
-
-    <section class="section s-arena on-light pt-4" aria-labelledby="lista-title">
-      <span class="node" aria-hidden="true"></span>
-      <div class="wrap">
-        <h2 id="lista-title" class="sr-only">Todas las guías</h2>
-        <ul class="grid gap-6 md:grid-cols-2">
-          {guias.map((g, i) => {
-            const sv = servicioDe(g.data.servicio);
-            return (
-              <li class:list={['guia-card', g.data.destacada && 'guia-card--destacada']} data-reveal style={`--d:${i * 80}ms`}>
-                <a href={`/guias/${g.id}/`} class="guia-card__link">
-                  <p class="label text-brasa">{g.data.kicker}</p>
-                  <h3 class="mt-4 font-display text-2xl font-extrabold leading-tight md:text-3xl">{g.data.h1}</h3>
-                  <p class="mt-3 opacity-80">{g.data.resumen}</p>
-                  <p class="meta mt-6 flex items-center gap-3 ">
-                    <span>{fmt(g.data.fecha)}</span><span aria-hidden="true">·</span><span>{g.data.lectura} min de lectura</span>
-                  </p>
-                  <span class="guia-card__cta">Leer la guía<Icon name="ph:arrow-right-bold" class="size-4" aria-hidden="true" /></span>
-                </a>
-                {sv?.page && (
-                  <p class="mt-4 border-t border-carbon/10 pt-4 text-sm">
-                    ¿Preferís que lo hagamos nosotros? <a class="link" href={sv.page}>{sv.name}</a>.
-                  </p>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </section>
-
-    <div class="s-arena"><Burn to="fuego" /></div>
-  </Mecha>
-  <FinalCta message="Hola, leí las guías de Traka y quiero que lo hagamos juntos." origin="cta-final-guias" />
+<Base title="Guías para que te encuentren en internet | Traka" description="Guías prácticas sobre Perfil de Empresa en Google, webs que traen consultas y cómo medir lo que funciona. Escritas para dueños de negocios." path="/guias/" jsonLd={jsonLd} ogSlug="guias">
+ <section class="guide-library s-papel on-light">
+  <div class="wrap">
+   <nav aria-label="Migas de pan" class="library-breadcrumb"><a href="/">Inicio</a> / <span aria-current="page">Guías</span></nav>
+   <header class="library-intro">
+    <p class="label text-brasa">Guías para tu negocio</p>
+    <h1>Un tema. Una duda menos.</h1>
+    <p>Elegí qué querés mejorar. Te lo explicamos con ejemplos, pasos claros y sin tecnicismos.</p>
+   </header>
+   <div class="library-filters" role="group" aria-label="Filtrar guías por tema" hidden>
+    <button type="button" data-topic="all" aria-pressed="true">Todas <span>{guias.length}</span></button>
+    {guideTopics.map(t=><button type="button" data-topic={t.id} aria-pressed="false">{t.name} <span>{guias.filter(g=>g.data.servicio===t.id).length}</span></button>)}
+   </div>
+   <div class="library-results"><h2 id="list-title">Todas las guías</h2><p aria-live="polite" aria-atomic="true" id="guide-count">{guias.length} guías para explorar</p></div>
+   <ul class="library-grid" aria-labelledby="list-title">
+    {guias.map((g,i)=><li data-guide-topic={g.data.servicio}><GuideCard guide={g} eager={i<3}/></li>)}
+   </ul>
+  </div>
+ </section>
+ <FinalCta message="Hola, leí las guías de Traka y quiero que lo hagamos juntos." origin="cta-final-guias" />
 </Base>
+<script>
+const group=document.querySelector<HTMLElement>('.library-filters');
+if(group){
+ group.hidden=false;
+ const buttons=Array.from(group.querySelectorAll<HTMLButtonElement>('button[data-topic]'));
+ const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-guide-topic]'));
+ buttons.forEach(button=>button.addEventListener('click',()=>{
+  const topic=button.dataset.topic;
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  let visible=0;
+  cards.forEach(card=>{card.hidden=topic!=='all'&&card.dataset.guideTopic!==topic;if(!card.hidden)visible++;});
+  const count=document.getElementById('guide-count');if(count)count.textContent=`${visible} ${visible===1?'guía disponible':'guías disponibles'}`;
+  const title=document.getElementById('list-title');if(title)title.textContent=topic==='all'?'Todas las guías':button.childNodes[0].textContent?.trim()||'Guías';
+ }));
+}
+</script>
+<style>
+.guide-library { padding:2rem 0 5rem; }
+.library-breadcrumb { font-size:.875rem; color:#65594f; margin-bottom:2.5rem; }
+.library-breadcrumb a { text-decoration:underline; text-underline-offset:3px; }
+.library-intro { max-width:780px; }
+.library-intro h1 { font-size:clamp(2.6rem,5vw,4.5rem); line-height:1.03; letter-spacing:-.045em; margin-top:1rem; }
+.library-intro>p:last-child { font-size:1.15rem; line-height:1.65; max-width:620px; margin-top:1.4rem; color:#62574f; }
+.library-filters { display:flex; flex-wrap:wrap; gap:.6rem; padding:2rem 0; }
+.library-filters[hidden],.library-grid>li[hidden] { display:none; }
+.library-filters button { border:1px solid #cfc6bc; border-radius:999px; padding:.7rem 1rem; font-size:.95rem; cursor:pointer; background:white; }
+.library-filters button[aria-pressed=true] { background:#241e19; color:white; border-color:#241e19; }
+.library-filters button:focus-visible { outline:3px solid #b94014; outline-offset:3px; }
+.library-filters span { margin-left:.4rem; opacity:.7; }
+.library-results { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem; margin:1rem 0 1.5rem; }
+.library-results h2 { font-size:1.35rem; }
+.library-results p { font-size:.875rem; color:#62574f; }
+.library-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; }
+@media(max-width:1000px){.library-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.library-grid{grid-template-columns:1fr;}.library-breadcrumb{margin-bottom:1.5rem;}.library-filters{gap:.5rem;}.library-filters button{font-size:.875rem;padding:.65rem .85rem;}}
+</style>
