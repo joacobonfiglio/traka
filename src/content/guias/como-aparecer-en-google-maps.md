@@ -46,6 +46,12 @@ Esto es importante de aceptar porque evita pelear una batalla imposible. **Tu ne
 aparecer primero en toda la ciudad**, y perseguir eso es tirar plata. Lo que sí podés es ganar en
 tu zona, y sumar las búsquedas que no son por cercanía sino por servicio puntual.
 
+
+<figure class="guide-figure">
+  <a href="/guias/seo-local.svg" aria-label="Ampliar imagen: Los tres factores que influyen en los resultados locales."><img src="/guias/seo-local.svg" alt="Los tres factores que influyen en los resultados locales." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Los tres factores que influyen en los resultados locales. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Relevancia: acá está casi todo tu margen
 
 Relevancia es qué tanto lo que ofrecés se parece a lo que la persona buscó. Es lo que más se

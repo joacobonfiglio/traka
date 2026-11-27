@@ -52,6 +52,12 @@ la medición y se publica.
 
 En proyectos simples la 2 y la 3 se solapan y el total baja a tres semanas.
 
+
+<figure class="guide-figure">
+  <a href="/guias/web-plazos.svg" aria-label="Ampliar imagen: El trabajo va del alcance y los materiales a las pruebas y la entrega."><img src="/guias/web-plazos.svg" alt="El trabajo va del alcance y los materiales a las pruebas y la entrega." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>El trabajo va del alcance y los materiales a las pruebas y la entrega. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Lo que de verdad frena un proyecto
 
 Después de hacer esto varias veces, las demoras se repiten y son siempre las mismas tres.

@@ -167,3 +167,29 @@ página de caso, que es la que más imágenes va a tener.
 
 Dos cuidados concretos: **declarar `width` y `height`** en cada imagen, que es lo que evita el
 salto de layout, y **`loading="lazy"`** en todo lo que no esté en la primera pantalla.
+
+## Actualización · 27 de noviembre de 2026
+
+Se incorporaron capturas reales de las páginas de inicio de Aquabon y Tintorería
+Constitución y del módulo Lavaderos B2B de Lavi. Las URLs públicas de las dos webs
+están cargadas en las fichas de proyecto. Lavi se capturó ejecutando su interfaz
+existente en el modo de prueba B2B (`NEXT_PUBLIC_B2B_TEST=true`), sin conexión a
+producción ni datos de clientes. El aviso de demostración queda visible.
+
+- Capturas de escritorio de 1333 × 926, WebP, con variantes de 640 px para tarjetas.
+- Se muestran completas y adaptables al ancho disponible, también en móvil: no se
+  recorta una captura de escritorio para hacerla pasar por una versión de celular.
+- Las tarjetas de home, proyectos, rubros y ciudades comparten estas imágenes.
+- Los servicios usan capturas reales (web / plataformas) o esquemas explicativos
+  (SEO / redes), mediante `ServiceVisual.astro`.
+- Las 16 guías incluyen una figura contextual dentro del cuerpo: ocho esquemas
+  editoriales SVG, reutilizados donde el concepto coincide, y capturas de Aquabon
+  y Lavi como ejemplos. Se pueden ampliar. Los SVG son diagramas explicativos,
+  no interfaces, resultados, reseñas ni fotografías inventadas.
+- No se añadieron reseñas, fotos de equipo ni imágenes de un supuesto «antes».
+- Validación: build, 200 pruebas, existencia de archivos, dimensiones y textos
+  alternativos; revisión visual de portfolio, servicio y guía en navegador.
+
+Fuentes de capturas (27/11/2026): https://www.aquabonlavanderia.com/,
+https://www.tintoreriaconstitucion.com/ y código de la interfaz Lavi en modo de
+prueba B2B. Las cifras y contactos de Lavi son los ejemplos del propio modo demo.

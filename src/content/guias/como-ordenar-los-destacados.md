@@ -50,6 +50,12 @@ TACC, si se puede ir con el perro. Las mismas que te repiten todos los días.
 
 De ahí en adelante, si te sobra lugar: trabajos hechos, opiniones de clientes, el equipo.
 
+
+<figure class="guide-figure">
+  <a href="/guias/instagram.svg" aria-label="Ampliar imagen: El papel de los destacados dentro de un perfil completo."><img src="/guias/instagram.svg" alt="El papel de los destacados dentro de un perfil completo." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>El papel de los destacados dentro de un perfil completo. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## El orden, y cómo cambiarlo
 
 Los destacados no se arrastran. **Instagram los ordena por el último actualizado**, así que el que

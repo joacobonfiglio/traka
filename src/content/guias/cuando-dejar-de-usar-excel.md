@@ -49,6 +49,12 @@ buena sin sentarse a comparar.
 Mientras la planilla la toque una sola persona, esto no pasa. En el momento en que la tocan dos,
 es cuestión de tiempo.
 
+
+<figure class="guide-figure">
+  <a href="/proyectos/lavi/escritorio.webp" aria-label="Ampliar imagen: Ejemplo real de Lavi: pedidos, clientes B2B y saldos en un mismo panel. Datos de demostración."><img src="/proyectos/lavi/escritorio.webp" alt="Ejemplo real de Lavi: pedidos, clientes B2B y saldos en un mismo panel. Datos de demostración." width="1333" height="926" loading="lazy" decoding="async" /></a>
+  <figcaption>Ejemplo real de Lavi: pedidos, clientes B2B y saldos en un mismo panel. Datos de demostración. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Señal 2: el mismo dato se carga dos veces
 
 Anotás la venta en una planilla y después el pago en otra. O cargás el pedido y después lo volvés

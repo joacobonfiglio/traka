@@ -59,7 +59,7 @@ const jsonLd = [
           <p class="lede mt-7 max-w-xl text-carbon/80">{d.negocio}</p>
           {d.url && <p class="mt-7"><a class="link" href={d.url} rel="noopener">Ver el sitio publicado</a></p>}
         </div>
-        <CaseCard name={d.nombre} kind={d.kind} tone={d.tone} servicio={d.servicio} nameAs="p" />
+        <CaseCard name={d.nombre} kind={d.kind} tone={d.tone} servicio={d.servicio} captura={d.captura} nameAs="p" eager={true} />
       </div>
     </section>
 
@@ -95,12 +95,6 @@ const jsonLd = [
         </div>
       </section>
     )}
-
-    <!--
-      TODO(Traka): capturas antes/después en WebP con alt descriptivo, y la cita
-      del cliente. Las sube otro agente. Hasta entonces se muestra la maqueta y
-      el bloque de cita no se renderiza.
-    -->
 
     <!-- Servicio usado -->
     {svc?.page && (

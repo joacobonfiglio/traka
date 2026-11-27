@@ -48,6 +48,12 @@ que tiene es un informe llamado **Rendimiento**, que te muestra, para cada búsq
 
 Son búsquedas reales de personas reales. No es una estimación.
 
+
+<figure class="guide-figure">
+  <a href="/guias/medicion.svg" aria-label="Ampliar imagen: Impresiones, clics y consultas son etapas distintas del recorrido."><img src="/guias/medicion.svg" alt="Impresiones, clics y consultas son etapas distintas del recorrido." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Impresiones, clics y consultas son etapas distintas del recorrido. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Cómo darlo de alta
 
 Es gratis y lleva un rato:

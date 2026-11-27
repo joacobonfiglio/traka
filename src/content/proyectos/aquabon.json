@@ -14,5 +14,12 @@
     "Estructura y textos escritos con el cliente, sin plantillas ni secciones de relleno.",
     "Medición de las consultas que entran, para ver qué parte de la página las trae."
   ],
-  "url": ""
+  "url": "https://www.aquabonlavanderia.com/",
+  "captura": {
+    "src": "/proyectos/aquabon/escritorio.webp",
+    "alt": "Página de inicio real de Aquabon, con sus servicios y contacto por WhatsApp",
+    "width": 1333,
+    "height": 926,
+    "caption": "Web publicada de Aquabon · Captura de noviembre de 2026"
+  }
 }

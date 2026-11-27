@@ -50,6 +50,12 @@ hay nada de esto hecho, el problema no es el plazo del SEO.
 
 Si la ficha estaba vacía o sin verificar, este mes es donde más se nota.
 
+
+<figure class="guide-figure">
+  <a href="/guias/seo-plazos.svg" aria-label="Ampliar imagen: Etapas de trabajo y medición; no son plazos garantizados."><img src="/guias/seo-plazos.svg" alt="Etapas de trabajo y medición; no son plazos garantizados." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Etapas de trabajo y medición; no son plazos garantizados. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Meses 2 y 3: empieza a verse en los datos
 
 Acá aparecen las primeras señales reales, y casi siempre en este orden:

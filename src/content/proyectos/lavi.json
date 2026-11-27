@@ -7,12 +7,19 @@
   "title": "Lavi: una plataforma a medida | Traka",
   "metaDescription": "La plataforma a medida que desarrollamos para Lavi: relevamiento del proceso real, entrada por usuario y entrega en etapas.",
   "h1": "Lavi",
-  "negocio": "TODO: validar con Joaco — qué es Lavi y con qué venía antes de la plataforma. Es el único proyecto del que no hay descripción en el repositorio, así que esta sección queda sin escribir a propósito en vez de inventarse.",
+  "negocio": "Lavi es la herramienta de gestión que desarrollamos para la operativa de una lavandería: reúne pedidos, clientes, cobros y gastos, y permite seguir el trabajo diario desde un mismo panel.",
   "queHicimos": [
-    "Relevamiento del proceso real de trabajo antes de proponer nada.",
-    "Una plataforma propia, construida para esa forma de trabajar y no al revés.",
-    "Entrada por usuario: cada persona ve lo que le toca ver.",
-    "TODO: validar con Joaco — qué módulos concretos tiene la plataforma."
+    "Gestión de pedidos y clientes, con estados de recepción, proceso, listo y entregado.",
+    "Registro de cobros, pagos parciales, gastos y movimientos de caja.",
+    "Reportes para consultar ingresos, gastos y la evolución del negocio.",
+    "Un módulo B2B para trabajar con otros lavaderos: pedidos de acolchados, entregas y saldos pendientes."
   ],
-  "url": ""
+  "url": "",
+  "captura": {
+    "src": "/proyectos/lavi/escritorio.webp",
+    "alt": "Panel real de Lavi: lavaderos, pedidos y cobros con datos de demostración",
+    "width": 1333,
+    "height": 926,
+    "caption": "Interfaz real de Lavi · Datos de demostración"
+  }
 }

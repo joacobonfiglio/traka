@@ -48,16 +48,12 @@ const jsonLd = [
           {proyectos.map((p) => (
             <li>
               <a href={`/proyectos/${p.id}/`} class="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuego">
-                <CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} />
+                <CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} captura={p.data.captura} />
                 <span class="mt-4 inline-flex items-center gap-1.5 font-medium underline underline-offset-4">Ver el proyecto</span>
               </a>
             </li>
           ))}
         </ul>
-        <!--
-          TODO(Traka): reemplazar las maquetas de CaseCard por capturas reales en WebP,
-          con alt descriptivo. Las sube otro agente cuando estén.
-        -->
       </div>
     </section>
 

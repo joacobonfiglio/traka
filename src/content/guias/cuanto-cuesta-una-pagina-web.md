@@ -48,6 +48,12 @@ Cada sección es diseño, escritura, carga y revisión. No crecen de a poco: cre
 Nosotros arrancamos en **$200.000 por una web de hasta cinco secciones**. Ese es el rango donde
 entra la enorme mayoría de los comercios y pymes con los que trabajamos.
 
+
+<figure class="guide-figure">
+  <a href="/guias/presupuesto.svg" aria-label="Ampliar imagen: Tres bloques para comparar el alcance de un presupuesto."><img src="/guias/presupuesto.svg" alt="Tres bloques para comparar el alcance de un presupuesto." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Tres bloques para comparar el alcance de un presupuesto. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## 2. Quién escribe los textos
 
 Acá está la diferencia escondida más grande entre dos presupuestos que parecen iguales.

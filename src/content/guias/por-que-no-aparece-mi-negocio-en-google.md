@@ -48,6 +48,12 @@ posicionamiento, y lleva meses.
 La prueba para saber cuál es la tuya: **buscá el nombre exacto de tu negocio más tu ciudad.**
 Si ahí aparecés, el problema es de posición, no de existencia. Si ni así aparecés, seguí leyendo.
 
+
+<figure class="guide-figure">
+  <a href="/guias/seo-local.svg" aria-label="Ampliar imagen: Relevancia, distancia y prominencia: tres factores a revisar."><img src="/guias/seo-local.svg" alt="Relevancia, distancia y prominencia: tres factores a revisar." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Relevancia, distancia y prominencia: tres factores a revisar. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Razón 1: no tenés Perfil de Empresa en Google
 
 Es la causa más común y la que más rápido se arregla.

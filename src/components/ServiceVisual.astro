@@ -1,0 +1,20 @@
+---
+interface Props { servicio: string }
+const { servicio } = Astro.props;
+const visuals: Record<string, {src:string; alt:string; caption:string; width:number; height:number}> = {
+ web: {src:'/proyectos/tintoreria-constitucion/escritorio.webp',alt:'Página de inicio de Tintorería Constitución, desarrollada por Traka',caption:'Trabajo real · Tintorería Constitución',width:1333,height:926},
+ medida: {src:'/proyectos/lavi/escritorio.webp',alt:'Lavi: gestión de lavaderos, pedidos y cobros con datos de prueba',caption:'Lavi · Interfaz real con datos de demostración',width:1333,height:926},
+ seo: {src:'/guias/seo-local.svg',alt:'Factores del SEO local: relevancia, distancia y prominencia',caption:'Qué influye en la visibilidad de un negocio local',width:960,height:640},
+ redes: {src:'/guias/instagram.svg',alt:'Bio para presentarte, destacados para resolver dudas y enlace para consultar',caption:'Una función clara para cada parte del perfil',width:960,height:640},
+};
+const v = visuals[servicio] ?? visuals.web;
+---
+<figure class="service-visual">
+ <img src={v.src} alt={v.alt} width={v.width} height={v.height} loading="eager" decoding="async" />
+ <figcaption>{v.caption}</figcaption>
+</figure>
+<style>
+.service-visual { min-width:0; width:100%; border:1px solid rgb(30 23 18 / .16); border-radius:18px; overflow:hidden; background:#faf8f4; color:#241e19; box-shadow:0 18px 40px rgb(30 23 18 / .08); }
+img { display:block; width:100%; height:auto; }
+figcaption { padding:1rem; font-size:.875rem; line-height:1.5; }
+</style>

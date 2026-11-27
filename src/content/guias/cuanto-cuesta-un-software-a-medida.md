@@ -47,6 +47,12 @@ usuario son cuatro proyectos conviviendo, y cada uno tiene sus reglas y sus caso
 La pregunta útil no es "cuántas pantallas quiero" sino **cuántas cosas distintas tiene que saber
 hacer.**
 
+
+<figure class="guide-figure">
+  <a href="/guias/software.svg" aria-label="Ampliar imagen: Personas, datos y entregas definen el alcance de la herramienta."><img src="/guias/software.svg" alt="Personas, datos y entregas definen el alcance de la herramienta." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Personas, datos y entregas definen el alcance de la herramienta. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## 2. Cuántas reglas tiene tu proceso
 
 Dos negocios pueden tener el mismo proceso en el papel y uno costar el doble, por las excepciones.

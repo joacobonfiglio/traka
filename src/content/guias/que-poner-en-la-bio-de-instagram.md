@@ -55,6 +55,12 @@ es.
 **6. El link.** Y que lleve a algo útil, que es un tema aparte:
 [qué poner en el link de la bio](/guias/que-poner-en-el-link-de-la-bio/).
 
+
+<figure class="guide-figure">
+  <a href="/guias/instagram.svg" aria-label="Ampliar imagen: La bio presenta; los destacados explican; el enlace permite actuar."><img src="/guias/instagram.svg" alt="La bio presenta; los destacados explican; el enlace permite actuar." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>La bio presenta; los destacados explican; el enlace permite actuar. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Los cuatro errores de siempre
 
 **Describirte en vez de decir qué vendés.** "Emprendimiento familiar con amor por el detalle" no

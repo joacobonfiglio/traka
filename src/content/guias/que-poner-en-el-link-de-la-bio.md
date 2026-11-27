@@ -48,6 +48,12 @@ Si no tenés web, en [desarrollo de páginas web](/servicios/desarrollo-web/) es
 plazo; y qué secciones necesita un comercio está en
 [qué tiene que tener la web de un comercio](/guias/que-tiene-que-tener-la-web-de-un-comercio/).
 
+
+<figure class="guide-figure">
+  <a href="/guias/instagram.svg" aria-label="Ampliar imagen: El enlace debe llevar a una acción clara."><img src="/guias/instagram.svg" alt="El enlace debe llevar a una acción clara." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>El enlace debe llevar a una acción clara. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Opción 2: un agregador de links
 
 Esas páginas con una lista de botones. Resuelven bien el problema del único clic cuando tenés

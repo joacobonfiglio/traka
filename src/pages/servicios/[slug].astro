@@ -7,7 +7,7 @@ import Burn from '../../components/Burn.astro';
 import Chispa from '../../components/Chispa.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import WaButton from '../../components/WaButton.astro';
-import WebMock from '../../components/WebMock.astro';
+import ServiceVisual from '../../components/ServiceVisual.astro';
 import Process from '../../components/Process.astro';
 import FinalCta from '../../components/FinalCta.astro';
 import { SITE_URL, site, servicios, notaPrecios } from '../../site';
@@ -92,7 +92,7 @@ const jsonLd = [
           </div>
         </div>
 
-        <WebMock variant={svc.id === 'seo' ? 'mapa' : svc.id === 'medida' ? 'panel' : 'web'} />
+        <ServiceVisual servicio={svc.id} />
       </div>
     </section>
 

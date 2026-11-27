@@ -128,7 +128,7 @@ const jsonLd = [
         <div class="snap-row snap-row--cases mt-12" data-scrollx tabindex="0" role="group" aria-label="Trabajos nuestros, deslizá para ver más">
           {proyectos.map((p) => (
             <a href={`/proyectos/${p.id}/`} class="block">
-              <CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} url={p.data.url} />
+              <CaseCard name={p.data.nombre} kind={p.data.kind} tone={p.data.tone} servicio={p.data.servicio} captura={p.data.captura} />
             </a>
           ))}
         </div>

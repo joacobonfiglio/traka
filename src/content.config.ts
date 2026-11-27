@@ -84,6 +84,7 @@ const proyectos = defineCollection({
     /** URL pública del sitio. Vacío = no se muestra el enlace. */
     url: z.string().default(''),
     /** Cita del cliente. Vacía = no se muestra el bloque. */
+    captura: z.object({ src: z.string(), alt: z.string(), width: z.number(), height: z.number(), caption: z.string() }).optional(),
     cita: z.object({ texto: z.string(), autor: z.string() }).optional(),
   }),
 });

@@ -47,6 +47,12 @@ y dura poco.
 Si tu trabajo tiene una entrega, es al entregar. Si es un servicio, es al terminar. Si vendés algo
 que se usa después, es cuando te escribe para contarte que funcionó.
 
+
+<figure class="guide-figure">
+  <a href="/guias/resenas.svg" aria-label="Ampliar imagen: Un proceso para pedir y responder reseñas sin incentivos."><img src="/guias/resenas.svg" alt="Un proceso para pedir y responder reseñas sin incentivos." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Un proceso para pedir y responder reseñas sin incentivos. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Allanarle el camino
 
 Esto es lo que más cambia los resultados y lo que menos se hace.

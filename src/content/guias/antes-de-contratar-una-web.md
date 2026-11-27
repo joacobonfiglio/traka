@@ -32,6 +32,12 @@ Antes de pedir presupuestos, definí en una frase qué tiene que pasar cuando al
 
 Esa frase cambia todo: el tamaño, el precio y hasta quién debería hacerla. Si no la tenés, cualquier presupuesto te va a parecer caro o barato sin saber respecto de qué.
 
+
+<figure class="guide-figure">
+  <a href="/guias/presupuesto.svg" aria-label="Ampliar imagen: Contenido, funciones y continuidad: lo que conviene dejar por escrito."><img src="/guias/presupuesto.svg" alt="Contenido, funciones y continuidad: lo que conviene dejar por escrito." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Contenido, funciones y continuidad: lo que conviene dejar por escrito. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Las diez preguntas
 
 ### 1. ¿A nombre de quién queda el dominio?

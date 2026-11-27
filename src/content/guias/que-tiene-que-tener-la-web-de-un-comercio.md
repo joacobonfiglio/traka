@@ -43,6 +43,12 @@ cliente, en el primer bloque y sin scrollear.
 Es el dato que decide si la persona se queda. Y es el que más webs resuelven mal, porque el dueño
 da por obvio lo que hace.
 
+
+<figure class="guide-figure">
+  <a href="/proyectos/aquabon/escritorio.webp" aria-label="Ampliar imagen: Ejemplo real: Aquabon presenta su servicio y el contacto por WhatsApp desde el inicio."><img src="/proyectos/aquabon/escritorio.webp" alt="Ejemplo real: Aquabon presenta su servicio y el contacto por WhatsApp desde el inicio." width="1333" height="926" loading="lazy" decoding="async" /></a>
+  <figcaption>Ejemplo real: Aquabon presenta su servicio y el contacto por WhatsApp desde el inicio. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## 2. El horario de hoy
 
 Primero de todo en gastronomía, comercio y cualquier cosa que abra y cierre. Es literalmente la

@@ -39,6 +39,12 @@ Entrá a Google con la cuenta que vaya a quedar como dueña —usá una cuenta d
 
 Si preferís no hacerlo vos, el Perfil de Empresa entra en nuestro servicio de [posicionamiento SEO](/servicios/posicionamiento-seo/).
 
+
+<figure class="guide-figure">
+  <a href="/guias/seo-local.svg" aria-label="Ampliar imagen: Cómo se relaciona la ficha con la visibilidad local."><img src="/guias/seo-local.svg" alt="Cómo se relaciona la ficha con la visibilidad local." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Cómo se relaciona la ficha con la visibilidad local. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## 2. Elegí bien la categoría principal
 
 Es el campo que más pesa para decidir en qué búsquedas aparecés. Elegí la categoría que describe **qué sos**, no qué vendés: "lavandería" antes que "servicio de limpieza". Después sumá categorías secundarias para lo demás que hacés, pero sin inflar la lista con cosas que no son.

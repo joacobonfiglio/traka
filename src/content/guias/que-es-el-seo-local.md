@@ -51,6 +51,12 @@ La consecuencia práctica es importante: **el mismo esfuerzo rinde mucho antes.*
 no puede pelear una búsqueda nacional contra empresas con equipos de marketing, pero sí puede
 quedar primero en su ciudad.
 
+
+<figure class="guide-figure">
+  <a href="/guias/seo-local.svg" aria-label="Ampliar imagen: Factores del SEO local: relevancia, distancia y prominencia."><img src="/guias/seo-local.svg" alt="Factores del SEO local: relevancia, distancia y prominencia." width="960" height="640" loading="lazy" decoding="async" /></a>
+  <figcaption>Factores del SEO local: relevancia, distancia y prominencia. Tocá la imagen para ampliarla.</figcaption>
+</figure>
+
 ## Las tres piezas
 
 **1. El Perfil de Empresa.** La categoría bien elegida, los servicios cargados uno por uno, los
